@@ -1,11 +1,12 @@
 ﻿'use strict';
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './app/index.ts',
     output: {
-        path: './wwwroot/dist',
+        path: './wwwroot/build',
         filename: 'bundle.js'
     },
     resolve: {
@@ -44,6 +45,7 @@ module.exports = {
             filename: 'styles.css',
             disable: false,
             allChunks: true
-        })
+        }),
+        new CleanWebpackPlugin(['./app/**/*.js', './app/**/*.map', './wwwroot/**/*.*'])
     ]
 };
