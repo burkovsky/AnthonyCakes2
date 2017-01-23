@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using AnthonyCakes2.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace AnthonyCakes2.Controllers
 {
@@ -18,18 +14,6 @@ namespace AnthonyCakes2.Controllers
             // controller (Home) and the name of the action method (Index).
             // So in this case, the view returned is /Views/Home/Index.cshtml.
             return View();
-        }
-
-        public IActionResult About()
-        {
-            // Creates a model and passes it on to the view.
-            Employee[] model =
-            {
-                new Employee { Name = "Alfred", Title = "Manager" },
-                new Employee { Name = "Sarah", Title = "Accountant" }
-            };
-
-            return View(model);
         }
     }
 }

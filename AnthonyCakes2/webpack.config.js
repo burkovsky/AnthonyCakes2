@@ -2,6 +2,7 @@
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+var UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
 module.exports = {
     entry: './app/index.ts',
@@ -20,17 +21,10 @@ module.exports = {
                 loader: 'ts-loader'
             },
             {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    loader: 'css-loader?sourceMap'
-                })
-            },
-            {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    loader: 'css-loader?sourceMap!sass-loader?sourceMap'
+                    loader: 'css-loader?minimize!sass-loader?sourceMap'
                 })
             },
             {
@@ -41,11 +35,14 @@ module.exports = {
     },
     devtool: 'source-map',
     plugins: [
+        new CleanWebpackPlugin(['./app/**/*.js', './app/**/*.map', './wwwroot/**/*.*']),
+        new UglifyJsPlugin({
+            sourceMap: true
+        }),
         new ExtractTextPlugin({
             filename: 'styles.css',
             disable: false,
             allChunks: true
-        }),
-        new CleanWebpackPlugin(['./app/**/*.js', './app/**/*.map', './wwwroot/**/*.*'])
+        })
     ]
 };
