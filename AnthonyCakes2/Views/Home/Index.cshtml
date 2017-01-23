@@ -3,8 +3,18 @@
     ViewData["Description"] = "The home page of my website";
 }
 
-<app>Loading...</app>
-
-@section Scripts {
-    @*Insert any script tags for this page here*@
-}
+<header role="banner">
+    <nav class="container">
+        <ul>
+            <li><a asp-controller="Home" asp-action="Index">AnthonyCakes2</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="container">
+    <app-root>Loading...</app-root>
+</main>
+<footer>
+    <div class="container">
+        <span>&copy; @DateTime.Now.Year - AnthonyCakes2</span>
+    </div>
+</footer>

@@ -1,8 +1,8 @@
 ﻿'use strict';
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
-var UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
 module.exports = {
     entry: './app/index.ts',
@@ -21,11 +21,18 @@ module.exports = {
                 loader: 'ts-loader'
             },
             {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    loader: 'css-loader?minimize!sass-loader?sourceMap'
-                })
+                test: /\.(css|scss)$/,
+                use: [
+                    'to-string-loader',
+                    ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        loader: 'css-loader?sourceMap&minimize!sass-loader?sourceMap'
+                    })
+                ]
+            },
+            {
+                test: /\.html$/,
+                loader: "raw-loader"
             },
             {
                 test: /\.woff2?$|\.ttf$|\.eot$|\.svg$|\.png|\.jpe?g|\.gif$/,
@@ -35,7 +42,9 @@ module.exports = {
     },
     devtool: 'source-map',
     plugins: [
-        new CleanWebpackPlugin(['./app/**/*.js', './app/**/*.map', './wwwroot/**/*.*']),
+        new CleanWebpackPlugin(['./wwwroot/build/', './app/**/*.js', './app/**/*.map'], {
+            verbose: false
+        }),
         new UglifyJsPlugin({
             sourceMap: true
         }),

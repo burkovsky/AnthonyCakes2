@@ -7,32 +7,9 @@
     <meta name="description" content="@ViewData["Description"]" />
     <link rel="stylesheet" href="~/build/styles.css" asp-append-version="true" />
 </head>
-<body>
+<body>  
+    @RenderBody()
 
-    <div class="wrapper">
-        <header role="banner">
-            <nav class="container">
-                <ul>
-                    <li><a asp-controller="Home" asp-action="Index">AnthonyCakes2</a></li>
-                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-controller="Home" asp-action="About">About</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <main class="container">
-            <h1>@ViewData["Title"]</h1>
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer>
-        <div class="container">
-            <span>&copy; @DateTime.Now.Year - AnthonyCakes2</span>
-        </div>
-    </footer>
-
-    <script src="~/build/bundle.js"></script>
-    @RenderSection("scripts", required: false)
+    <script src="~/build/bundle.js" asp-append-version="true"></script>
 </body>
 </html>

@@ -1,5 +1,2 @@
-﻿// Styles
-import './index.scss';
-
-// Scripts
-import './scripts/main.ts';
+﻿// Scripts
+import './bootstrap.ts';
