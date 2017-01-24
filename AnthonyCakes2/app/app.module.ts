@@ -7,4 +7,4 @@ import { AppRootComponent } from './components/approot/approot.component';
     declarations: [AppRootComponent],
     bootstrap: [AppRootComponent]
 })
-export class AppRootModule { }
+export class AppModule { }

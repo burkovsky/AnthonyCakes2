@@ -2,6 +2,6 @@
 import 'reflect-metadata';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppRootModule } from './app.module';
+import { AppModule } from './app.module';
 
-platformBrowserDynamic().bootstrapModule(AppRootModule);
+platformBrowserDynamic().bootstrapModule(AppModule);
