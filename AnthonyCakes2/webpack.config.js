@@ -43,10 +43,18 @@ module.exports = {
     devtool: 'source-map',
     plugins: [
         new CleanWebpackPlugin(['./wwwroot/build/', './app/**/*.js', './app/**/*.map'], {
-            verbose: false
+            verbose: false,
+            dry: false
         }),
         new UglifyJsPlugin({
-            sourceMap: true
+            minimize: true,
+            sourceMap: true,
+            output: {
+                comments: false
+            },
+            compressor: {
+                warnings: false
+            }
         }),
         new ExtractTextPlugin({
             filename: 'styles.css',
