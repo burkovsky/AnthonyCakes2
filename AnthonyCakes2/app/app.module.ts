@@ -17,7 +17,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
             { path: 'gallery', component: GalleryComponent },
             { path: 'about', component: AboutComponent },
             { path: '**', redirectTo: 'gallery' }
-        ])
+        ], { useHash: true })
     ],
     declarations: [
         AppRootComponent,
