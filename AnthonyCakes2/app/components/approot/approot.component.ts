@@ -4,7 +4,7 @@ import '../../assets/main.scss';
 
 @Component({
     selector: 'app-root',
-    template: require('./app-root.component.html'),
-    styles: [require('./app-root.component.scss')]
+    template: require('./approot.component.html'),
+    styles: [require('./approot.component.scss')]
 })
 export class AppRootComponent { name = 'Angular'; }
