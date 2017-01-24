@@ -1,2 +1,2 @@
 ﻿// Scripts
-import './bootstrap.ts';
+import './main.ts';
