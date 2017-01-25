@@ -1,1 +1,6 @@
-﻿<section>Gallery</section>
+﻿<section>
+    <h2>Gallery</h2>
+    <ul *ngIf="photos.length > 0">
+        <li *ngFor="let photo of photos">{{photo}}</li>
+    </ul>
+</section>

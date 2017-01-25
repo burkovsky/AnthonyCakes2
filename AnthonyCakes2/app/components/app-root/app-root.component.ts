@@ -1,6 +1,8 @@
-﻿import { Component } from '@angular/core';
+﻿import '../../assets/main.scss';
 
-import '../../assets/main.scss';
+import '../../rxjs-operators';
+
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-root',

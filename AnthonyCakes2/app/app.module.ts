@@ -1,6 +1,7 @@
 ﻿import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppRootComponent } from './components/app-root/app-root.component';
@@ -12,6 +13,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 @NgModule({
     imports: [
         BrowserModule,
+        HttpModule,
+        JsonpModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'gallery', pathMatch: 'full' },
             { path: 'gallery', component: GalleryComponent },
