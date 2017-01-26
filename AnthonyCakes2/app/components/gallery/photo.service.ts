@@ -1,11 +1,12 @@
 ﻿import { Injectable } from '@angular/core';
 import { Jsonp, URLSearchParams, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 import { YandexFotkiParserService } from './yandex-fotki-parser.service';
 
 @Injectable()
 export class PhotoService {
-    private photoServiceUrl = 'http://api-fotki.yandex.ru/api/users/';
+    private photoServiceUrl = 'http://api-fotki.yandex.ru/api/users';
     private params = new URLSearchParams();
 
     constructor(private jsonp: Jsonp, private parserService: YandexFotkiParserService) {
@@ -13,39 +14,28 @@ export class PhotoService {
         this.params.set('callback', 'JSONP_CALLBACK');
     }
 
-    getPhotos(user: string, album: string): string[] {
-        return [];
+    getPhotos(user: string, album: string): Observable<any> {
+        const userServiceDocumentUrl = `${this.photoServiceUrl}/${user}/`;
+
+        return this.getDocument(userServiceDocumentUrl)
+            .map(this.parserService.extractAlbumsUrl)
+            .flatMap(url => this.getDocument(String(url)))
+            .map(doc => this.parserService.extractAlbumUrl(doc, album))
+            .flatMap(url => this.getDocument(String(url)))
+            .map(this.parserService.extractAlbumPhotosUrls);
     }
 
-    private getServiceDocument(user: string): Promise<any> {
+    private getDocument(documentUrl: string): Observable<any> {
+        if (!documentUrl)
+            return Observable.throw('Incorrect URL');
+
         return this.jsonp
-            .get(`${this.photoServiceUrl}/${user}/`, { search: this.params })
-            .toPromise()
-            .then(this.extractData)
+            .get(documentUrl, { search: this.params })
+            .map(this.extractData)
             .catch(this.handleError);
     }
 
-    private getAlbumsDocument(serviceDocument: Object): Promise<any> {
-        const albumsUrl = this.parserService.extractAlbumsUrl(serviceDocument);
-
-        return this.jsonp
-            .get(albumsUrl, { search: this.params })
-            .toPromise()
-            .then(this.extractData)
-            .catch(this.handleError);
-    }
-
-    private getAlbumPhotosDocument(albumsDocument: Object, album: string) {
-        const albumUrl = this.parserService.extractAlbumUrl(albumsDocument);
-
-        return this.jsonp
-            .get(albumUrl, { search: this.params })
-            .toPromise()
-            .then(this.extractData)
-            .catch(this.handleError);
-    }
-
-    private extractData(response: Response) : Object {
+    private extractData(response: Response): Object {
         return response.json() || {};
     }
 
@@ -61,6 +51,6 @@ export class PhotoService {
 
         console.error(errorMessage);
 
-        return Promise.reject(errorMessage); 
+        return Observable.throw(errorMessage);
     }
 }

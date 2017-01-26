@@ -2,11 +2,9 @@
 
 @Injectable()
 export class YandexFotkiParserService {
-    extractAlbumsUrl(serviceDocument: Object) : string {
-        // User collections: photos, albums, tags
+    extractAlbumsUrl(serviceDocument: Object): string {
         const collections = serviceDocument['collections'];
         if (collections) {
-            // User albums
             const albums = collections['album-list'];
             if (albums)
                 return albums['href'];
@@ -15,11 +13,37 @@ export class YandexFotkiParserService {
         return '';
     }
 
-    extractAlbumUrl(albumsDocument: Object): string {
+    extractAlbumUrl(albumsDocument: Object, album: string): string {
+        const entries = albumsDocument['entries'];
+        if (entries) {
+            for (let entry of entries) {
+                const title = entry["title"];
+                if (title && title === album) {
+                    const links = entry['links'];
+                    if (links)
+                        return links['photos'];
+                }
+            }
+        }
+
         return '';
     }
 
     extractAlbumPhotosUrls(albumDocument: Object): string[] {
-        return [];
+        let photosUrls: string[] = [];
+
+        const entries = albumDocument['entries'];
+        if (entries) {
+            for (let entry of entries) {
+                const images = entry['img'];
+                if (images) {
+                    const original = images['orig'];
+                    if (original)
+                        photosUrls.push(original['href']);
+                }
+            }
+        }
+
+        return photosUrls;
     }
 }

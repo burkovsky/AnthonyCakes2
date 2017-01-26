@@ -11,15 +11,16 @@ import { PhotoService } from './photo.service';
     providers: [ YandexFotkiParserService, PhotoService ]
 })
 export class GalleryComponent implements OnInit {
-    photos: string[];
+    photos: string[] = [];
 
-    constructor(private photoService: PhotoService, private parserService: YandexFotkiParserService) { }
+    constructor(private photoService: PhotoService) { }
 
     ngOnInit() {
         this.getPhotos();
     }
 
     getPhotos() {
-        this.photos = this.photoService.getPhotos('alekna', 'public');
+        this.photoService.getPhotos('alekna', 'Природа')
+            .subscribe(photos => this.photos = photos);
     }
 }
