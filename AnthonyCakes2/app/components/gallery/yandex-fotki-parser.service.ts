@@ -17,7 +17,7 @@ export class YandexFotkiParserService {
         const entries = albumsDocument['entries'];
         if (entries) {
             for (let entry of entries) {
-                const title = entry["title"];
+                const title = entry['title'];
                 if (title && title === album) {
                     const links = entry['links'];
                     if (links)
