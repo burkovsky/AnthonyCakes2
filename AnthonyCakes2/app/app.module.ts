@@ -10,6 +10,8 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { AboutComponent } from './components/about/about.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 
+import { AppConfig } from './app.config';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -29,6 +31,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
         AboutComponent,
         GalleryComponent
     ],
+    providers: [AppConfig],
     bootstrap: [AppRootComponent]
 })
 export class AppModule { }
