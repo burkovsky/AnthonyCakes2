@@ -1,65 +1,7 @@
-﻿'use strict';
+﻿function buildConfig(env) {
+    return require('./webpack.config.' + env + '.js')({
+        env: env
+    });
+}
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
-
-module.exports = {
-    entry: './app/index.ts',
-    output: {
-        path: './wwwroot/build',
-        filename: 'bundle.js'
-    },
-    resolve: {
-        modules: ['node_modules'],
-        extensions: ['.ts', '.js', '.css', '.scss']
-    },
-    module: {
-        rules: [
-            {
-                test: /\.ts$/,
-                loader: 'ts-loader'
-            },
-            {
-                test: /\.(css|scss)$/,
-                use: [
-                    'to-string-loader',
-                    ExtractTextPlugin.extract({
-                        fallback: 'style-loader',
-                        loader: 'css-loader?sourceMap&minimize!sass-loader?sourceMap'
-                    })
-                ]
-            },
-            {
-                test: /\.html$/,
-                loader: "raw-loader"
-            },
-            {
-                test: /\.woff2?$|\.ttf$|\.eot$|\.svg$|\.png|\.jpe?g|\.gif$/,
-                loader: 'file-loader'
-            }
-        ]
-    },
-    devtool: 'source-map',
-    plugins: [
-        new CleanWebpackPlugin(['./wwwroot/build/', './app/**/*.js', './app/**/*.map'], {
-            verbose: false,
-            dry: false
-        }),
-        new UglifyJsPlugin({
-            minimize: true,
-            sourceMap: true,
-            output: {
-                comments: false
-            },
-            compressor: {
-                warnings: false
-            }
-        }),
-        new ExtractTextPlugin({
-            filename: 'styles.css',
-            disable: false,
-            allChunks: true
-        })
-    ]
-};
+module.exports = buildConfig;

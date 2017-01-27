@@ -3,6 +3,10 @@
   "name": "anthonycakes2",
   "private": true,
   "author": "Anton Burkovsky",
+  "scripts": {
+    "build:dev": "webpack --env=dev --colors",
+    "build:prod": "webpack --env=prod --colors"
+  },
   "dependencies": {
     "@angular/common": "~2.4.0",
     "@angular/compiler": "~2.4.0",
