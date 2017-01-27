@@ -1,12 +1,5 @@
-﻿import { Injectable } from '@angular/core';
-
-export interface IAppConfig {
-    user: string;
-    album: string;
-}
-
-@Injectable()
-export class AppConfig implements  IAppConfig {
-    user = 'alekna';
-    album = 'Природа';
+﻿export const appConfig = {
+    photoServiceUrl: 'http://api-fotki.yandex.ru/api/users',
+    user: 'alekna',
+    album: 'Природа'
 };

@@ -2,11 +2,12 @@
 import { Jsonp, URLSearchParams, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
+import { appConfig } from '../../../app.config';
+
 import { YandexFotkiParserService } from './yandex-fotki-parser.service';
 
 @Injectable()
 export class PhotoService {
-    private photoServiceUrl = 'http://api-fotki.yandex.ru/api/users';
     private params = new URLSearchParams();
 
     constructor(private jsonp: Jsonp, private parserService: YandexFotkiParserService) {
@@ -15,14 +16,14 @@ export class PhotoService {
     }
 
     getPhotos(user: string, album: string): Observable<any> {
-        const userServiceDocumentUrl = `${this.photoServiceUrl}/${user}/`;
+        const userServiceDocumentUrl = `${appConfig.photoServiceUrl}/${user}/`;
 
         return this.getDocument(userServiceDocumentUrl)
             .map(this.parserService.extractAlbumsUrl)
             .flatMap(url => this.getDocument(String(url)))
             .map(doc => this.parserService.extractAlbumUrl(doc, album))
             .flatMap(url => this.getDocument(String(url)))
-            .map(this.parserService.extractAlbumPhotosUrls);
+            .map(this.parserService.extractAlbumPhotos);
     }
 
     private getDocument(documentUrl: string): Observable<any> {

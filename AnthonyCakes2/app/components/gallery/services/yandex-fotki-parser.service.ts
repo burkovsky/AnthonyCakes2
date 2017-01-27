@@ -1,5 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 
+import { Photo } from '../models/photo';
+
 @Injectable()
 export class YandexFotkiParserService {
     extractAlbumsUrl(serviceDocument: Object): string {
@@ -29,8 +31,8 @@ export class YandexFotkiParserService {
         return '';
     }
 
-    extractAlbumPhotosUrls(albumDocument: Object): string[] {
-        let photosUrls: string[] = [];
+    extractAlbumPhotos(albumDocument: Object): Photo[] {
+        let photos: Photo[] = [];
 
         const entries = albumDocument['entries'];
         if (entries) {
@@ -39,11 +41,11 @@ export class YandexFotkiParserService {
                 if (images) {
                     const original = images['orig'];
                     if (original)
-                        photosUrls.push(original['href']);
+                        photos.push(new Photo(original['href']));
                 }
             }
         }
 
-        return photosUrls;
+        return photos;
     }
 }

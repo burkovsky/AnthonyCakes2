@@ -1,10 +1,12 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { AppConfig } from '../../app.config';
+import { appConfig } from '../../app.config';
 
-import { YandexFotkiParserService } from './yandex-fotki-parser.service';
-import { PhotoService } from './photo.service';
+import { YandexFotkiParserService } from './services/yandex-fotki-parser.service';
+import { PhotoService } from './services/photo.service';
+
+import { Photo } from './models/photo';
 
 @Component({
     selector: 'gallery',
@@ -13,16 +15,16 @@ import { PhotoService } from './photo.service';
     providers: [YandexFotkiParserService, PhotoService]
 })
 export class GalleryComponent implements OnInit {
-    photos: string[] = [];
+    photos: Photo[] = [];
 
-    constructor(private config: AppConfig, private photoService: PhotoService) {}
+    constructor(private photoService: PhotoService) {}
 
     ngOnInit() {
         this.getPhotos();
     }
 
     getPhotos() {
-        this.photoService.getPhotos(this.config.user, this.config.album)
+        this.photoService.getPhotos(appConfig.user, appConfig.album)
             .subscribe(photos => this.photos = photos);
     }
 }
