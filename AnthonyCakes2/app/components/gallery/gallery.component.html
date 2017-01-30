@@ -1,6 +1,9 @@
 ﻿<section>
     <h2>Gallery</h2>
-    <div *ngIf="photos.length > 0">
+    <div *ngIf="photos.length">
         <img *ngFor="let photo of photos" src="{{photo.url}}" alt="Yandex Fotki"/>
+    </div>
+    <div *ngIf="!photos.length">
+        loading
     </div>
 </section>

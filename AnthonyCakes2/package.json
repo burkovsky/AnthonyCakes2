@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@types/node": "^7.0.2",
+    "bootstrap": "^4.0.0-alpha.6",
     "clean-webpack-plugin": "^0.1.15",
     "compression-webpack-plugin": "^0.3.2",
     "css-loader": "^0.26.1",

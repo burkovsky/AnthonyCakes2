@@ -1,1 +1,9 @@
-﻿
+﻿@import '../../common/variables';
+
+.navbar {
+    background: $clr-header $img-overlay;
+
+    &-nav {
+        margin: 0 auto;
+    }
+}

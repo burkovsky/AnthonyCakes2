@@ -1,1 +1,22 @@
-﻿
+﻿@import '../../common/variables';
+
+.main {
+    &_header,
+    &_content,
+    &_footer {
+        background-image: $img-overlay;
+    }
+
+    &_header {
+        background-color: $clr-header;
+        padding-top: 2.5rem;
+    }
+
+    &_content {
+        background-color: $clr-content;
+    }
+
+    &_footer {
+        background-color: $clr-footer;
+    }
+}

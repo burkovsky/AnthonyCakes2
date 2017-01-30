@@ -1,4 +1,5 @@
-﻿import '../../assets/main.scss';
+﻿import 'bootstrap/scss/bootstrap.scss';
+import '../../common/main.scss';
 
 import '../../rxjs-operators';
 
