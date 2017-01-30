@@ -1,9 +1,9 @@
 ﻿'use strict';
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
-const DefinePlugin = require('webpack/lib/DefinePlugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = function(env) {
     return {
@@ -44,30 +44,25 @@ module.exports = function(env) {
         },
         devtool: 'source-map',
         plugins: [
-            new DefinePlugin({
+            new CleanWebpackPlugin(['./wwwroot/build/', './app/**/*.js', './app/**/*.map'],
+            {
+                    verbose: false
+            }),
+            new ExtractTextPlugin('styles.css'),
+            new webpack.DefinePlugin({
                 'process.env': {
                     'NODE_ENV': JSON.stringify(env)
                 }
             }),
-            new CleanWebpackPlugin(['./wwwroot/build/', './app/**/*.js', './app/**/*.map'],
-            {
-                verbose: false,
-                dry: false
+            new webpack.LoaderOptionsPlugin({
+                minimize: true
             }),
-            new UglifyJsPlugin({
-                minimize: true,
-                sourceMap: false,
-                output: {
-                    comments: false
-                },
-                compressor: {
-                    warnings: false
-                }
+            new webpack.optimize.UglifyJsPlugin({
+                comments: false
             }),
-            new ExtractTextPlugin({
-                filename: 'styles.css',
-                disable: false,
-                allChunks: true
+            new CompressionPlugin({
+                test: /\.js$|\.css$|\.html$/,
+                minRatio: 0.8
             })
         ]
     }

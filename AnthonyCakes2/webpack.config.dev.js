@@ -1,7 +1,7 @@
 ﻿'use strict';
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function(env) {
     return {
@@ -44,14 +44,9 @@ module.exports = function(env) {
         plugins: [
             new CleanWebpackPlugin(['./wwwroot/build/', './app/**/*.js', './app/**/*.map'],
             {
-                verbose: false,
-                dry: false
+                verbose: false
             }),
-            new ExtractTextPlugin({
-                filename: 'styles.css',
-                disable: false,
-                allChunks: true
-            })
+            new ExtractTextPlugin('styles.css')
         ]
     }
 };
