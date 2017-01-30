@@ -274,12 +274,10 @@ __pycache__/
 # tools/**
 # !tools/packages.config
 
-# wwwroot
-wwwroot/
-
 # Publish Profiles
 PublishProfiles/
 
 # App compiled files
-app/**/*.js
-app/**/*.js.map
+/AnthonyCakes2/wwwroot/build/
+/AnthonyCakes2/app/**/*.js
+/AnthonyCakes2/app/**/*.js.map
