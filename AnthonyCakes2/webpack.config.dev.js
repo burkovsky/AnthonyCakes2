@@ -42,7 +42,7 @@ module.exports = function(env) {
         },
         devtool: 'source-map',
         plugins: [
-            new CleanWebpackPlugin(['./wwwroot/build/', './app/**/*.js', './app/**/*.map'],
+            new CleanWebpackPlugin(['./wwwroot/build/'],
             {
                 verbose: false
             }),

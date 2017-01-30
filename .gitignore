@@ -279,3 +279,7 @@ wwwroot/
 
 # Publish Profiles
 PublishProfiles/
+
+# App compiled files
+app/**/*.js
+app/**/*.js.map
