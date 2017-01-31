@@ -1,9 +1,6 @@
 ﻿@import '../../common/variables';
 
-.navbar {
+.navbar-menu {
     background: $clr-header $img-overlay;
-
-    &-nav {
-        margin: 0 auto;
-    }
+    padding-bottom: 0;
 }

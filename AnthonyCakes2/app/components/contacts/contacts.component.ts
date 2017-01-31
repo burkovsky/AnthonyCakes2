@@ -5,4 +5,4 @@
     template: require('./contacts.component.html'),
     styles: [require('./contacts.component.scss')]
 })
-export class ContactsComponent { }
+export class ContactsComponent {}

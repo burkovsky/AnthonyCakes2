@@ -1,1 +1,11 @@
-﻿
+﻿@import '../../common/variables';
+
+.navbar-contacts {
+    background: $clr-header $img-overlay;
+    padding-top: 0;
+
+    .dropdown-menu {
+        background-color: transparent;
+        border-width: 0;
+    }
+}

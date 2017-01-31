@@ -2,6 +2,7 @@
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = function(env) {
     return {
@@ -46,7 +47,13 @@ module.exports = function(env) {
             {
                 verbose: false
             }),
-            new ExtractTextPlugin('styles.css')
+            new ExtractTextPlugin('styles.css'),
+            new webpack.ProvidePlugin({
+                $: 'jquery',
+                jQuery: 'jquery',
+                'window.jQuery': 'jquery',
+                'Tether': 'tether'
+            })
         ]
     }
 };

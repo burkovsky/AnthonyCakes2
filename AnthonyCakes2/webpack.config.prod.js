@@ -49,6 +49,12 @@ module.exports = function(env) {
                     verbose: false
             }),
             new ExtractTextPlugin('styles.css'),
+            new webpack.ProvidePlugin({
+                $: 'jquery',
+                jQuery: 'jquery',
+                'window.jQuery': 'jquery',
+                'Tether': 'tether'
+            }),
             new webpack.DefinePlugin({
                 'process.env': {
                     'NODE_ENV': JSON.stringify(env)

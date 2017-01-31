@@ -1,4 +1,11 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿// Swiper
+import 'swiper/dist/css/swiper.css';
+import 'swiper/dist/js/swiper.js';
+
+// Masonry
+import 'masonry-layout/dist/masonry.pkgd.js';
+
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { appConfig } from '../../app.config';
