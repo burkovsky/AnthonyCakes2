@@ -1,14 +1,9 @@
-﻿// Swiper
-import 'swiper/dist/css/swiper.css';
-import 'swiper/dist/js/swiper.js';
-
-// Masonry
-import 'masonry-layout/dist/masonry.pkgd.js';
-
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { appConfig } from '../../app.config';
+import { SwiperConfigInterface } from 'angular2-swiper-wrapper';
+import { MasonryOptions } from 'angular2-masonry';
 
 import { YandexFotkiParserService } from './services/yandex-fotki-parser.service';
 import { PhotoService } from './services/photo.service';
@@ -23,6 +18,19 @@ import { Photo } from './models/photo';
 })
 export class GalleryComponent implements OnInit {
     photos: Photo[] = [];
+    swiperConfig: SwiperConfigInterface = {
+        direction: 'horizontal',
+        slidesPerView: 1,
+        centeredSlides: true,
+        preventClicks: false,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        keyboardControl: true,
+        loop: true
+    };
+    masonryConfig: MasonryOptions = {
+        transitionDuration: '0.8s'
+    };
 
     constructor(private photoService: PhotoService) {}
 

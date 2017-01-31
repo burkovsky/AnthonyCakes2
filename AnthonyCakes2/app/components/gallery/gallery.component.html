@@ -1,9 +1,20 @@
 ﻿<section>
-    <h2>Gallery</h2>
     <div *ngIf="photos.length">
-        <img *ngFor="let photo of photos" src="{{photo.url}}" alt="Yandex Fotki"/>
+        <!--<swiper [config]="swiperConfig">
+            <div class="swiper-slide" *ngFor="let photo of photos">
+                <img src="{{photo.url}}" alt="Anthony Cakes"/>
+            </div>
+        </swiper>-->
+        
+        <masonry [options]="masonryConfig">
+            <masonry-brick *ngFor="let photo of photos">
+                <div class="masonry-brick">
+                    <img src="{{photo.url}}" alt="Anthony Cakes" />
+                </div>
+            </masonry-brick>
+        </masonry>
     </div>
     <div *ngIf="!photos.length">
-        loading
+        Мы готовим для Вас
     </div>
 </section>

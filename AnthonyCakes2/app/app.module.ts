@@ -3,6 +3,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { SwiperModule } from 'angular2-swiper-wrapper';
+import { MasonryModule } from 'angular2-masonry';
 
 import { AppRootComponent } from './components/app-root/app-root.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
@@ -20,7 +22,9 @@ import { GalleryComponent } from './components/gallery/gallery.component';
             { path: 'gallery', component: GalleryComponent },
             { path: 'about', component: AboutComponent },
             { path: '**', redirectTo: 'gallery' }
-        ], { useHash: true })
+        ], { useHash: true }),
+        SwiperModule,
+        MasonryModule
     ],
     declarations: [
         AppRootComponent,
