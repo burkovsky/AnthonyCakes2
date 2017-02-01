@@ -37,12 +37,27 @@ export class YandexFotkiParserService {
         const entries = albumDocument['entries'];
         if (entries) {
             for (let entry of entries) {
+                let photo = new Photo();
+
+                const title = entry['title'];
+                if (title)
+                    photo.title = title;
+
                 const images = entry['img'];
                 if (images) {
                     const original = images['orig'];
-                    if (original)
-                        photos.push(new Photo(original['href'], entry['title']));
+                    if (original) {
+                        photo.url = original['href'];
+                    }
+                        
                 }
+
+                const tags = entry['tags'];
+                if (tags) {
+                    photo.tags = Object.keys(tags);
+                }
+
+                photos.push(photo);
             }
         }
 

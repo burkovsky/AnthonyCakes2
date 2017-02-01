@@ -1,5 +1,5 @@
 ﻿export class Photo {
-    constructor(
-        public url: string,
-        public title: string) {}
+    url = '';
+    title = '';
+    tags: string[] = [];
 }
