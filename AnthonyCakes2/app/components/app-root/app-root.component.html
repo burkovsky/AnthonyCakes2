@@ -1,10 +1,8 @@
 ﻿<div class="container-fluid main">
-    <header class="main_header">
-        <div class="col-8 offset-2
-                    col-sm-6 offset-sm-3
-                    col-md-4 offset-md-4 
-                    col-lg-2 offset-lg-5">
-            <img src="images/logo.svg" alt="Anthony Cakes" />
+    <header class="main_header pt-4">
+        <div class="col-8 col-sm-6 col-md-4 col-lg-3 col-xl-2
+                    block-center">
+            <img src="images/logo.svg" alt="Anthony Cakes"/>
         </div>
     </header>
     <nav-menu></nav-menu>
@@ -12,10 +10,24 @@
     <main class="main_content">
         <router-outlet></router-outlet>
     </main>
-    <footer class="main_footer">
-        <div>&copy;{{currentYear}} - Anthony Cakes</div>
+    <footer class="main_footer p-4 text-center">
+        <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-1
+                    pb-1 block-center">
+            <img src="images/logo.svg" alt="Anthony Cakes" />
+        </div>
+        <div>
+            &copy;{{currentYear}} Anthony Cakes
+        </div>
         <div>
             Разработка - <a href="mailto:burkovsky.anton@gmail.com">Антон Бурковский</a>
+        </div>
+        <div class="main_footer-social mt-1">
+            <a href="https://vk.com/anthonycakes" class="mr-2">
+                <i class="fa fa-2x fa-vk"></i>
+            </a>
+            <a href="https://www.instagram.com/anthonycakes_spb/">
+                <i class="fa fa-2x fa-instagram"></i>
+            </a>
         </div>
     </footer>
 </div>

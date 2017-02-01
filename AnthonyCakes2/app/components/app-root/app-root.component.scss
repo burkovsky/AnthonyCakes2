@@ -9,7 +9,6 @@
 
     &_header {
         background-color: $clr-header;
-        padding-top: 2.5rem;
     }
 
     &_content {
@@ -18,5 +17,17 @@
 
     &_footer {
         background-color: $clr-footer;
+
+        &-social {
+
+            a {
+                color: lighten($clr-logo-secondary, $clr-lighten-index);
+
+                &:hover,
+                &:focus {
+                    color: $clr-logo-secondary;
+                }
+            }
+        }
     }
 }

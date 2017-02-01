@@ -9,6 +9,9 @@ import 'tether/dist/js/tether.js';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
+// Font Awesome
+import 'font-awesome/css/font-awesome.css';
+
 // Common styles
 import '../../common/main.scss';
 

@@ -1,9 +1,19 @@
 ﻿@import 'variables';
+@import 'bootstrap-navbar';
 
 body {
-    color: $clr-text;
+    color: $clr-logo-primary;
 }
 
-.navbar-nav {
+a {
+    color: lighten($clr-logo-primary, $clr-lighten-index);
+
+    &:hover,
+    &:focus {
+        color: $clr-logo-primary;
+    }
+}
+
+.block-center {
     margin: 0 auto;
 }
