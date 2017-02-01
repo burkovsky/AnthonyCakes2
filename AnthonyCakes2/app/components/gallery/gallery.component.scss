@@ -1,7 +1,18 @@
-﻿.masonry-brick {
-    width: 200px;
+﻿@import '../../common/variables';
 
-    img {
-        max-width: 100%;
+.card-columns {
+    column-count: 1;
+
+    @media (min-width: $mbp-sm) {
+        column-count: 2;
+    }
+    @media (min-width: $mbp-md) {
+        column-count: 3;
+    }
+    @media (min-width: $mbp-lg) {
+        column-count: 4;
+    }
+    @media (min-width: $mbp-xl){
+        column-count: 5;
     }
 }

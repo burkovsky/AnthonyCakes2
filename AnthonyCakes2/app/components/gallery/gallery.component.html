@@ -1,18 +1,8 @@
 ﻿<section>
-    <div *ngIf="photos.length">
-        <!--<swiper [config]="swiperConfig">
-            <div class="swiper-slide" *ngFor="let photo of photos">
-                <img src="{{photo.url}}" alt="Anthony Cakes"/>
-            </div>
-        </swiper>-->
-        
-        <masonry [options]="masonryConfig">
-            <masonry-brick *ngFor="let photo of photos">
-                <div class="masonry-brick">
-                    <img src="{{photo.url}}" alt="Anthony Cakes" />
-                </div>
-            </masonry-brick>
-        </masonry>
+    <div *ngIf="photos.length">       
+        <div class="card-columns">
+            <card *ngFor="let photo of photos" [url]="photo.url" [title]="photo.title"></card>
+        </div>
     </div>
     <div *ngIf="!photos.length">
         Мы готовим для Вас

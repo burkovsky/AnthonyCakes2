@@ -41,7 +41,7 @@ export class YandexFotkiParserService {
                 if (images) {
                     const original = images['orig'];
                     if (original)
-                        photos.push(new Photo(original['href']));
+                        photos.push(new Photo(original['href'], entry['title']));
                 }
             }
         }
