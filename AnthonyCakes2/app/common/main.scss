@@ -1,8 +1,10 @@
 ﻿@import 'variables';
 @import 'bootstrap-navbar';
 
+html,
 body {
     color: $clr-logo-primary;
+    height: 100%;
 }
 
 a {
@@ -16,4 +18,19 @@ a {
 
 .block-center {
     margin: 0 auto;
+}
+
+.color-primary {
+    color: $clr-logo-primary;
+}
+
+.color-secondary {
+    color: $clr-logo-secondary;
+}
+
+.loader {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
 }

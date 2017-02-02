@@ -1,8 +1,12 @@
 ﻿@import '../../common/variables';
 
 .main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+
     &_header,
-    &_content,
     &_footer {
         background-image: $img-overlay;
     }
@@ -12,7 +16,11 @@
     }
 
     &_content {
-        background-color: $clr-content;
+        align-items: center;
+        background-color: $clr-logo-secondary;
+        display: flex;
+        flex: 1;
+        justify-content: center;
     }
 
     &_footer {
