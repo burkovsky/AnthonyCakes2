@@ -2,6 +2,12 @@
 
 .navbar-contacts {
     background: $clr-header $img-overlay;
+    opacity: 0.95;
+
+    .show > .dropdown-toggle::after {
+        border-top: none;
+        border-bottom: 0.3em solid;
+    }
 
     .dropdown-menu {
         background-color: transparent;
