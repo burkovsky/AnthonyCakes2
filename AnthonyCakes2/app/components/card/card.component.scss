@@ -1,15 +1,26 @@
 ﻿@import '../../common/variables';
 
 .card {
-    &-logo {
-        &-primary {
-            background-color: $clr-logo-primary;
-            border-color: $clr-logo-primary;
+    transition: .75s opacity;
+
+    .fa {
+        color: lighten($clr-logo-secondary, $clr-lighten-index);
+
+        &:hover {
+            color: $clr-logo-secondary;
+        }
+    }
+
+    &-panel {
+        &--front,
+        &--back {
         }
 
-        &-secondary {
-            background-color: $clr-logo-secondary;
-            border-color: $clr-logo-secondary;
+        &--front {
+        }
+
+        &--back {
+            display: none;
         }
     }
 }

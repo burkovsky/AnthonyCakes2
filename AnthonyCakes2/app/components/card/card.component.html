@@ -1,3 +1,14 @@
 ﻿<div class="card text-center">
-    <img class="card-img img-fluid" src="{{url}}" alt="Anthony Cakes">
+    <div class="card-panel--front">
+        <img class="card-img img-fluid" src="{{url}}" alt="Anthony Cakes">
+        <div class="card-img-overlay">
+            <i class="fa fa-info-circle fa-2x fa-pull-right"></i>
+        </div>
+    </div>
+    <div class="card-panel--back">
+        <h4>{{title}}</h4>
+        <ul>
+            <li *ngFor="let tag of tags">{{tag}}</li>
+        </ul>
+    </div>
 </div>

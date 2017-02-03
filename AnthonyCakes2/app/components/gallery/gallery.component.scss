@@ -5,6 +5,9 @@
         -webkit-column-count: 1;
         -moz-column-count: 1;
         column-count: 1;
+        -webkit-column-gap: 0;
+        -moz-column-gap: 0;
+        column-gap: 0;
 
         @media (min-width: $mbp-sm) {
             -webkit-column-count: 2;
@@ -25,6 +28,16 @@
             -webkit-column-count: 5;
             -moz-column-count: 5;
             column-count: 5;
+        }
+
+        &:hover {
+            .card {
+                opacity: 0.5;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
         }
     }
 }

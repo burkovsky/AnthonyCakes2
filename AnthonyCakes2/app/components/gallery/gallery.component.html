@@ -1,5 +1,5 @@
 ﻿<section class="gallery">
-    <div class="pt-3 pr-3 pb-1 pl-3" *ngIf="photos.length">       
+    <div *ngIf="photos.length">       
         <div class="card-columns">
             <card *ngFor="let photo of photos" [url]="photo.url" [title]="photo.title"></card>
         </div>
