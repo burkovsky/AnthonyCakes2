@@ -3,6 +3,8 @@
 .navbar-contacts {
     background: $clr-header $img-overlay;
     opacity: 0.95;
+    width: 100%;
+    z-index: 100;
 
     .dropdown-toggle::after {
         -webkit-transition: all 300ms 0s ease-in-out;
@@ -22,5 +24,10 @@
     .dropdown-menu {
         background-color: transparent;
         border-width: 0;
+    }
+
+    &.sticky {
+        position: fixed;
+        top: 0;
     }
 }

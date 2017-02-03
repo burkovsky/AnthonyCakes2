@@ -278,6 +278,7 @@ __pycache__/
 PublishProfiles/
 
 # App compiled files
-/AnthonyCakes2/wwwroot/build/
-/AnthonyCakes2/app/**/*.js
-/AnthonyCakes2/app/**/*.js.map
+AnthonyCakes2/wwwroot/build/
+AnthonyCakes2/app/**/*.js
+AnthonyCakes2/app/**/*.js.map
+!AnthonyCakes2/app/common/*.js

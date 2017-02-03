@@ -15,6 +15,10 @@ import 'font-awesome/css/font-awesome.css';
 // Common styles
 import '../../common/main.scss';
 
+// Custom scripts
+import '../../common/custom.js';
+
+// Reactive-Extensions
 import '../../rxjs-operators';
 
 import { Component } from '@angular/core';
