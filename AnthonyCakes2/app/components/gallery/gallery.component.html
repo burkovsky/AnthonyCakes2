@@ -1,11 +1,11 @@
 ﻿<section class="gallery">
-    <div *ngIf="photos.length">       
-        <div class="card-columns">
-            <card *ngFor="let photo of photos" [url]="photo.url" [title]="photo.title"></card>
-        </div>
+    <div class="card-columns" *ngIf="photos.length">
+        <card *ngFor="let photo of photos"
+              [url]="photo.url" [title]="photo.title" [tags]="photo.tags">
+        </card>
     </div>
     <div class="loader text-center color-primary" *ngIf="!photos.length">
-        <div class="loader-inner">
+        <div>
             <div>
                 <i class="fa fa-spinner fa-pulse fa-spin fa-5x"></i>
             </div>

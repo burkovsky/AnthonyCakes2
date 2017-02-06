@@ -8,4 +8,7 @@
 export class CardComponent {
     @Input() url: string;
     @Input() title: string;
+    @Input() tags: string[];
+
+    descriptionShown = false;
 }

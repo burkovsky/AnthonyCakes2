@@ -1,14 +1,9 @@
-﻿<div class="card text-center">
-    <div class="card-panel--front">
-        <img class="card-img img-fluid" src="{{url}}" alt="Anthony Cakes">
-        <div class="card-img-overlay">
-            <i class="fa fa-info-circle fa-2x fa-pull-right"></i>
-        </div>
+﻿<div class="card text-center" (click)="descriptionShown = !descriptionShown">
+    <div class="card__panel--front">
+        <img class="img-fluid" src="{{url}}" alt="Anthony Cakes">
     </div>
-    <div class="card-panel--back">
-        <h4>{{title}}</h4>
-        <ul>
-            <li *ngFor="let tag of tags">{{tag}}</li>
-        </ul>
+    <div class="card__panel--back p-3" [class.active]="descriptionShown">
+        <h2 class="mb-4">{{title}}</h2>
+        <p class="m-0" *ngFor="let tag of tags">{{tag}}</p>
     </div>
 </div>

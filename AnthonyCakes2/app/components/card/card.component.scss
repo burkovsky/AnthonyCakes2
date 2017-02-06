@@ -1,26 +1,24 @@
 ﻿@import '../../common/variables';
 
 .card {
+    cursor: pointer;
     transition: .75s opacity;
 
-    .fa {
-        color: lighten($clr-logo-secondary, $clr-lighten-index);
-
-        &:hover {
-            color: $clr-logo-secondary;
-        }
-    }
-
-    &-panel {
-        &--front,
+    &__panel {
         &--back {
-        }
+            background-color: #000;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: .75s opacity;
 
-        &--front {
-        }
-
-        &--back {
-            display: none;
+            &.active {
+                opacity: .75;
+            }
         }
     }
 }
