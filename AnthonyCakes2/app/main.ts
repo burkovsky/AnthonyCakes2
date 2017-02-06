@@ -1,4 +1,5 @@
-﻿import 'zone.js';
+﻿import "core-js/client/shim";
+import 'zone.js';
 import 'reflect-metadata';
 
 import { enableProdMode } from '@angular/core';

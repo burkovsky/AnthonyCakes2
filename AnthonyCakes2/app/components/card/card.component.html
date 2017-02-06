@@ -3,7 +3,9 @@
         <img class="img-fluid" src="{{url}}" alt="Anthony Cakes">
     </div>
     <div class="card__panel--back p-3" [class.active]="descriptionShown">
-        <h2 class="mb-4">{{title}}</h2>
-        <p class="m-0" *ngFor="let tag of tags">{{tag}}</p>
+        <div class="card__panel--back-content">
+            <h2 class="mb-4">{{title}}</h2>
+            <p class="m-0" *ngFor="let tag of tags">{{tag}}</p>
+        </div>
     </div>
 </div>
