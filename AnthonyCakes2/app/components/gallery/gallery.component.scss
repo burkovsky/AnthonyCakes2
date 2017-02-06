@@ -29,20 +29,22 @@ gallery {
                 -moz-column-count: 4;
                 column-count: 4;
             }
-            @media (min-width: $mbp-xl){
+            @media (min-width: $mbp-xl) {
                 -webkit-column-count: 5;
                 -moz-column-count: 5;
                 column-count: 5;
             }
 
-            &:hover,
-            &:focus {
-                .card {
-                    opacity: 0.5;
+            @media (min-width: $mbp-lg) {
+                &:hover,
+                &:focus {
+                    .card {
+                        opacity: .5;
 
-                    &:hover,
-                    &:focus {
-                        opacity: 1;
+                        &:hover,
+                        &:focus {
+                            opacity: 1;
+                        }
                     }
                 }
             }
