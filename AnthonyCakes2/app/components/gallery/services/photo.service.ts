@@ -19,11 +19,11 @@ export class PhotoService {
         const userServiceDocumentUrl = `${appConfig.photoServiceUrl}/${user}/`;
 
         return this.getDocument(userServiceDocumentUrl)
-            .map(this.parserService.extractAlbumsUrl)
+            .map(doc => this.parserService.extractAlbumsUrl(doc))
             .flatMap(url => this.getDocument(String(url)))
             .map(doc => this.parserService.extractAlbumUrl(doc, album))
             .flatMap(url => this.getDocument(String(url)))
-            .map(this.parserService.extractAlbumPhotos);
+            .map(doc => this.parserService.extractAlbumPhotos(doc));
     }
 
     private getDocument(documentUrl: string): Observable<any> {
