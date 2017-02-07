@@ -11,7 +11,7 @@ import { Photo } from './models/photo';
 @Component({
     selector: 'gallery',
     template: require('./gallery.component.html'),
-    styles: [require('./gallery.component.scss')],
+    styles: [String(require('./gallery.component.scss'))],
     providers: [YandexFotkiParserService, PhotoService]
 })
 export class GalleryComponent implements OnInit {

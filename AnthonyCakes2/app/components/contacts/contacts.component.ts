@@ -7,6 +7,6 @@ import 'waypoints/lib/shortcuts/sticky.js';
 @Component({
     selector: 'contacts',
     template: require('./contacts.component.html'),
-    styles: [require('./contacts.component.scss')]
+    styles: [String(require('./contacts.component.scss'))]
 })
 export class ContactsComponent {}

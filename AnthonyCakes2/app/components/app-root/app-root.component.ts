@@ -26,7 +26,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-root',
     template: require('./app-root.component.html'),
-    styles: [require('./app-root.component.scss')]
+    styles: [String(require('./app-root.component.scss'))]
 })
 export class AppRootComponent {
     currentYear = new Date().getFullYear();

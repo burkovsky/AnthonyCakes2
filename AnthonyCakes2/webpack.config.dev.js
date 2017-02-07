@@ -23,13 +23,10 @@ module.exports = function(env) {
                 },
                 {
                     test: /\.(css|scss)$/,
-                    use: [
-                        'to-string-loader',
-                        ExtractTextPlugin.extract({
-                            fallback: 'style-loader',
-                            loader: 'css-loader?sourceMap!sass-loader?sourceMap'
-                        })
-                    ]
+                    loader: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: 'css-loader?sourceMap!sass-loader?sourceMap'
+                    })
                 },
                 {
                     test: /\.html$/,

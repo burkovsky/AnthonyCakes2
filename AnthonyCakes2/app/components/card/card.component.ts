@@ -3,7 +3,7 @@
 @Component({
     selector: 'card',
     template: require('./card.component.html'),
-    styles: [require('./card.component.scss')]
+    styles: [String(require('./card.component.scss'))]
 })
 export class CardComponent {
     @Input() url: string;
