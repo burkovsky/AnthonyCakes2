@@ -5,6 +5,7 @@
   "author": "Anton Burkovsky",
   "scripts": {
     "build:dev": "webpack --env=dev --color",
+    "build:dev:watch": "webpack --env=dev --color -w",
     "build:prod": "webpack --env=prod --color"
   },
   "dependencies": {
