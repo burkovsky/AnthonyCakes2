@@ -22,6 +22,10 @@
             &.active {
                 opacity: .75;
             }
+            
+            &-content {
+                max-height: 100%;
+            }
         }
     }
 }
