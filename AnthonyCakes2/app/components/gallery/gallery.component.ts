@@ -3,10 +3,11 @@ import { Observable } from 'rxjs/Observable';
 
 import { appConfig } from '../../app.config';
 
+import { Photo } from './models/photo';
+
 import { YandexFotkiParserService } from './services/yandex-fotki-parser.service';
 import { PhotoService } from './services/photo.service';
-
-import { Photo } from './models/photo';
+import { LocalStorageService } from '../../services/storage.service';
 
 @Component({
     selector: 'gallery',
@@ -17,14 +18,23 @@ import { Photo } from './models/photo';
 export class GalleryComponent implements OnInit {
     photos: Photo[] = [];
 
-    constructor(private photoService: PhotoService) {}
+    constructor(private photoService: PhotoService, private localStorageService: LocalStorageService) {}
 
     ngOnInit() {
         this.getPhotos();
     }
 
     getPhotos() {
-        this.photoService.getPhotos(appConfig.user, appConfig.album)
-            .subscribe(photos => this.photos = photos);
+        const key = 'photos';
+        const cachedPhotos = this.localStorageService.getCache(key);
+
+        if (cachedPhotos)
+            this.photos = cachedPhotos;
+        else
+            this.photoService.getPhotos(appConfig.user, appConfig.album)
+                .subscribe(photos => {
+                    this.localStorageService.setCache(key, photos);
+                    this.photos = photos;
+                });
     }
 }

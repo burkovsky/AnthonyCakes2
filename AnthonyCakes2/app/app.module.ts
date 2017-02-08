@@ -11,6 +11,8 @@ import { AboutComponent } from './components/about/about.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CardComponent } from './components/card/card.component';
 
+import { LocalStorageService } from './services/storage.service';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -31,6 +33,7 @@ import { CardComponent } from './components/card/card.component';
         GalleryComponent,
         CardComponent
     ],
+    providers: [LocalStorageService],
     bootstrap: [AppRootComponent]
 })
 export class AppModule {}
