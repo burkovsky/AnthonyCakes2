@@ -15,6 +15,7 @@ export class PhotoService {
         this.params.set('callback', 'JSONP_CALLBACK');
     }
 
+    // TODO Support next pages loading
     getPhotos(user: string, album: string): Observable<any> {
         const userServiceDocumentUrl = `${appConfig.photoServiceUrl}/${user}/`;
 

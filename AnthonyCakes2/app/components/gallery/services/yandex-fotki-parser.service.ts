@@ -67,7 +67,7 @@ export class YandexFotkiParserService {
                 if (images) {
                     const originalHidden = entry[this.keysMap.sizes.hideOriginal] || false;
                     if (originalHidden) {
-                        // Rework with regex
+                        // TODO Rework with regex
                         const xxxl = images[this.keysMap.sizes.XXXL];
                         const xxl = images[this.keysMap.sizes.XXL];
                         const xl = images[this.keysMap.sizes.XL];
