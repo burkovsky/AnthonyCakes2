@@ -5,8 +5,23 @@
     <meta charset="utf-8"/>
     <title>Anthony Cakes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="@ViewData["Description"]"/>
-    <link rel="stylesheet" href="~/build/styles.css" asp-append-version="true"/>
+    <meta name="description" content=""/>
+    <!-- Icons -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Anthony Cakes">
+    <link rel="icon" sizes="192x192" href="images/icons/android-chrome-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Anthony Cakes">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/icons/mstile-150x150.png">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/build/styles.css" asp-append-version="true"/>
 </head>
 <body>  
     @RenderBody()
