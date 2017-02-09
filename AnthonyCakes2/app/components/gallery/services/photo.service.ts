@@ -44,9 +44,7 @@ export class PhotoService {
     private handleError(error: Response | any) {
         let errorMessage: string;
         if (error instanceof Response) {
-            const body = error.json() || '';
-            const err = body.error || JSON.stringify(body);
-            errorMessage = `${error.status} - ${error.statusText || ''} ${err}`;
+            errorMessage = `${error.status} - ${error.statusText} ${error.text()}`;
         } else {
             errorMessage = error.message ? error.message : error.toString();
         }

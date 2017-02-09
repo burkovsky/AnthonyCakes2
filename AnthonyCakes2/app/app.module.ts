@@ -9,7 +9,7 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { AboutComponent } from './components/about/about.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { CardComponent } from './components/card/card.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 import { LocalStorageService } from './services/storage.service';
 
@@ -31,7 +31,7 @@ import { LocalStorageService } from './services/storage.service';
         ContactsComponent,
         AboutComponent,
         GalleryComponent,
-        CardComponent
+        CardsComponent
     ],
     providers: [LocalStorageService],
     bootstrap: [AppRootComponent]

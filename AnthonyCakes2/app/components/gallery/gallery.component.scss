@@ -7,28 +7,12 @@ gallery {
         height: 100%;
 
         &__cards {
-            float: none;
             height: 100%;
-        }
 
-        &__card {
-            cursor: pointer;
-            float: left;
-            padding-bottom: 100%;
-            position: relative;
-            width: 100%;
-
-            @media (min-width: $mbp-sm) {
-                padding-bottom: 50%;
-                width: 50%;
-            }
-            @media (min-width: $mbp-md) {
-                padding-bottom: 33%;
-                width: 33%;
-            }
-            @media (min-width: $mbp-lg) {
-                padding-bottom: 25%;
-                width: 25%;
+            cards {
+                display: block;
+                float: none;
+                height: 100%;
             }
         }
     }

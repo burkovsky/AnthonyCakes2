@@ -1,8 +1,6 @@
 ﻿<section class="gallery">
-    <div class="gallery__cards p-2" *ngIf="photos.length">
-        <card class="gallery__card" *ngFor="let photo of photos"
-              [url]="photo.url" [title]="photo.title" [tags]="photo.tags">
-        </card>
+    <div class="gallery__cards" *ngIf=photos.length>
+        <cards class="p-2" [items]="photos"></cards>                
     </div>
     <div class="loader text-center color-primary" *ngIf="!photos.length">
         <div>
