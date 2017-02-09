@@ -1,48 +1,34 @@
 ﻿@import '../../common/variables';
 
-.gallery {
-    height: 100%;
+gallery {
+    width: 100%;
 
-    .card-columns {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
-        -webkit-column-gap: 0;
-        -moz-column-gap: 0;
-        column-gap: 0;
+    .gallery {
+        height: 100%;
 
-        @media (min-width: $mbp-sm) {
-            -webkit-column-count: 2;
-            -moz-column-count: 2;
-            column-count: 2;
-        }
-        @media (min-width: $mbp-md) {
-            -webkit-column-count: 3;
-            -moz-column-count: 3;
-            column-count: 3;
-        }
-        @media (min-width: $mbp-lg) {
-            -webkit-column-count: 4;
-            -moz-column-count: 4;
-            column-count: 4;
-        }
-        @media (min-width: $mbp-xl) {
-            -webkit-column-count: 5;
-            -moz-column-count: 5;
-            column-count: 5;
+        &__cards {
+            float: none;
+            height: 100%;
         }
 
-        @media (min-width: $mbp-lg) {
-            &:hover,
-            &:focus {
-                .card {
-                    opacity: .5;
+        &__card {
+            cursor: pointer;
+            float: left;
+            padding-bottom: 100%;
+            position: relative;
+            width: 100%;
 
-                    &:hover,
-                    &:focus {
-                        opacity: 1;
-                    }
-                }
+            @media (min-width: $mbp-sm) {
+                padding-bottom: 50%;
+                width: 50%;
+            }
+            @media (min-width: $mbp-md) {
+                padding-bottom: 33%;
+                width: 33%;
+            }
+            @media (min-width: $mbp-lg) {
+                padding-bottom: 25%;
+                width: 25%;
             }
         }
     }

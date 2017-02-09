@@ -1,4 +1,7 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿// jQuery Lazyload
+import 'jquery-lazyload/jquery.lazyload.js';
+
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { appConfig } from '../../app.config';
@@ -8,6 +11,8 @@ import { Photo } from './models/photo';
 import { YandexFotkiParserService } from './services/yandex-fotki-parser.service';
 import { PhotoService } from './services/photo.service';
 import { LocalStorageService } from '../../services/storage.service';
+
+declare var jQuery: any;
 
 @Component({
     selector: 'gallery',
@@ -37,4 +42,11 @@ export class GalleryComponent implements OnInit {
                     this.photos = photos;
                 });
     }
+
+    //ngAfterViewInit() {
+    //    jQuery('.lazy').lazyload({
+    //        effect: 'fadeIn',
+    //        threshold: 200
+    //    });
+    //}
 }
