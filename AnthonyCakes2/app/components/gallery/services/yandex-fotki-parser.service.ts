@@ -14,12 +14,10 @@ export class YandexFotkiParserService {
         photos: 'photos',
         images: 'img',
         sizes: {
-            hideOriginal: 'hideOriginal',
+            original: 'orig',
             XXXL: 'XXXL',
             XXL: 'XXL',
-            XL: 'XL',
-            L: 'L',
-            original: 'orig'
+            XL: 'XL'
         },
         tags: 'tags'
     }
@@ -65,26 +63,18 @@ export class YandexFotkiParserService {
 
                 const images = entry[this.keysMap.images];
                 if (images) {
-                    const originalHidden = entry[this.keysMap.sizes.hideOriginal] || false;
-                    if (originalHidden) {
-                        // TODO Rework with regex
-                        const xxxl = images[this.keysMap.sizes.XXXL];
-                        const xxl = images[this.keysMap.sizes.XXL];
-                        const xl = images[this.keysMap.sizes.XL];
-                        const l = images[this.keysMap.sizes.L];
-                        if (xxxl)
-                            photo.url = xxxl[this.keysMap.url];
-                        else if (xxl)
-                            photo.url = xxl[this.keysMap.url];
-                        else if (xl)
-                            photo.url = xl[this.keysMap.url];
-                        else
-                            photo.url = l[this.keysMap.url];
-                    } else {
-                        const original = images[this.keysMap.sizes.original];
-                        if (original)
-                            photo.url = original[this.keysMap.url];
-                    }
+                    const original = images[this.keysMap.sizes.original];
+                    const xxxl = images[this.keysMap.sizes.XXXL];
+                    const xxl = images[this.keysMap.sizes.XXL];
+                    const xl = images[this.keysMap.sizes.XL];
+                    if (xl)
+                        photo.url = xl[this.keysMap.url];
+                    else if (xxl)
+                        photo.url = xxl[this.keysMap.url];
+                    else if (xxxl)
+                        photo.url = xxxl[this.keysMap.url];
+                    else if (original)
+                        photo.url = original[this.keysMap.url];
                 }
 
                 const tags = entry[this.keysMap.tags];

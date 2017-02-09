@@ -1,6 +1,7 @@
 ﻿export const appConfig = {
     cacheTimeInHours: 24,
+    photosPortion: 10,
     photoServiceUrl: 'http://api-fotki.yandex.ru/api/users',
-    user: 'mbibi',
-    album: 'СТАМБУЛ'
+    user: 'alexs3110',
+    album: 'Родос'
 };
