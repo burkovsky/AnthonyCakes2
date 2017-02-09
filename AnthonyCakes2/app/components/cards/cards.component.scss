@@ -33,6 +33,16 @@
         justify-content: center;
 
         &__panel {
+            &--front {
+                height: 100%;
+                width: 100%;
+
+                .lazy {
+                    background-size: cover;
+                    height: 100%;
+                }
+            }
+
             &--back {
                 overflow: hidden;
                 display: flex;

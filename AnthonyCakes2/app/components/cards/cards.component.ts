@@ -1,5 +1,5 @@
-﻿// jQuery Lazy Load
-import 'jquery-lazyload/jquery.lazyload.js';
+﻿// jQuery Lazy
+import 'jquery-lazy/jquery.lazy.js';
 
 import { Component, Input, OnChanges, SimpleChanges, AfterViewChecked } from '@angular/core';
 
@@ -33,9 +33,9 @@ export class CardsComponent implements OnChanges, AfterViewChecked {
     private initLazyload() {
         let lazyItems = jQuery('.lazy');
         if (lazyItems.length) {
-            lazyItems.lazyload({
+            lazyItems.Lazy({
                 effect: 'fadeIn',
-                threshold: 200
+                effectTime: 500
             });
 
             this.lazyLoadInitialized = true;

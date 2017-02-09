@@ -1,7 +1,7 @@
 ﻿<div class="card-wrapper" *ngFor="let card of items" (click)="card.flipped = !card.flipped">
     <div  class="card text-center m-2">
         <div class="card__panel--front">
-            <img class="lazy" attr.data-original="{{card.url}}" alt="Anthony Cakes">
+            <div class="lazy" attr.data-src="{{card.url}}">
         </div>
         <div class="card__panel--back p-2" [class.active]="card.flipped">
             <div class="card__panel--back-content">
