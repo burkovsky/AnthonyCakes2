@@ -28,7 +28,7 @@ export class CardsComponent implements OnChanges {
         if (lazyItems.length) {
             lazyItems.Lazy({
                 effect: 'fadeIn',
-                effectTime: 500
+                effectTime: 750
             });
 
             clearInterval(this.timer);
