@@ -1,7 +1,7 @@
 ﻿// jQuery Lazy
 import 'jquery-lazy/jquery.lazy.js';
 
-import { Component, Input, OnChanges, SimpleChanges, AfterViewChecked } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 import { Photo } from '../../models/photo';
 
@@ -12,21 +12,14 @@ declare var jQuery: any;
     template: require('./cards.component.html'),
     styles: [String(require('./cards.component.scss'))]
 })
-export class CardsComponent implements OnChanges, AfterViewChecked {
+export class CardsComponent implements OnChanges {
     @Input() items: Photo[];
 
-    private itemsLoaded = false;
-    private lazyLoadInitialized = false;
+    private timer: any;
 
     ngOnChanges(changes: SimpleChanges) {
         if (changes['items'] && this.items.length > 0) {
-            this.itemsLoaded = true;
-        }
-    }
-
-    ngAfterViewChecked(): void {
-        if (this.itemsLoaded && !this.lazyLoadInitialized) {
-            this.initLazyload();
+            this.timer = setInterval(() => this.initLazyload(), 250);
         }
     }
 
@@ -38,7 +31,7 @@ export class CardsComponent implements OnChanges, AfterViewChecked {
                 effectTime: 500
             });
 
-            this.lazyLoadInitialized = true;
+            clearInterval(this.timer);
         }
     }
 }
