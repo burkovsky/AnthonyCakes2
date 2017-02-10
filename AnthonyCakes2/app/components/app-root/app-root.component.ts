@@ -18,13 +18,20 @@ import '../../common/main.scss';
 // Reactive-Extensions
 import '../../rxjs-operators';
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MetaService } from 'ng2-meta';
 
 @Component({
     selector: 'app-root',
     template: require('./app-root.component.html'),
     styles: [String(require('./app-root.component.scss'))]
 })
-export class AppRootComponent {
-    currentYear = new Date().getFullYear();
+export class AppRootComponent implements OnInit {
+    currentYear: number;
+
+    constructor(private metaService: MetaService) {}
+
+    ngOnInit() {
+        this.currentYear = new Date().getFullYear();
+    }
 }

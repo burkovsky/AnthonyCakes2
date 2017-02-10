@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { appConfig } from '../../app.config';
+import { appConfig } from '../../configs/app.config';
 
 import { Photo } from '../../models/photo';
 
@@ -31,7 +31,7 @@ export class GalleryComponent implements OnInit {
         if (cachedPhotos)
             this.photos = cachedPhotos;
         else
-            this.photoService.getPhotos(appConfig.user, appConfig.album)
+            this.photoService.getPhotos(appConfig.photoService.user, appConfig.photoService.album)
                 .subscribe(photos => {
                     this.localStorageService.setCache(key, photos);
                     this.photos = photos;

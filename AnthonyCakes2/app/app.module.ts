@@ -3,6 +3,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { MetaModule } from 'ng2-meta';
 
 import { AppRootComponent } from './components/app-root/app-root.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
@@ -14,17 +15,16 @@ import { CardsComponent } from './components/cards/cards.component';
 
 import { LocalStorageService } from './services/storage.service';
 
+import { routes } from './configs/routes.config';
+import { metaConfig } from './configs/meta.config';
+
 @NgModule({
     imports: [
         BrowserModule,
         HttpModule,
         JsonpModule,
-        RouterModule.forRoot([
-            { path: '', redirectTo: 'gallery', pathMatch: 'full' },
-            { path: 'gallery', component: GalleryComponent },
-            { path: 'about', component: AboutComponent },
-            { path: '**', redirectTo: 'gallery' }
-        ], { useHash: true })
+        RouterModule.forRoot(routes, { useHash: true }),
+        MetaModule.forRoot(metaConfig)
     ],
     declarations: [
         AppRootComponent,

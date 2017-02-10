@@ -2,7 +2,7 @@
 import { Jsonp, URLSearchParams, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { appConfig } from '../../../app.config';
+import { appConfig } from '../../../configs/app.config';
 
 import { YandexFotkiParserService } from './yandex-fotki-parser.service';
 
@@ -17,7 +17,7 @@ export class PhotoService {
 
     // TODO Support next pages loading
     getPhotos(user: string, album: string): Observable<any> {
-        const userServiceDocumentUrl = `${appConfig.photoServiceUrl}/${user}/`;
+        const userServiceDocumentUrl = `${appConfig.photoService.url}/${user}/`;
 
         return this.getDocument(userServiceDocumentUrl)
             .map(doc => this.parserService.extractAlbumsUrl(doc))
