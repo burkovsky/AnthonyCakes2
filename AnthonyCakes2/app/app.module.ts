@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppRootComponent } from './components/app-root/app-root.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import { ToTopComponent } from './components/to-top/to-top.component';
 import { AboutComponent } from './components/about/about.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CardsComponent } from './components/cards/cards.component';
@@ -29,6 +30,7 @@ import { LocalStorageService } from './services/storage.service';
         AppRootComponent,
         NavMenuComponent,
         ContactsComponent,
+        ToTopComponent,
         AboutComponent,
         GalleryComponent,
         CardsComponent
