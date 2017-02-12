@@ -1,5 +1,7 @@
 ﻿export class Photo {
-    url = '';
+    imageUrl = '';
     title = '';
+    description: string[] = [];
     tags: string[] = [];
+    marketUrl = '';
 }

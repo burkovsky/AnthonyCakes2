@@ -17,6 +17,10 @@ export class CardsComponent implements OnChanges {
 
     private timer: any;
 
+    stopFlipping(event: any) {
+        event.stopPropagation();
+    }
+
     ngOnChanges(changes: SimpleChanges) {
         if (changes['items'] && this.items.length > 0) {
             this.timer = setInterval(() => this.initLazyload(), 250);

@@ -1,12 +1,19 @@
 ﻿<div class="card-wrapper" *ngFor="let card of items" (click)="card.flipped = !card.flipped">
     <div class="card text-center m-1">
         <div class="card__panel--front">
-            <div class="lazy" attr.data-src="{{card.url}}">
+            <div class="lazy" attr.data-src="{{card.imageUrl}}">
         </div>
         <div class="card__panel--back p-2" [class.active]="card.flipped">
             <div class="card__panel--back-content">
-                <h2 class="mb-4">{{card.title}}</h2>
-                <p class="m-0" *ngFor="let tag of card.tags">{{tag}}</p>
+                <h2 class="mb-4">
+                    {{card.title}}
+                </h2>
+                <p *ngIf="card.marketUrl" class="mb-3">
+                    <a  (click)="stopFlipping($event)" href="{{card.marketUrl}}" target="_blank">
+                        <i class="fa fa-info-circle fa-2x"></i>
+                    </a>
+                </p>
+                <p class="m-0" *ngFor="let part of card.description">{{part}}</p>
             </div>
         </div>
     </div>

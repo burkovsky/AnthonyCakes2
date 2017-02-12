@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Observable';
 
 import { appConfig } from '../../../configs/app.config';
 
+import { Photo } from '../../../models/photo';
+
 import { YandexFotkiParserService } from './yandex-fotki-parser.service';
 
 @Injectable()
@@ -24,7 +26,11 @@ export class PhotoService {
             .flatMap(url => this.getDocument(String(url)))
             .map(doc => this.parserService.extractAlbumUrl(doc, album))
             .flatMap(url => this.getDocument(String(url)))
-            .map(doc => this.parserService.extractAlbumPhotos(doc));
+            .map(doc => {
+                let photos = this.parserService.extractAlbumPhotos(doc);
+                this.generateMarketUrls(photos);
+                return photos;
+            });
     }
 
     private getDocument(documentUrl: string): Observable<any> {
@@ -52,5 +58,14 @@ export class PhotoService {
         console.error(errorMessage);
 
         return Observable.throw(errorMessage);
+    }
+
+    private generateMarketUrls(photos: Photo[]) {
+        for (let photo of photos) {
+            if (photo.tags.length) {
+                let itemId = photo.tags[photo.tags.length - 1];
+                photo.marketUrl = `${appConfig.vk.baseUrl}${appConfig.vk.marketId}?w=product-${appConfig.vk.marketId}_${itemId}`
+            }
+        }
     }
 }

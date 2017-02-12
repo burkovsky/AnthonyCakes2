@@ -4,6 +4,7 @@ import { Photo } from '../../../models/photo';
 
 @Injectable()
 export class YandexFotkiParserService {
+    private summarySeparator = '\n';
     private keysMap = {
         collections: 'collections',
         albums: 'album-list',
@@ -19,6 +20,7 @@ export class YandexFotkiParserService {
             XXL: 'XXL',
             XL: 'XL'
         },
+        summary: 'summary',
         tags: 'tags'
     }
 
@@ -68,19 +70,22 @@ export class YandexFotkiParserService {
                     const xxl = images[this.keysMap.sizes.XXL];
                     const xl = images[this.keysMap.sizes.XL];
                     if (xl)
-                        photo.url = xl[this.keysMap.url];
+                        photo.imageUrl = xl[this.keysMap.url];
                     else if (xxl)
-                        photo.url = xxl[this.keysMap.url];
+                        photo.imageUrl = xxl[this.keysMap.url];
                     else if (xxxl)
-                        photo.url = xxxl[this.keysMap.url];
+                        photo.imageUrl = xxxl[this.keysMap.url];
                     else if (original)
-                        photo.url = original[this.keysMap.url];
+                        photo.imageUrl = original[this.keysMap.url];
                 }
 
+                const summary = entry[this.keysMap.summary];
+                if (summary)
+                    photo.description = summary.split(this.summarySeparator);
+
                 const tags = entry[this.keysMap.tags];
-                if (tags) {
+                if (tags)
                     photo.tags = Object.keys(tags);
-                }
 
                 photos.push(photo);
             }

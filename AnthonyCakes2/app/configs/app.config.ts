@@ -4,7 +4,11 @@
     },
     photoService: {
         url: 'http://api-fotki.yandex.ru/api/users',
-        user: 'alexs3110',
-        album: 'Родос'
+        user: 'anthonycakes',
+        album: 'Продукция'
+    },
+    vk: {
+        baseUrl: 'https://vk.com/market-',
+        marketId: 114453626
     }
 };
