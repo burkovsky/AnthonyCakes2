@@ -50,7 +50,7 @@ export class StorageService {
     }
 
     private isValidCache(timestamp: number): boolean {
-        return timestamp + this.millisecondsInHour * appConfig.cache.cacheTimeInHours > Date.now();
+        return (Date.now() - timestamp) / this.millisecondsInHour < appConfig.cache.cacheTimeInHours;
     }
 
     private generateStorageKey(key: string): string {
