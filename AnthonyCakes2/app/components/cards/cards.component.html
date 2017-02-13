@@ -5,7 +5,7 @@
         </div>
         <div class="card__panel--back p-2" [class.active]="card.flipped">
             <div class="card__panel--back-content">
-                <h2 class="mb-4">
+                <h2 [class.mb-3]="card.marketUrl" [class.mb-4]="!card.marketUrl">
                     {{card.title}}
                 </h2>
                 <p *ngIf="card.marketUrl" class="mb-3">
