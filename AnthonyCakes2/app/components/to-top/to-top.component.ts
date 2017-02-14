@@ -17,4 +17,10 @@ export class ToTopComponent {
     onWindowScroll() {
         this.active = this.document.body.scrollTop > this.scrollLimit;
     }
+
+    toTop() {
+        window.scrollTo(0, 0);
+
+        return false;
+    }
 }

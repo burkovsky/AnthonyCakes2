@@ -14,7 +14,7 @@ export class CardsComponent implements OnChanges {
 
     constructor(private lazyLoadService: LazyLoadService) {}
 
-    stopFlipping(event: any) {
+    stop(event: any) {
         event.stopPropagation();
     }
 

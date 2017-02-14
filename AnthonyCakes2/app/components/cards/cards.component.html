@@ -9,7 +9,7 @@
                     {{card.title}}
                 </h2>
                 <p *ngIf="card.marketUrl" class="mb-3">
-                    <a  (click)="stopFlipping($event)" href="{{card.marketUrl}}" target="_blank">
+                    <a (click)="stop($event)" href="{{card.marketUrl}}" target="_blank">
                         <i class="fa fa-info-circle fa-2x"></i>
                     </a>
                 </p>
