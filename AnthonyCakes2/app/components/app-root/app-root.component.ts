@@ -27,11 +27,11 @@ import { MetaService } from 'ng2-meta';
     styles: [String(require('./app-root.component.scss'))]
 })
 export class AppRootComponent implements OnInit {
-    currentYear: number;
+    year: number;
 
     constructor(private metaService: MetaService) {}
 
     ngOnInit() {
-        this.currentYear = new Date().getFullYear();
+        this.year = new Date().getFullYear();
     }
 }

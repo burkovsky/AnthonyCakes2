@@ -1,7 +1,7 @@
 ﻿<div class="card-wrapper" *ngFor="let card of items" (click)="card.flipped = !card.flipped">
-    <div class="card text-center m-1">
+    <div class="card shadowed text-center m-1">
         <div class="card__panel--front">
-            <div class="lazy" attr.data-src="{{card.imageUrl}}">
+            <div class="lazy" attr.data-src="{{card.imageUrl}}"></div>
         </div>
         <div class="card__panel--back p-2" [class.active]="card.flipped">
             <div class="card__panel--back-content">

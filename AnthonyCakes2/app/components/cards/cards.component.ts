@@ -1,11 +1,8 @@
-﻿// jQuery Lazy
-import 'jquery-lazy/jquery.lazy.js';
-
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+﻿import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 import { Photo } from '../../models/photo';
 
-declare var jQuery: any;
+import { LazyLoadService } from '../../services/lazy-load.service';
 
 @Component({
     selector: 'cards',
@@ -15,7 +12,7 @@ declare var jQuery: any;
 export class CardsComponent implements OnChanges {
     @Input() items: Photo[];
 
-    private timer: any;
+    constructor(private lazyLoadService: LazyLoadService) {}
 
     stopFlipping(event: any) {
         event.stopPropagation();
@@ -23,19 +20,7 @@ export class CardsComponent implements OnChanges {
 
     ngOnChanges(changes: SimpleChanges) {
         if (changes['items'] && this.items.length > 0) {
-            this.timer = setInterval(() => this.initLazyload(), 250);
-        }
-    }
-
-    private initLazyload() {
-        let lazyItems = jQuery('.lazy');
-        if (lazyItems.length) {
-            lazyItems.Lazy({
-                effect: 'fadeIn',
-                effectTime: 750
-            });
-
-            clearInterval(this.timer);
+            this.lazyLoadService.delayedInit(250);
         }
     }
 }

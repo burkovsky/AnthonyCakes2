@@ -13,6 +13,7 @@ import { AboutComponent } from './components/about/about.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CardsComponent } from './components/cards/cards.component';
 
+import { LazyLoadService } from './services/lazy-load.service';
 import { LocalStorageService } from './services/storage.service';
 
 import { routes } from './configs/routes.config';
@@ -35,7 +36,10 @@ import { metaConfig } from './configs/meta.config';
         GalleryComponent,
         CardsComponent
     ],
-    providers: [LocalStorageService],
+    providers: [
+        LazyLoadService,
+        LocalStorageService
+    ],
     bootstrap: [AppRootComponent]
 })
 export class AppModule {}
