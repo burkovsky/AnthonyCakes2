@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "build:dev": "webpack --env=dev --color",
-    "build:dev:watch": "webpack --env=dev --color -w",
-    "build:prod": "webpack --env=prod --color"
+    "build:dev": "npm i && webpack --env=dev --color",
+    "build:dev:watch": "npm i && webpack --env=dev --color -w",
+    "build:prod": "npm i && webpack --env=prod --color",
+    "start": "node server.js"
   },
   "author": "Anton Burkovsky",
   "license": "MIT",
