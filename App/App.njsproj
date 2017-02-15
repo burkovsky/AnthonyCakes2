@@ -53,7 +53,6 @@
     <TypeScriptCompile Include="app\rxjs-operators.ts" />
     <TypeScriptCompile Include="app\services\lazy-load.service.ts" />
     <TypeScriptCompile Include="app\services\storage.service.ts" />
-    <TypeScriptCompile Include="typings\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app.js" />
