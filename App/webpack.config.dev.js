@@ -3,13 +3,12 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
-const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = function(env) {
     return {
         entry: './app/index.ts',
         output: {
-            path: './wwwroot/build',
+            path: './public/build',
             filename: 'bundle.js'
         },
         resolve: {
@@ -26,7 +25,7 @@ module.exports = function(env) {
                     test: /\.(css|scss)$/,
                     loader: ExtractTextPlugin.extract({
                         fallback: 'style-loader',
-                        use: 'css-loader?minimize!sass-loader'
+                        use: 'css-loader?sourceMap!sass-loader?sourceMap'
                     })
                 },
                 {
@@ -41,9 +40,9 @@ module.exports = function(env) {
         },
         devtool: 'source-map',
         plugins: [
-            new CleanWebpackPlugin(['./wwwroot/build/'],
+            new CleanWebpackPlugin(['./public/build/'],
             {
-                    verbose: false
+                verbose: false
             }),
             new ExtractTextPlugin('styles.css'),
             new webpack.ProvidePlugin({
@@ -51,21 +50,6 @@ module.exports = function(env) {
                 jQuery: 'jquery',
                 'window.jQuery': 'jquery',
                 'Tether': 'tether'
-            }),
-            new webpack.DefinePlugin({
-                'process.env': {
-                    'NODE_ENV': JSON.stringify(env)
-                }
-            }),
-            new webpack.LoaderOptionsPlugin({
-                minimize: true
-            }),
-            new webpack.optimize.UglifyJsPlugin({
-                comments: false
-            }),
-            new CompressionPlugin({
-                test: /\.js$|\.css$|\.html$/,
-                minRatio: 0.8
             })
         ]
     }

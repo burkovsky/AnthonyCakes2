@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <base href="/">
@@ -24,8 +24,14 @@
     <link rel="stylesheet" href="/build/styles.css" asp-append-version="true"/>
 </head>
 <body>  
-    @RenderBody()
+    <app-root>
+        <div class="loader text-center color-secondary">
+            <div>
+                <i class="fa fa-cog fa-spin fa-5x"></i>
+            </div>
+        </div>
+    </app-root>
 
-    <script src="~/build/bundle.js" asp-append-version="true"></script>
+    <script src="/build/bundle.js" asp-append-version="true"></script>
 </body>
 </html>
