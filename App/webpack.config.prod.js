@@ -39,11 +39,11 @@ module.exports = function(env) {
                 }
             ]
         },
-        devtool: 'source-map',
+        devtool: false,
         plugins: [
             new CleanWebpackPlugin(['./public/build/'],
             {
-                    verbose: false
+                verbose: false
             }),
             new ExtractTextPlugin('styles.css'),
             new webpack.ProvidePlugin({
