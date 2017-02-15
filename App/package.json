@@ -1,6 +1,7 @@
 {
   "name": "anthonycakes",
   "version": "1.0.0",
+  "description": "Anthony Cakes web application",
   "main": "server.js",
   "scripts": {
     "build:dev": "npm i && webpack --env=dev --color",
@@ -8,8 +9,16 @@
     "build:prod": "npm i && webpack --env=prod --color",
     "start": "node server.js"
   },
-  "author": "Anton Burkovsky",
-  "license": "MIT",
+  "author": {
+    "name": "Anton Burkovsky",
+    "email": "burkovsky.anton@gmail.com"
+  },
+  "private": true,
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/burkovsky/AnthonyCakes2.git"
+  },
   "dependencies": {
     "@angular/common": "2.4.5",
     "@angular/compiler": "2.4.5",
@@ -28,13 +37,13 @@
     "jquery-lazy": "1.7.4",
     "ng2-meta": "2.0.3",
     "reflect-metadata": "0.1.9",
-    "rxjs": "5.1.0",
+    "rxjs": "5.1.1",
     "serve-favicon": "2.3.2",
-    "systemjs": "0.20.5",
+    "systemjs": "0.20.7",
     "tether": "1.4.0",
     "waypoints": "4.0.1",
     "zone.js": "0.7.4"
-  }, 
+  },
   "devDependencies": {
     "@types/node": "7.0.5",
     "clean-webpack-plugin": "0.1.15",
@@ -44,7 +53,7 @@
     "file-loader": "0.10.0",
     "node-sass": "4.5.0",
     "raw-loader": "0.5.1",
-    "sass-loader": "5.0.0",
+    "sass-loader": "6.0.0",
     "style-loader": "0.13.1",
     "to-string-loader": "1.1.5",
     "ts-loader": "2.0.0",
