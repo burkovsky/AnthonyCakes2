@@ -94,14 +94,18 @@
     <Content Include="app\components\to-top\to-top.component.scss" />
     <Content Include="package.json" />
     <Content Include="public\favicon.ico" />
+    <Content Include="public\images\about\piece_blue.jpg" />
+    <Content Include="public\images\about\piece_red.jpg" />
+    <Content Include="public\images\about\piece_yellow.jpg" />
+    <Content Include="public\images\about\self.jpg" />
     <Content Include="public\images\icons\android-chrome-192x192.png" />
     <Content Include="public\images\icons\android-chrome-512x512.png" />
     <Content Include="public\images\icons\apple-touch-icon.png" />
     <Content Include="public\images\icons\favicon-16x16.png" />
     <Content Include="public\images\icons\favicon-32x32.png" />
     <Content Include="public\images\icons\mstile-150x150.png" />
-    <Content Include="public\images\logo.svg" />
-    <Content Include="public\images\overlay.png" />
+    <Content Include="public\images\common\logo.svg" />
+    <Content Include="public\images\common\overlay.png" />
     <Content Include="public\manifest.json" />
     <Content Include="public\robots.txt" />
     <Content Include="tsconfig.json" />
@@ -126,6 +130,8 @@
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\images\icons\" />
+    <Folder Include="public\images\about\" />
+    <Folder Include="public\images\common\" />
     <Folder Include="routes\" />
     <Folder Include="views\" />
   </ItemGroup>
