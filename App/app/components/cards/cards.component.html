@@ -4,7 +4,7 @@
             <div class="lazy" attr.data-src="{{card.imageUrl}}"></div>
         </div>
         <div class="card__panel--back p-2" [class.active]="card.flipped">
-            <div class="card__panel--back-content">
+            <div class="card__panel--back__content">
                 <h2 [class.mb-3]="card.marketUrl" [class.mb-4]="!card.marketUrl">
                     {{card.title}}
                 </h2>
@@ -13,7 +13,7 @@
                         <i class="fa fa-info-circle fa-2x"></i>
                     </a>
                 </p>
-                <p class="m-0" *ngFor="let part of card.description">{{part}}</p>
+                <p class="card__panel--back__content-par m-0" *ngFor="let part of card.description">{{part}}</p>
             </div>
         </div>
     </div>

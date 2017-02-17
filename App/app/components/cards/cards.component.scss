@@ -22,6 +22,7 @@
 
     .card {
         background-color: transparent;
+        font-family: 'Kurale', serif;
         overflow: hidden;
         position: absolute;
         top: 0.25rem;
@@ -62,8 +63,12 @@
                     opacity: .9;
                 }
                 
-                &-content {
+                &__content {
                     max-height: 100%;
+
+                    &-par {
+                        font-size: 1.0625rem;
+                    }
                 }
             }
         }
