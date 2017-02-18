@@ -1,33 +1,37 @@
 ﻿@import '../../common/variables';
 
-.navbar-contacts {
-    background: $clr-header $img-overlay;
-    opacity: 0.95;
-    width: 100%;
-    z-index: 100;
+contacts {
+    background: $clr-contacts $img-overlay;
 
-    .dropdown-toggle::after {
-        -webkit-transition: all .3s ease-in-out;
-        -moz-transition: all .3s ease-in-out;
-        -o-transition: all .3s ease-in-out;
-        transition: all .3s ease-out;
-    }
+    .navbar-contacts {
+        background: $clr-contacts $img-overlay;
+        opacity: 0.95;
+        width: 100%;
+        z-index: 100;
 
-    .show > .dropdown-toggle::after {
-        -webkit-transform: rotate(-180deg);
-        -moz-transform: rotate(-180deg);
-        -o-transform: rotate(-180deg);
-        -ms-transform: rotate(-180deg);
-        transform: rotate(-180deg);
-    }
+        .dropdown-toggle::after {
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-out;
+        }
 
-    .dropdown-menu {
-        background-color: transparent;
-        border-width: 0;
-    }
+        .show > .dropdown-toggle::after {
+            -webkit-transform: rotate(-180deg);
+            -moz-transform: rotate(-180deg);
+            -o-transform: rotate(-180deg);
+            -ms-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+        }
 
-    &.sticky {
-        position: fixed;
-        top: 0;
+        .dropdown-menu {
+            background-color: transparent;
+            border-width: 0;
+        }
+
+        &.sticky {
+            position: fixed;
+            top: 0;
+        }
     }
 }
