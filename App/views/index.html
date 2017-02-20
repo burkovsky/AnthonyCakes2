@@ -4,8 +4,9 @@
     <base href="/">
     <meta charset="utf-8"/>
     <title>Anthony Cakes</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TODO Fill description -->
+    <meta name="description" content="">
     <!-- Icons -->
     <link rel="manifest" href="/manifest.json">
     <meta name="mobile-web-app-capable" content="yes">
@@ -21,7 +22,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <meta name="theme-color" content="#ffffff">
     <!-- CSS -->
-    <link rel="stylesheet" href="/build/styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="/build/styles.css" asp-append-version="true">
 </head>
 <body>  
     <app-root>
@@ -31,7 +32,17 @@
             </div>
         </div>
     </app-root>
-
+    <!-- JS -->
     <script src="/build/bundle.js" asp-append-version="true"></script>
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-92269259-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
 </html>
