@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "prepare": "npm i && npm i node-sass --save-dev",
-    "build:dev": "webpack --env=dev --color",
-    "build:dev:watch": "webpack --env=dev --color -w",
+    "build": "webpack --env=dev --color",
+    "build:watch": "webpack --env=dev --color -w",
     "build:prod": "webpack --env=prod --color",
     "start": "node server.js"
   },

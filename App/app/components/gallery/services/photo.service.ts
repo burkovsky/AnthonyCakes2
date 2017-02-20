@@ -24,7 +24,7 @@ export class PhotoService {
         return this.getDocument(userServiceDocumentUrl)
             .map(doc => this.parserService.extractAlbumsUrl(doc))
             .flatMap(url => this.getDocument(String(url)))
-            .map(doc => this.parserService.extractAlbumUrl(doc, album))
+            .map(doc => this.parserService.extractAlbumUrl(doc, album, appConfig.photoService.sorting))
             .flatMap(url => this.getDocument(String(url)))
             .map(doc => {
                 let photos = this.parserService.extractAlbumPhotos(doc);

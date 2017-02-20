@@ -4,6 +4,7 @@
     },
     photoService: {
         url: 'http://api-fotki.yandex.ru/api/users',
+        sorting: 'manual',
         user: 'anthonycakes',
         album: 'Продукция'
     },
