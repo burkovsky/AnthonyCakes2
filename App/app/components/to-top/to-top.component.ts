@@ -1,6 +1,8 @@
 ﻿import { Component, HostListener, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
+import { appConfig } from '../../configs/app.config';
+
 @Component({
     selector: 'to-top',
     template: require('./to-top.component.html'),
@@ -11,11 +13,9 @@ export class ToTopComponent {
 
     constructor(@Inject(DOCUMENT) private document: Document) {}
 
-    private scrollLimit = 200;
-
     @HostListener("window:scroll", [])
     onWindowScroll() {
-        this.active = this.document.body.scrollTop > this.scrollLimit;
+        this.active = this.document.body.scrollTop > appConfig.scrollTopBound;
     }
 
     toTop() {

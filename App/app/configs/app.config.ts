@@ -11,5 +11,6 @@
     vk: {
         baseUrl: 'https://vk.com/market-',
         marketId: 114453626
-    }
+    },
+    scrollTopBound: 500
 };

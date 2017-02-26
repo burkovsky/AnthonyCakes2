@@ -14,4 +14,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 var index = require('./routes/index');
 app.use('/', index);
 
+// catch 404 and forward to home page
+app.use(function(req, res, next) {
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
 module.exports = app;

@@ -24,7 +24,7 @@ import { metaConfig } from './configs/meta.config';
         BrowserModule,
         HttpModule,
         JsonpModule,
-        RouterModule.forRoot(routes, { useHash: true }),
+        RouterModule.forRoot(routes),
         MetaModule.forRoot(metaConfig)
     ],
     declarations: [
