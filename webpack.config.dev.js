@@ -1,6 +1,5 @@
 ﻿'use strict';
 
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 
@@ -40,10 +39,6 @@ module.exports = function(env) {
         },
         devtool: 'source-map',
         plugins: [
-            new CleanWebpackPlugin(['./public/build/'],
-            {
-                verbose: false
-            }),
             new ExtractTextPlugin('styles.css'),
             new webpack.ProvidePlugin({
                 $: 'jquery',

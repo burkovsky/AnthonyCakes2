@@ -1,6 +1,5 @@
 ﻿'use strict';
 
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const CompressionPlugin = require("compression-webpack-plugin");
@@ -41,10 +40,6 @@ module.exports = function(env) {
         },
         devtool: false,
         plugins: [
-            new CleanWebpackPlugin(['./public/build/'],
-            {
-                verbose: false
-            }),
             new ExtractTextPlugin('styles.css'),
             new webpack.ProvidePlugin({
                 $: 'jquery',
