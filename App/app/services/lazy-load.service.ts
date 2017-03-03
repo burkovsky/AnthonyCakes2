@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 declare var jQuery: any;
 
 @Injectable()
-export class LazyLoadService {
+export default class LazyLoadService {
     private timer: any;
 
     delayedInit(delay: number) {

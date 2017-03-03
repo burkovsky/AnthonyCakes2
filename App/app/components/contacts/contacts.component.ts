@@ -11,7 +11,7 @@ declare var Waypoint: any;
     template: require('./contacts.component.html'),
     styles: [String(require('./contacts.component.scss'))]
 })
-export class ContactsComponent implements AfterViewInit {
+export default class ContactsComponent implements AfterViewInit {
     @ViewChild('navbar') navbar: ElementRef;
 
     ngAfterViewInit(): void {

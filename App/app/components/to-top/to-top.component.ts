@@ -8,7 +8,7 @@ import { appConfig } from '../../configs/app.config';
     template: require('./to-top.component.html'),
     styles: [String(require('./to-top.component.scss'))]
 })
-export class ToTopComponent {
+export default class ToTopComponent {
     active = false;
 
     constructor(@Inject(DOCUMENT) private document: Document) {}

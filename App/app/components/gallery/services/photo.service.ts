@@ -3,13 +3,11 @@ import { Jsonp, URLSearchParams, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import { appConfig } from '../../../configs/app.config';
-
 import Photo from '../../../models/photo';
-
-import { YandexFotkiParserService } from './yandex-fotki-parser.service';
+import YandexFotkiParserService from './yandex-fotki-parser.service';
 
 @Injectable()
-export class PhotoService {
+export default class PhotoService {
     private params = new URLSearchParams();
 
     constructor(private jsonp: Jsonp, private parserService: YandexFotkiParserService) {

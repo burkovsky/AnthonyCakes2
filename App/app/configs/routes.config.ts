@@ -1,7 +1,7 @@
-﻿import { AboutComponent } from '../components/about/about.component';
-import { GalleryComponent } from '../components/gallery/gallery.component';
+﻿import AboutComponent from '../components/about/about.component';
+import GalleryComponent from '../components/gallery/gallery.component';
 
-export const routes = [
+export const routesConfig = [
     {
         path: '',
         redirectTo: 'gallery',

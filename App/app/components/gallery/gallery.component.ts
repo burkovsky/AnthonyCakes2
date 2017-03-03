@@ -2,11 +2,9 @@
 import { Observable } from 'rxjs/Observable';
 
 import { appConfig } from '../../configs/app.config';
-
 import Photo from '../../models/photo';
-
-import { YandexFotkiParserService } from './services/yandex-fotki-parser.service';
-import { PhotoService } from './services/photo.service';
+import YandexFotkiParserService from './services/yandex-fotki-parser.service';
+import PhotoService from './services/photo.service';
 import { LocalStorageService } from '../../services/storage.service';
 
 @Component({
@@ -15,7 +13,7 @@ import { LocalStorageService } from '../../services/storage.service';
     styles: [String(require('./gallery.component.scss'))],
     providers: [YandexFotkiParserService, PhotoService]
 })
-export class GalleryComponent implements OnInit {
+export default class GalleryComponent implements OnInit {
     photos: Photo[] = [];
 
     constructor(private photoService: PhotoService, private localStorageService: LocalStorageService) {}

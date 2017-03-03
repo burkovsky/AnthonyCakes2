@@ -3,7 +3,7 @@
 import Photo from '../../../models/photo';
 
 @Injectable()
-export class YandexFotkiParserService {
+export default class YandexFotkiParserService {
     private summarySeparator = '\n';
     private keysMap = {
         collections: 'collections',

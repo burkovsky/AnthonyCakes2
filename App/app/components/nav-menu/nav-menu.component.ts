@@ -5,4 +5,4 @@
     template: require('./nav-menu.component.html'),
     styles: [require('./nav-menu.component.scss').toString()]
 })
-export class NavMenuComponent {}
+export default class NavMenuComponent {}
