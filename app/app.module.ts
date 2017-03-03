@@ -13,6 +13,7 @@ import ToTopComponent from './components/to-top/to-top.component';
 import AboutComponent from './components/about/about.component';
 import GalleryComponent from './components/gallery/gallery.component';
 import CardsComponent from './components/cards/cards.component';
+import CardComponent from './components/card/card.component';
 import LazyLoadService from './services/lazy-load.service';
 import { LocalStorageService } from './services/storage.service';
 
@@ -31,7 +32,8 @@ import { LocalStorageService } from './services/storage.service';
         ToTopComponent,
         AboutComponent,
         GalleryComponent,
-        CardsComponent
+        CardsComponent,
+        CardComponent
     ],
     providers: [
         LazyLoadService,

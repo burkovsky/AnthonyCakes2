@@ -6,7 +6,7 @@ import LazyLoadService from '../../services/lazy-load.service';
 @Component({
     selector: 'cards',
     template: require('./cards.component.html'),
-    styles: [String(require('./cards.component.scss'))]
+    // styles: [String(require('./cards.component.scss'))]
 })
 export default class CardsComponent implements OnChanges {
     @Input() items: Photo[];

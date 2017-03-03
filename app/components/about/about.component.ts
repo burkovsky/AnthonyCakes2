@@ -5,7 +5,7 @@ import LazyLoadService from '../../services/lazy-load.service';
 @Component({
     selector: 'about',
     template: require('./about.component.html'),
-    styles: [String(require('./about.component.scss'))]
+    // styles: [String(require('./about.component.scss'))]
 })
 export default class AboutComponent implements OnInit {
     constructor(private lazyLoadService: LazyLoadService) {}

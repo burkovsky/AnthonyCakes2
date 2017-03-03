@@ -1,0 +1,76 @@
+@import '../../common/variables';
+
+.card-wrapper {
+    cursor: pointer;
+    float: left;
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
+
+    @media (min-width: $mbp-sm) {
+        padding-bottom: 50%;
+        width: 50%;
+    }
+    @media (min-width: $mbp-md) {
+        padding-bottom: 33%;
+        width: 33%;
+    }
+    @media (min-width: $mbp-xl) {
+        padding-bottom: 25%;
+        width: 25%;
+    }
+
+    .card {
+        background-color: transparent;
+        font-family: 'Kurale', serif;
+        overflow: hidden;
+        position: absolute;
+        top: 0.25rem;
+        right: 0.25rem;
+        bottom: 0.25rem;
+        left: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__panel {
+            &--front {
+                height: 100%;
+                width: 100%;
+
+                .lazy {
+                    background-size: cover;
+                    height: 100%;
+                }
+            }
+
+            &--back {
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $clr-footer;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                transition: .75s opacity;
+
+                &.active {
+                    opacity: .9;
+                }
+                
+                &__content {
+                    max-height: 100%;
+
+                    &-par {
+                        font-size: 1.0625rem;
+                    }
+                }
+            }
+        }
+    }
+}
