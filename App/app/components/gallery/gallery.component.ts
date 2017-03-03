@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { appConfig } from '../../configs/app.config';
 
-import { Photo } from '../../models/photo';
+import Photo from '../../models/photo';
 
 import { YandexFotkiParserService } from './services/yandex-fotki-parser.service';
 import { PhotoService } from './services/photo.service';

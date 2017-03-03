@@ -1,6 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 
-import { Photo } from '../../../models/photo';
+import Photo from '../../../models/photo';
 
 @Injectable()
 export class YandexFotkiParserService {

@@ -1,4 +1,4 @@
-﻿export class Photo {
+﻿export default class Photo {
     imageUrl = '';
     title = '';
     description: string[] = [];
