@@ -45,7 +45,7 @@
     "systemjs": "0.20.9",
     "tether": "1.4.0",
     "waypoints": "4.0.1",
-    "zone.js": "0.7.7"
+    "zone.js": "0.7.6"
   },
   "devDependencies": {
     "@types/node": "7.0.5",
