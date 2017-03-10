@@ -8,4 +8,8 @@ import Photo from '../../models/photo';
 })
 export default class CardComponent {
     @Input() item: Photo;
+
+    stop(event: any) {
+        event.stopPropagation();
+    }
 }

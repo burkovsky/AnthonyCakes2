@@ -13,10 +13,6 @@ export default class CardsComponent implements OnChanges {
 
     constructor(private lazyLoadService: LazyLoadService) {}
 
-    stop(event: any) {
-        event.stopPropagation();
-    }
-
     ngOnChanges(changes: SimpleChanges) {
         if (changes['items'] && this.items.length > 0) {
             this.lazyLoadService.delayedInit(250);
