@@ -1,16 +1,17 @@
 ﻿@import '../../common/variables';
 
 .to-top {
-    display: none;
+    visibility: hidden;
     color: $clr-logo-secondary;
     position: fixed;
     right: 2rem;
     bottom: 1.5rem;
-    opacity: .75;
-    transition: .25s opacity;
+    opacity: 0;
+    transition: all .25s;
 
     &.active {
-        display: block;
+        opacity: .75;
+        visibility: visible;
     }
 
     &:hover,

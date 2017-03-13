@@ -51,20 +51,25 @@
                 justify-content: center;
                 background-color: $clr-footer;
                 opacity: 0;
-                overflow: hidden;
                 position: absolute;
                 top: 0;
                 right: 0;
                 bottom: 0;
                 left: 0;
-                transition: .75s opacity;
+                transition: all .75s;
+                visibility: hidden;
 
                 &.active {
                     opacity: .9;
+                    visibility: visible;
                 }
                 
                 &__content {
                     max-height: 100%;
+                    
+                    &-line {
+                        border-color: $clr-logo-primary;
+                    }
 
                     &-par {
                         font-size: 1.0625rem;

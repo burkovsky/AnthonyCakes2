@@ -10,9 +10,6 @@ export default class CardComponent {
     @Input() item: Photo;
 
     stop(event: any) {
-        if (this.item['flipped'])
-            event.stopPropagation();
-        else
-            event.preventDefault();
+        event.stopPropagation();
     }
 }
