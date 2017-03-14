@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 module.exports = function(env) {
     return {
-        entry: './app/index.ts',
+        entry: './src/index.ts',
         output: {
             path: './public/build',
             filename: 'bundle.js'

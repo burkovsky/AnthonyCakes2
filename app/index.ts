@@ -1,2 +1,0 @@
-﻿// Scripts
-import './main.ts';
