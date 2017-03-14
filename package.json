@@ -4,8 +4,7 @@
   "description": "Anthony Cakes Web Application",
   "main": "server.js",
   "scripts": {
-    "install": "npm i",
-    "install:globals": "npm i -g webpack && npm i -g typescript && npm i -g tslint",
+    "prepare": "npm install",
     "clean": "rimraf public/build",
     "build": "npm run clean && webpack --env=dev --color",
     "build:watch": "npm run clean && webpack --env=dev --color -w",
