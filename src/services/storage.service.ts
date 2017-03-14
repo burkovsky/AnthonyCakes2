@@ -8,14 +8,14 @@ export default class StorageService {
 
     constructor(private storage: Storage) {}
 
-    get(key: string): any {
+    public get(key: string): any {
         const storageKey = this.generateStorageKey(key);
         const value = this.storage.getItem(storageKey);
 
         return this.deserialize(value);
     }
 
-    getCache(key: string): any {
+    public getCache(key: string): any {
         const cacheValue = this.get(key);
         if (cacheValue) {
             const timestamp = cacheValue.timestamp;
@@ -30,13 +30,13 @@ export default class StorageService {
         return null;
     }
 
-    set(key: string, value: any): void {
+    public set(key: string, value: any): void {
         const storageKey = this.generateStorageKey(key);
 
         this.storage.setItem(storageKey, this.serialize(value));
     }
 
-    setCache(key: string, value: any): void {
+    public setCache(key: string, value: any): void {
         const cacheValue = {
             timestamp: Date.now(),
             value,
@@ -44,7 +44,7 @@ export default class StorageService {
         this.set(key, cacheValue);
     }
 
-    remove(key: string): void {
+    public remove(key: string): void {
         const storageKey = this.generateStorageKey(key);
 
         this.storage.removeItem(storageKey);

@@ -1,5 +1,4 @@
-﻿// jQuery Lazy
-import "jquery-lazy/jquery.lazy.js";
+﻿import "jquery-lazy/jquery.lazy.js";
 
 import { Injectable } from "@angular/core";
 
@@ -9,11 +8,11 @@ declare var jQuery: any;
 export default class LazyLoadService {
     private timer: any;
 
-    delayedInit(delay: number) {
+    public delayedInit(delay: number) {
         this.timer = setInterval(() => this.init(), delay);
     }
 
-    init() {
+    public init() {
         let lazyItems = jQuery(".lazy");
         if (lazyItems.length) {
             lazyItems.Lazy({
