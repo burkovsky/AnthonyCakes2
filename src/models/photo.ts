@@ -1,7 +1,7 @@
 ﻿export default class Photo {
-    imageUrl = "";
-    title = "";
-    description: string[] = [];
-    tags: string[] = [];
-    marketUrl = "";
+    public imageUrl = "";
+    public title = "";
+    public description: string[] = [];
+    public tags: string[] = [];
+    public marketUrl = "";
 }
