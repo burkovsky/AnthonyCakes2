@@ -3,7 +3,7 @@ import { Component, Input } from "@angular/core";
 import Photo from "../../models/photo";
 
 @Component({
-    selector: "card",
+    selector: "ac-card",
     styles: [String(require("./card.component.scss"))],
     template: require("./card.component.html"),
 })

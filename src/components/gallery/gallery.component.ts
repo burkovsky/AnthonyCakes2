@@ -9,7 +9,7 @@ import YandexFotkiParserService from "./services/yandex-fotki-parser.service";
 
 @Component({
     providers: [YandexFotkiParserService, PhotoService],
-    selector: "gallery",
+    selector: "ac-gallery",
     styles: [String(require("./gallery.component.scss"))],
     template: require("./gallery.component.html"),
 })

@@ -4,7 +4,7 @@ import { DOCUMENT } from "@angular/platform-browser";
 import { appConfig } from "../../configs/app.config";
 
 @Component({
-    selector: "to-top",
+    selector: "ac-to-top",
     styles: [String(require("./to-top.component.scss"))],
     template: require("./to-top.component.html"),
 })

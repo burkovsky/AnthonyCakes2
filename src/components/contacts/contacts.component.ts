@@ -6,7 +6,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from "@angular/core";
 declare var Waypoint: any;
 
 @Component({
-    selector: "contacts",
+    selector: "ac-contacts",
     styles: [String(require("./contacts.component.scss"))],
     template: require("./contacts.component.html"),
 })

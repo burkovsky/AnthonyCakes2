@@ -15,6 +15,10 @@
         background-color: $clr-header;
     }
 
+    &_contacts {
+        background: $clr-contacts $img-overlay;
+    }
+
     &_content {
         background-color: $clr-content;
         display: flex;

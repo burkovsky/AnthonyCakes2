@@ -4,7 +4,7 @@ import Photo from "../../models/photo";
 import LazyLoadService from "../../services/lazy-load.service";
 
 @Component({
-    selector: "cards",
+    selector: "ac-cards",
     // styles: [String(require('./cards.component.scss'))],
     template: require("./cards.component.html"),
 })

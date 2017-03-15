@@ -11,7 +11,7 @@ import { Component, OnInit } from "@angular/core";
 import { MetaService } from "ng2-meta";
 
 @Component({
-    selector: "app-root",
+    selector: "ac-app-root",
     styles: [String(require("./app-root.component.scss"))],
     template: require("./app-root.component.html"),
 })

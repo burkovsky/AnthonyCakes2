@@ -1,37 +1,33 @@
 ﻿@import '../../common/variables';
 
-contacts {
+.navbar-contacts {
     background: $clr-contacts $img-overlay;
+    opacity: 0.95;
+    width: 100%;
+    z-index: 100;
 
-    .navbar-contacts {
-        background: $clr-contacts $img-overlay;
-        opacity: 0.95;
-        width: 100%;
-        z-index: 100;
+    .dropdown-toggle::after {
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
 
-        .dropdown-toggle::after {
-            -webkit-transition: all .3s ease-in-out;
-            -moz-transition: all .3s ease-in-out;
-            -o-transition: all .3s ease-in-out;
-            transition: all .3s ease-out;
-        }
+    .show > .dropdown-toggle::after {
+        -webkit-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -o-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
 
-        .show > .dropdown-toggle::after {
-            -webkit-transform: rotate(-180deg);
-            -moz-transform: rotate(-180deg);
-            -o-transform: rotate(-180deg);
-            -ms-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-        }
+    .dropdown-menu {
+        background-color: transparent;
+        border-width: 0;
+    }
 
-        .dropdown-menu {
-            background-color: transparent;
-            border-width: 0;
-        }
-
-        &.sticky {
-            position: fixed;
-            top: 0;
-        }
+    &.sticky {
+        position: fixed;
+        top: 0;
     }
 }
