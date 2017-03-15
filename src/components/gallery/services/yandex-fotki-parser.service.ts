@@ -27,7 +27,7 @@ export default class YandexFotkiParserService {
         url: "href",
     };
 
-    extractAlbumsUrl(serviceDocument: Object): string {
+    public extractAlbumsUrl(serviceDocument: Object): string {
         const collections = serviceDocument[this.keysMap.collections];
         if (collections) {
             const albums = collections[this.keysMap.albums];
@@ -39,7 +39,7 @@ export default class YandexFotkiParserService {
         return "";
     }
 
-    extractAlbumUrl(albumsDocument: Object, album: string, sorting: string): string {
+    public extractAlbumUrl(albumsDocument: Object, album: string, sorting: string): string {
         const entries = albumsDocument[this.keysMap.entries];
         if (entries) {
             for (let entry of entries) {
@@ -62,7 +62,7 @@ export default class YandexFotkiParserService {
         return "";
     }
 
-    extractAlbumPhotos(albumDocument: Object): Photo[] {
+    public extractAlbumPhotos(albumDocument: Object): Photo[] {
         let photos: Photo[] = [];
 
         const entries = albumDocument[this.keysMap.entries];

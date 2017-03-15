@@ -16,7 +16,7 @@ export default class PhotoService {
     }
 
     // TODO Support next pages loading
-    getPhotos(user: string, album: string): Observable<any> {
+    public getPhotos(user: string, album: string): Observable<any> {
         const userServiceDocumentUrl = `${appConfig.photoService.url}/${user}/`;
 
         return this.getDocument(userServiceDocumentUrl)
