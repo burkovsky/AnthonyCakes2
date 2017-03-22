@@ -5,7 +5,6 @@ import "jquery/dist/jquery.js";
 import "tether/dist/css/tether.css";
 import "tether/dist/js/tether.js";
 import "../../common/main.scss";
-import "../../rxjs-operators";
 
 import { Component, OnInit } from "@angular/core";
 import { MetaService } from "ng2-meta";

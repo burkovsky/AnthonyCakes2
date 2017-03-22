@@ -1,5 +1,8 @@
 ﻿import { Injectable } from "@angular/core";
 import { Jsonp, Response, URLSearchParams } from "@angular/http";
+import "rxjs/add/operator/catch";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/mergeMap";
 import { Observable } from "rxjs/Observable";
 
 import { appConfig } from "../../../configs/app.config";
