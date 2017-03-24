@@ -10,10 +10,12 @@
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5",
-    "types": [ "node" ]
+    "types": [ "node", "jquery" ]
   },
   "exclude": [
     "node_modules",
-    "wwwroot"
+    "public",
+    "routes",
+    "views"
   ]
 }

@@ -1,19 +1,21 @@
 ﻿'use strict';
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = function(env) {
     return {
-        entry: './src/index.ts',
+        context: path.resolve(__dirname, 'src'),
+        entry: './index',
         output: {
-            path: './public/build',
+            path: path.resolve(__dirname, 'public/build/'),
             filename: 'bundle.js'
         },
         resolve: {
             modules: ['node_modules'],
-            extensions: ['.ts', '.js', '.css', '.scss']
+            extensions: ['.ts', '.js', '.scss', '.css']
         },
         module: {
             rules: [

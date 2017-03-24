@@ -2,8 +2,6 @@
 
 import { Injectable } from "@angular/core";
 
-declare var jQuery: any;
-
 @Injectable()
 export default class LazyLoadService {
     private timer: any;
@@ -13,7 +11,7 @@ export default class LazyLoadService {
     }
 
     public init() {
-        let lazyItems = jQuery(".lazy");
+        let lazyItems = $(".lazy");
         if (lazyItems.length) {
             lazyItems.Lazy({
                 effect: "fadeIn",
