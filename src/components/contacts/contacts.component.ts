@@ -3,8 +3,6 @@ import "waypoints/lib/shortcuts/sticky.js";
 
 import { AfterViewInit, Component, ElementRef, ViewChild } from "@angular/core";
 
-declare var Waypoint: any;
-
 @Component({
     selector: "ac-contacts",
     styles: [String(require("./contacts.component.scss"))],
