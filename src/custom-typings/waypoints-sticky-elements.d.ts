@@ -3,18 +3,20 @@
 // Definitions by: Anton Burkovsky <https://github.com/burkovsky>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-interface WaypointStickyOptions {
+interface IWaypointStickyOptions {
     element: HTMLElement;
     wrapper?: string | boolean;
     stuckClass?: string;
     direction?: string;
 }
 
-declare module Waypoint {
+declare namespace Waypoint {
     class Sticky {
-        constructor(options: WaypointStickyOptions);
         public element: HTMLElement;
-        public options: WaypointStickyOptions;
+        public options: IWaypointStickyOptions;
+
+        constructor(options: IWaypointStickyOptions);
+
         public destroy(): void;
     }
 }
