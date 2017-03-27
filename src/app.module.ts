@@ -1,5 +1,5 @@
 ﻿import { NgModule } from "@angular/core";
-import { HttpModule, JsonpModule } from "@angular/http";
+import { JsonpModule } from "@angular/http";
 import { BrowserModule, Title } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 
@@ -30,7 +30,6 @@ import LocalStorageService from "./services/local-storage.service";
     ],
     imports: [
         BrowserModule,
-        HttpModule,
         JsonpModule,
         RouterModule.forRoot(routesConfig),
     ],
