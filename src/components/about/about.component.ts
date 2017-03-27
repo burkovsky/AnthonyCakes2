@@ -1,5 +1,7 @@
 ﻿import { Component, OnInit } from "@angular/core";
+import { Title } from "@angular/platform-browser";
 
+import { metaConfig } from "../../configs/meta.config";
 import LazyLoadService from "../../services/lazy-load.service";
 
 @Component({
@@ -8,9 +10,11 @@ import LazyLoadService from "../../services/lazy-load.service";
     template: require("./about.component.html"),
 })
 export default class AboutComponent implements OnInit {
-    constructor(private lazyLoadService: LazyLoadService) {}
+    constructor(private lazyLoadService: LazyLoadService, private titleService: Title) {}
 
     ngOnInit(): void {
+        this.titleService.setTitle(metaConfig.about.title);
+
         this.lazyLoadService.init();
     }
 }

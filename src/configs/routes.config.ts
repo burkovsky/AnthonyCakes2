@@ -9,20 +9,10 @@ export const routesConfig = [
     },
     {
         component: GalleryComponent,
-        data: {
-            meta: {
-                title: "Вкусняшки",
-            },
-        },
         path: "gallery",
     },
     {
         component: AboutComponent,
-        data: {
-            meta: {
-                title: "Обо мне",
-            },
-        },
         path: "about",
     },
     {

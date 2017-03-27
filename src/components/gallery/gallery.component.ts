@@ -1,7 +1,9 @@
 ﻿import { Component, OnInit } from "@angular/core";
+import { Title } from "@angular/platform-browser";
 import { Observable } from "rxjs/Observable";
 
 import { appConfig } from "../../configs/app.config";
+import { metaConfig } from "../../configs/meta.config";
 import Photo from "../../models/photo";
 import LocalStorageService from "../../services/local-storage.service";
 import PhotoService from "./services/photo.service";
@@ -16,9 +18,14 @@ import YandexFotkiParserService from "./services/yandex-fotki-parser.service";
 export default class GalleryComponent implements OnInit {
     photos: Photo[] = [];
 
-    constructor(private photoService: PhotoService, private localStorageService: LocalStorageService) {}
+    constructor(
+        private photoService: PhotoService,
+        private localStorageService: LocalStorageService,
+        private titleService: Title) {}
 
     ngOnInit() {
+        this.titleService.setTitle(metaConfig.gallery.title);
+
         this.getPhotos();
     }
 

@@ -7,7 +7,6 @@ import "tether/dist/js/tether.js";
 import "../../common/main.scss";
 
 import { Component, OnInit } from "@angular/core";
-import { MetaService } from "ng2-meta";
 
 @Component({
     selector: "ac-app-root",
@@ -16,8 +15,6 @@ import { MetaService } from "ng2-meta";
 })
 export default class AppRootComponent implements OnInit {
     year: number;
-
-    constructor(private metaService: MetaService) {}
 
     ngOnInit() {
         this.year = new Date().getFullYear();
