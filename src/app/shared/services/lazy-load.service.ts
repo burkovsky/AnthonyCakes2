@@ -11,11 +11,11 @@ export default class LazyLoadService {
     }
 
     public init() {
-        let lazyItems = $(".lazy");
+        const lazyItems = $(".lazy") as IJQueryLazyPlugin;
         if (lazyItems.length) {
             lazyItems.Lazy({
                 effect: "fadeIn",
-                effectTime: 750,
+                effectTime: 500,
             });
 
             if (this.timer) {

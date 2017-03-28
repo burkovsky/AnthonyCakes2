@@ -1,6 +1,6 @@
 // Type definitions for Waypoints Sticky Elements
 // Project: http://imakewebthings.com/waypoints/shortcuts/sticky-elements/
-// Definitions by: Anton Burkovsky <https://github.com/burkovsky>
+// Definitions by: Anton Burkovskii <https://github.com/burkovsky>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 interface IWaypointStickyOptions {
