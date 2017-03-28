@@ -1,7 +1,7 @@
 ﻿import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 
-import Photo from "../../models/photo";
-import LazyLoadService from "../../services/lazy-load.service";
+import LazyLoadService from "../../shared/services/lazy-load.service";
+import Photo from "../shared/photo.model";
 
 @Component({
     selector: "ac-cards",

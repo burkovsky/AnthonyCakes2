@@ -4,7 +4,7 @@ import "font-awesome/css/font-awesome.css";
 import "jquery/dist/jquery.js";
 import "tether/dist/css/tether.css";
 import "tether/dist/js/tether.js";
-import "./common/main.scss";
+import "../common/main.scss";
 
 import { Component, OnInit } from "@angular/core";
 

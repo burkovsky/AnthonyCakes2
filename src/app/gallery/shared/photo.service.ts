@@ -5,8 +5,8 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/mergeMap";
 import { Observable } from "rxjs/Observable";
 
-import { appConfig } from "../../../configs/app.config";
-import Photo from "../../../models/photo";
+import { appConfig } from "../../shared/configs/app.config";
+import Photo from "./photo.model";
 import YandexFotkiParserService from "./yandex-fotki-parser.service";
 
 @Injectable()

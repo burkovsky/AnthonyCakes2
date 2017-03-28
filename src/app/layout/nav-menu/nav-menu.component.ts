@@ -2,7 +2,7 @@
 
 @Component({
     selector: "ac-nav-menu",
-    styles: [require("./nav-menu.component.scss").toString()],
+    styles: [String(require("./nav-menu.component.scss"))],
     template: require("./nav-menu.component.html"),
 })
 export default class NavMenuComponent {}

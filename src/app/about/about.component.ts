@@ -1,8 +1,8 @@
 ﻿import { Component, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 
-import { metaConfig } from "../../configs/meta.config";
-import LazyLoadService from "../../services/lazy-load.service";
+import { metaConfig } from "../shared/configs/meta.config";
+import LazyLoadService from "../shared/services/lazy-load.service";
 
 @Component({
     selector: "ac-about",

@@ -4,17 +4,16 @@ import { BrowserModule, Title } from "@angular/platform-browser";
 
 import { AppRoutingModule } from "./app-routing.module";
 
+import AboutComponent from "./about/about.component";
 import AppComponent from "./app.component";
-import AboutComponent from "./components/about/about.component";
-import CardComponent from "./components/card/card.component";
-import CardsComponent from "./components/cards/cards.component";
-import ContactsComponent from "./components/contacts/contacts.component";
-import GalleryComponent from "./components/gallery/gallery.component";
-import NavMenuComponent from "./components/nav-menu/nav-menu.component";
-import ToTopComponent from "./components/to-top/to-top.component";
-
-import LazyLoadService from "./services/lazy-load.service";
-import LocalStorageService from "./services/local-storage.service";
+import CardComponent from "./gallery/card/card.component";
+import CardsComponent from "./gallery/cards/cards.component";
+import GalleryComponent from "./gallery/gallery.component";
+import ContactsComponent from "./layout/contacts/contacts.component";
+import NavMenuComponent from "./layout/nav-menu/nav-menu.component";
+import ToTopComponent from "./layout/to-top/to-top.component";
+import LazyLoadService from "./shared/services/lazy-load.service";
+import LocalStorageService from "./shared/services/local-storage.service";
 
 @NgModule({
     bootstrap: [AppComponent],

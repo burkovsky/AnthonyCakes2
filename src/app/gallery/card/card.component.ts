@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 
-import Photo from "../../models/photo";
+import Photo from "../shared/photo.model";
 
 @Component({
     selector: "ac-card",
