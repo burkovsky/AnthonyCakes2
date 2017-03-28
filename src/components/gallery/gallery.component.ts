@@ -1,6 +1,7 @@
-﻿import { Component, OnInit } from "@angular/core";
+﻿import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 import { Observable } from "rxjs/Observable";
+import { Subscription } from "rxjs/Subscription";
 
 import { appConfig } from "../../configs/app.config";
 import { metaConfig } from "../../configs/meta.config";
@@ -15,8 +16,9 @@ import YandexFotkiParserService from "./services/yandex-fotki-parser.service";
     styles: [String(require("./gallery.component.scss"))],
     template: require("./gallery.component.html"),
 })
-export default class GalleryComponent implements OnInit {
+export default class GalleryComponent implements OnInit, OnDestroy {
     photos: Photo[] = [];
+    onGetPhotos: Subscription;
 
     constructor(
         private photoService: PhotoService,
@@ -29,6 +31,12 @@ export default class GalleryComponent implements OnInit {
         this.getPhotos();
     }
 
+    ngOnDestroy() {
+        if (this.onGetPhotos) {
+            this.onGetPhotos.unsubscribe();
+        }
+    }
+
     getPhotos() {
         const key = "photos";
         const cachedPhotos = this.localStorageService.getCache(key);
@@ -36,7 +44,7 @@ export default class GalleryComponent implements OnInit {
         if (cachedPhotos) {
             this.photos = cachedPhotos;
         } else {
-            this.photoService.getPhotos(appConfig.photoService.user, appConfig.photoService.album)
+            this.onGetPhotos = this.photoService.getPhotos(appConfig.photoService.user, appConfig.photoService.album)
                 .subscribe((photos) => {
                     this.localStorageService.setCache(key, photos);
                     this.photos = photos;

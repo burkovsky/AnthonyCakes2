@@ -6,7 +6,7 @@ import LazyLoadService from "../../services/lazy-load.service";
 
 @Component({
     selector: "ac-about",
-    styles: [String(require("./about.component.scss"))],
+    // styles: [String(require("./about.component.scss"))],
     template: require("./about.component.html"),
 })
 export default class AboutComponent implements OnInit {
