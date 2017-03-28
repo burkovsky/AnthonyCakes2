@@ -10,7 +10,7 @@
     "build:watch": "npm run clean && webpack --env=dev --color -w",
     "build:prod": "npm run clean && webpack --env=prod --color",
     "start": "node server.js",
-    "lint": "tslint --type-check --project tsconfig.json -c tslint.json src/**/*.ts --fix --force"
+    "lint": "tslint --type-check --project ./src/tsconfig.json -c ./src/tslint.json src/**/*.ts --fix --force"
   },
   "author": {
     "name": "Anton Burkovsky",
