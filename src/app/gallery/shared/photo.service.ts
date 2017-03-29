@@ -19,7 +19,7 @@ export default class PhotoService {
     }
 
     // TODO Support next pages loading
-    public getPhotos(user: string, album: string): Observable<any> {
+    public getPhotos(user: string, album: string): Observable<Photo[]> {
         const userServiceDocumentUrl = `${appConfig.photoService.url}/${user}/`;
 
         return this.getDocument(userServiceDocumentUrl)
@@ -34,7 +34,7 @@ export default class PhotoService {
             });
     }
 
-    private getDocument(documentUrl: string): Observable<any> {
+    private getDocument(documentUrl: string): Observable<Object> {
         if (!documentUrl) {
             return Observable.throw("Incorrect URL");
         }

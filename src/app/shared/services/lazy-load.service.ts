@@ -6,8 +6,8 @@ import { Injectable } from "@angular/core";
 export default class LazyLoadService {
     private timer: any;
 
-    public delayedInit(delay: number, selector = ".lazy") {
-        this.timer = setInterval(() => this.init(selector), delay);
+    public delayedInit(timeout: number, selector = ".lazy") {
+        this.timer = setInterval(() => this.init(selector), timeout);
     }
 
     public init(selector = ".lazy") {

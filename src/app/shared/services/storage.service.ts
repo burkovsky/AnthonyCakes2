@@ -62,7 +62,7 @@ export default class StorageService {
         return typeof value === "string" ? value : JSON.stringify(value);
     }
 
-    private deserialize(value: any): any {
+    private deserialize(value: string): any {
         try {
             return JSON.parse(value);
         } catch (e) {

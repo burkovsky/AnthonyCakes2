@@ -10,7 +10,7 @@ import Photo from "../shared/photo.model";
 export default class CardComponent {
     @Input() item: Photo;
 
-    stop(event: any) {
+    stop(event: Event) {
         event.stopPropagation();
     }
 }
