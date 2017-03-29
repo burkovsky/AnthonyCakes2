@@ -1,7 +1,7 @@
-﻿function buildConfig(env) {
-    return require('./webpack.config.' + env + '.js')({
+﻿'use strict';
+
+module.exports = function(env) {
+    return require('./configs/webpack.config.' + env + '.js')({
         env: env
     });
-}
-
-module.exports = buildConfig;
+};
