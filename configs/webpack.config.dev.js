@@ -3,14 +3,15 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function(env) {
     return {
         context: path.resolve('src/'),
         entry: './main',
         output: {
-            path: path.resolve('public/build/'),
-            filename: 'bundle.js'
+            path: path.resolve('public/dist/'),
+            filename: 'main.js'
         },
         resolve: {
             modules: ['node_modules'],
@@ -31,7 +32,12 @@ module.exports = function(env) {
                 },
                 {
                     test: /\.html$/,
-                    loader: "html-loader"
+                    use: {
+                        loader: "html-loader",
+                        options: {
+                            minimize: false
+                        }
+                    }
                 },
                 {
                     test: /\.woff2?$|\.ttf$|\.eot$|\.svg$|\.png|\.jpe?g|\.gif$/,
@@ -50,6 +56,11 @@ module.exports = function(env) {
             }),
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify(env)
+            }),
+            new HtmlWebpackPlugin({
+                template: path.resolve('index.template.html'),
+                filename: path.resolve('public/index.html'),
+                hash: true
             })
         ]
     }

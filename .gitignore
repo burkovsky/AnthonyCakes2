@@ -58,4 +58,5 @@ typings/
 .env
 
 # Compiled files
-/public/build/
+/public/dist/
+/public/index.html

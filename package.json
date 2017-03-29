@@ -7,7 +7,7 @@
     "build": "npm run build:dev",
     "build:dev": "npm run clean && webpack --env=dev --color --progress",
     "build:prod": "npm run clean && webpack --env=prod --color --progress",
-    "clean": "rimraf public/build",
+    "clean": "rimraf public/dist/*",
     "lint": "tslint --type-check --project ./src/tsconfig.json -c ./src/tslint.json src/**/*.ts --fix --force",
     "start": "node server.js",
     "watch": "npm run watch:dev",

@@ -21,12 +21,12 @@ app.use(express.static(path.resolve('public/')));
 
 var router = express.Router();
 router.get('/', function(req, res) {
-  res.sendFile(path.resolve('index.html'));
+  res.sendFile(path.resolve('public/index.html'));
 });
 
 // catch 404 and forward to home page
 app.use(function(req, res, next) {
-  res.sendFile(path.resolve('index.html'));
+  res.sendFile(path.resolve('public/index.html'));
 });
 
 /**
