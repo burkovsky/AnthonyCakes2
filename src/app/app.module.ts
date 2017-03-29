@@ -1,11 +1,11 @@
 ﻿import { NgModule } from "@angular/core";
 import { JsonpModule } from "@angular/http";
 import { BrowserModule, Title } from "@angular/platform-browser";
-
-import { AppRoutingModule } from "./app-routing.module";
+import { RouterModule } from "@angular/router";
 
 import AboutComponent from "./about/about.component";
 import AppComponent from "./app.component";
+import { routes } from "./app.routes";
 import CardComponent from "./gallery/card/card.component";
 import CardsComponent from "./gallery/cards/cards.component";
 import GalleryComponent from "./gallery/gallery.component";
@@ -30,7 +30,7 @@ import LocalStorageService from "./shared/services/local-storage.service";
     imports: [
         BrowserModule,
         JsonpModule,
-        AppRoutingModule,
+        RouterModule.forRoot(routes),
     ],
     providers: [
         LazyLoadService,

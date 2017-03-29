@@ -6,7 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function(env) {
     return {
-        context: path.resolve('src'),
+        context: path.resolve('src/'),
         entry: './main',
         output: {
             path: path.resolve('public/build/'),
@@ -31,7 +31,7 @@ module.exports = function(env) {
                 },
                 {
                     test: /\.html$/,
-                    loader: "raw-loader"
+                    loader: "html-loader"
                 },
                 {
                     test: /\.woff2?$|\.ttf$|\.eot$|\.svg$|\.png|\.jpe?g|\.gif$/,
@@ -47,6 +47,9 @@ module.exports = function(env) {
                 jQuery: 'jquery',
                 'window.jQuery': 'jquery',
                 'Tether': 'tether'
+            }),
+            new webpack.DefinePlugin({
+                'process.env.NODE_ENV': JSON.stringify(env)
             })
         ]
     }

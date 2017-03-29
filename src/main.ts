@@ -4,10 +4,11 @@ import "zone.js";
 
 import { enableProdMode } from "@angular/core";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import AppModule from "./app/app.module";
 
-// Variable defined globally in the webpack config
-if (process.env.NODE_ENV) {
+import AppModule from "./app/app.module";
+import { appConfig } from "./app/shared/configs/app.config";
+
+if (process.env.NODE_ENV === appConfig.environment.production) {
     enableProdMode();
 }
 
