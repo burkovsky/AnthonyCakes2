@@ -14,18 +14,19 @@ var http = require('http');
 
 var app = express();
 
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.resolve('public/favicon.ico')));
 
-app.use(compression()); 
-app.use(express.static(path.join(__dirname, 'views')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(compression());
+app.use(express.static(path.resolve('public/')));
 
-var index = require('./routes/index');
-app.use('/', index);
+var router = express.Router();
+router.get('/', function(req, res) {
+  res.sendFile(path.resolve('index.html'));
+});
 
 // catch 404 and forward to home page
 app.use(function(req, res, next) {
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  res.sendFile(path.resolve('index.html'));
 });
 
 /**
