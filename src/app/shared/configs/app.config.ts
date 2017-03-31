@@ -15,6 +15,8 @@
     scrollTopBound: 500,
     vk: {
         baseUrl: "https://vk.com/market-",
+        commentsLimit: 20,
+        commentsMedia: "*",
         marketId: 114453626,
     },
 };

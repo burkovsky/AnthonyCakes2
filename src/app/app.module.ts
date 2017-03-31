@@ -12,6 +12,8 @@ import GalleryComponent from "./gallery/gallery.component";
 import ContactsComponent from "./layout/contacts/contacts.component";
 import NavMenuComponent from "./layout/nav-menu/nav-menu.component";
 import ToTopComponent from "./layout/to-top/to-top.component";
+import ReviewsComponent from "./reviews/reviews.component";
+import VKCommentsComponent from "./reviews/vk-comments/vk-comments.component";
 import LazyLoadService from "./shared/services/lazy-load.service";
 import LocalStorageService from "./shared/services/local-storage.service";
 
@@ -19,13 +21,15 @@ import LocalStorageService from "./shared/services/local-storage.service";
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
-        AboutComponent,
-        CardComponent,
-        CardsComponent,
         ContactsComponent,
-        GalleryComponent,
         NavMenuComponent,
         ToTopComponent,
+        GalleryComponent,
+        CardComponent,
+        CardsComponent,
+        AboutComponent,
+        ReviewsComponent,
+        VKCommentsComponent,
     ],
     imports: [
         BrowserModule,
