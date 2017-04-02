@@ -5,4 +5,7 @@
     gallery: {
         title: "Вкусняшки | Anthony Cakes",
     },
+    reviews: {
+        title: "Отзывы | Anthony Cakes",
+    },
 };

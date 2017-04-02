@@ -2,6 +2,9 @@
     cache: {
         cacheTimeInHours: 24,
     },
+    cackle: {
+        widgetId: 52063,
+    },
     environment: {
         development: "dev",
         production: "prod",

@@ -11,7 +11,7 @@ interface IJQueryLazyPluginOptions {
     bind?: string;
     threshold?: number;
     visibleOnly?: boolean;
-    appendScroll?: number | object;
+    appendScroll?: number | Object;
     scrollDirection?: string;
     imageBase?: string;
     defaultImage?: string;
@@ -41,33 +41,33 @@ interface IJQueryLazyPluginOptions {
     onFinishedAll?: Function;
 }
 
-declare class JQueryLazyPlugin {
+interface IJQueryLazyPlugin {
     // get or set an configuration entry
-    public config(entryName: string, value: IJQueryLazyPluginOptions): JQueryLazyPlugin;
+    config(entryName: string, value: IJQueryLazyPluginOptions): IJQueryLazyPlugin;
 
     // add new items to current instance
-    public addItems(items: HTMLElement[]): JQueryLazyPlugin;
-    public addItems(items: object): JQueryLazyPlugin;
-    public addItems(items: string): JQueryLazyPlugin;
+    addItems(items: HTMLElement[]): IJQueryLazyPlugin;
+    addItems(items: Object): IJQueryLazyPlugin;
+    addItems(items: string): IJQueryLazyPlugin;
 
     // get all unhandled items left of current instance
-    public getItems(): object;
+    getItems(): Object;
 
     // loads all elements in current viewport
-    public update(useThrottle: boolean): JQueryLazyPlugin;
+    update(useThrottle: boolean): IJQueryLazyPlugin;
 
     // force loading specific items, ignoring the viewport
-    public force(items: HTMLElement[]): JQueryLazyPlugin;
-    public force(items: object): JQueryLazyPlugin;
-    public force(items: string): JQueryLazyPlugin;
+    force(items: HTMLElement[]): IJQueryLazyPlugin;
+    force(items: Object): IJQueryLazyPlugin;
+    force(items: string): IJQueryLazyPlugin;
 
     // loads all remaining available elements from this instance
-    public loadAll(): JQueryLazyPlugin;
+    loadAll(): IJQueryLazyPlugin;
 
     // unbinds all events and stop execution directly
-    public destroy(): void;
+    destroy(): void;
 }
 
 interface IJQueryLazyPlugin extends JQuery {
-    Lazy(options: IJQueryLazyPluginOptions): JQueryLazyPlugin;
+    Lazy(options: IJQueryLazyPluginOptions): IJQueryLazyPlugin;
 }

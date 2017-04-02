@@ -31,23 +31,17 @@
             </div>
         </div>
     </ac-app>
-    <!-- VK -->
-    <div id="vk_api_transport"></div>
+    <!-- External scripts -->
+    <script></script>
+    <!-- Cackle -->
     <script>
-        window.vkAsyncInit = function() {
-            VK.init({
-                apiId: 5958338,
-                onlyWidgets: true
-            });
-        };
-
-        setTimeout(function() {
-            var el = document.createElement("script");
-            el.type = "text/javascript";
-            el.src = "http://vk.com/js/api/openapi.js";
-            el.async = true;
-            document.getElementById("vk_api_transport").appendChild(el);
-        }, 0);
+        cackle_widget = window.cackle_widget || [];
+        (function() {
+            var mc = document.createElement('script');
+            mc.async = true;
+            mc.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cackle.me/widget.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s);
+        })();
     </script>
     <!-- Google Analytics -->
     <script>
