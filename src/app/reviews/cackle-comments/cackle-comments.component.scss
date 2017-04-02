@@ -1,0 +1,48 @@
+@import '../../../styles/variables';
+
+.cackle-comments {
+    .cc .mc-head .mc-comment-star {
+        color: $clr-logo-secondary !important;
+
+        &:hover,
+        &:focus {
+            color: $clr-logo-secondary !important;
+        }
+    }
+
+    .cc .mc-nav li a,
+    .cc .mc-sort li.mc-active a,
+    .cc .mc-head .mc-user-menu .mc-menu-toggle {
+        color: lighten($clr-logo-primary, $clr-lighten-index) !important;
+
+        &:hover,
+        &:focus {
+            color: $clr-logo-primary !important;
+        }
+    }
+
+    .cc .mc-text-wrap .mc-textarea, 
+    .mc-complaint .mc-textarea {
+        color: $clr-content !important;
+    }
+
+    .mc-c .mc-btn2 {
+        background: lighten($clr-logo-primary, $clr-lighten-index) !important;
+        color: $clr-content !important;
+
+        &:hover,
+        &:focus {
+            background: $clr-logo-primary !important;
+        }
+    }
+
+    .cc .mc-comment-username, 
+    .mc-complaint .mc-comment-username {
+        color: $clr-logo-primary !important;
+    }
+
+    .cc .mc-comment-msg, 
+    .mc-complaint .mc-comment-msg {
+        color: #fff !important;
+    }
+}
