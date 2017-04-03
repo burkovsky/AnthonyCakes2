@@ -10,9 +10,14 @@
         }
     }
 
+    .cc .mc-head .mc-logo {
+        display: none !important;
+    }
+
     .cc .mc-nav li a,
     .cc .mc-sort li.mc-active a,
-    .cc .mc-head .mc-user-menu .mc-menu-toggle {
+    .cc .mc-head .mc-user-menu .mc-menu-toggle,
+    .cc .mc-sort-toggle {
         color: lighten($clr-logo-primary, $clr-lighten-index) !important;
 
         &:hover,
@@ -22,7 +27,8 @@
     }
 
     .cc .mc-text-wrap .mc-textarea, 
-    .mc-complaint .mc-textarea {
+    .mc-complaint .mc-textarea,
+    .mc-c .mc-auth-anonym input {
         color: $clr-content !important;
     }
 
@@ -35,10 +41,21 @@
             background: $clr-logo-primary !important;
         }
     }
-
+    
+    .mc-c,
     .cc .mc-comment-username, 
-    .mc-complaint .mc-comment-username {
+    .mc-complaint .mc-comment-username,
+    .cc .mc-h6 {
         color: $clr-logo-primary !important;
+    }
+
+    .cc .mc-dropdown-menu li.mc-active a {
+        color: #666 !important;
+
+        &:hover,
+        &:focus {
+            color: #666 !important;
+        }
     }
 
     .cc .mc-comment-msg, 
