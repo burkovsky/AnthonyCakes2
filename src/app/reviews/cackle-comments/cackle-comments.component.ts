@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 
 import { appConfig } from "../../shared/configs/app.config";
 
@@ -7,7 +7,7 @@ import { appConfig } from "../../shared/configs/app.config";
     styles: [String(require("./cackle-comments.component.scss"))],
     template: require("./cackle-comments.component.html"),
 })
-export default class CackleCommentsComponent implements OnInit {
+export default class CackleCommentsComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         let widgets = (window as IWindowCackleWidget).cackle_widget;
         widgets.push({
@@ -17,5 +17,10 @@ export default class CackleCommentsComponent implements OnInit {
         });
 
         Cackle.bootstrap(true);
+    }
+
+    ngOnDestroy(): void {
+        let widgets = (window as IWindowCackleWidget).cackle_widget;
+        widgets.pop();
     }
 }
