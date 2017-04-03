@@ -5,10 +5,6 @@
     cackle: {
         widgetId: 52063,
     },
-    environment: {
-        development: "dev",
-        production: "prod",
-    },
     photoService: {
         album: "Продукция",
         sorting: "manual",
