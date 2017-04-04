@@ -1,3 +1,4 @@
 ﻿User-agent: *
-Disallow: /build/
+Disallow: /dist/
 Disallow: /images/
+Sitemap: http://www.anthonycakes.ru/sitemap.xml
