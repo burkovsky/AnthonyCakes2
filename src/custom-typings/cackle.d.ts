@@ -29,29 +29,29 @@ interface ICackleWidget {
     level?: number;
     badge?: string;
     badgeHide?: boolean;
-    shareSocial?: Array<string>;
+    shareSocial?: string[];
     timeFormat?: string;
     textHigh?: number;
     agreement?: string;
     guestFirst?: boolean;
     guestHideEmail?: boolean;
     callback?: {
-        create?: Array<Function>;
-        edit?: Array<Function>;
-        status?: Array<Function>;
-        vote?: Array<Function>;
-        submit?: Array<Function>;
-        reply?: Array<Function>;
-        ready?: Array<Function>;
-        loggedin?: Array<Function>;
-        logout?: Array<Function>;
-        subscribe?: Array<Function>;
-        unsubscribe?: Array<Function>;
+        create?: Function[];
+        edit?: Function[];
+        status?: Function[];
+        vote?: Function[];
+        submit?: Function[];
+        reply?: Function[];
+        ready?: Function[];
+        loggedin?: Function[];
+        logout?: Function[];
+        subscribe?: Function[];
+        unsubscribe?: Function[];
     };
 }
 
 interface IWindowCackleWidget extends Window {
-    cackle_widget: Array<ICackleWidget>;
+    cackle_widget: ICackleWidget[];
 }
 
 declare class Cackle {

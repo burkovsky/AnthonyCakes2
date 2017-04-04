@@ -8,7 +8,9 @@ import { appConfig } from "../../shared/configs/app.config";
     template: require("./cackle-comments.component.html"),
 })
 export default class CackleCommentsComponent implements OnInit, OnDestroy {
-    ngOnInit(): void {
+    private timer: any;
+
+    public ngOnInit(): void {
         let widgets = (window as IWindowCackleWidget).cackle_widget;
         widgets.push({
             guestHideEmail: true,
@@ -16,11 +18,19 @@ export default class CackleCommentsComponent implements OnInit, OnDestroy {
             widget: "Comment",
         });
 
-        Cackle.bootstrap(true);
+        this.timer = setInterval(() => this.bootstrap(), 250);
     }
 
-    ngOnDestroy(): void {
+    public ngOnDestroy(): void {
         let widgets = (window as IWindowCackleWidget).cackle_widget;
         widgets.pop();
+    }
+
+    private bootstrap() {
+        if (Cackle) {
+            Cackle.bootstrap(true);
+
+            clearInterval(this.timer);
+        }
     }
 }
