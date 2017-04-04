@@ -12,7 +12,7 @@ import LazyLoadService from "../shared/services/lazy-load.service";
 export default class AboutComponent implements OnInit {
     constructor(private lazyLoadService: LazyLoadService, private titleService: Title) {}
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.titleService.setTitle(metaConfig.about.title);
 
         this.lazyLoadService.init();

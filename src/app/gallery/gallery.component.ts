@@ -17,27 +17,27 @@ import YandexFotkiParserService from "./shared/yandex-fotki-parser.service";
     template: require("./gallery.component.html"),
 })
 export default class GalleryComponent implements OnInit, OnDestroy {
-    photos: Photo[] = [];
-    onGetPhotos: Subscription;
+    public photos: Photo[] = [];
+    private onGetPhotos: Subscription;
 
     constructor(
         private photoService: PhotoService,
         private localStorageService: LocalStorageService,
         private titleService: Title) {}
 
-    ngOnInit() {
+    public ngOnInit() {
         this.titleService.setTitle(metaConfig.gallery.title);
 
         this.getPhotos();
     }
 
-    ngOnDestroy() {
+    public ngOnDestroy() {
         if (this.onGetPhotos) {
             this.onGetPhotos.unsubscribe();
         }
     }
 
-    getPhotos() {
+    private getPhotos() {
         const key = "photos";
         const cachedPhotos = this.localStorageService.getCache(key);
 

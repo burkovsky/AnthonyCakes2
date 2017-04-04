@@ -8,9 +8,9 @@ import { appConfig } from "../../shared/configs/app.config";
     template: require("./vk-comments.component.html"),
 })
 export default class VKCommentsComponent implements OnInit {
-    id: string = "vk_comments";
+    public id: string = "vk_comments";
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         VK.Widgets.Comments(this.id, {
             attach: appConfig.vk.commentsMedia,
             limit: appConfig.vk.commentsLimit,

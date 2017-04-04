@@ -11,7 +11,7 @@ import { metaConfig } from "../shared/configs/meta.config";
 export default class ReviewsComponent implements OnInit {
     constructor(private titleService: Title) {}
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.titleService.setTitle(metaConfig.reviews.title);
     }
 }

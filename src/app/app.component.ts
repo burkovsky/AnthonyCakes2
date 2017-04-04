@@ -14,9 +14,9 @@ import { Component, OnInit } from "@angular/core";
     template: require("./app.component.html"),
 })
 export default class AppComponent implements OnInit {
-    year: number;
+    public year: number;
 
-    ngOnInit() {
+    public ngOnInit() {
         this.year = new Date().getFullYear();
     }
 }

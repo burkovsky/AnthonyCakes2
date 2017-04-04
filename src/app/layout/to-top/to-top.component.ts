@@ -9,16 +9,16 @@ import { appConfig } from "../../shared/configs/app.config";
     template: require("./to-top.component.html"),
 })
 export default class ToTopComponent {
-    active = false;
+    public active = false;
 
     constructor(@Inject(DOCUMENT) private document: Document) {}
 
     @HostListener("window:scroll", [])
-    onWindowScroll() {
+    public onWindowScroll() {
         this.active = this.document.body.scrollTop > appConfig.scrollTopBound;
     }
 
-    toTop() {
+    public toTop() {
         window.scrollTo(0, 0);
 
         return false;

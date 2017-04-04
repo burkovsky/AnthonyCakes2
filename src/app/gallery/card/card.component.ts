@@ -8,9 +8,10 @@ import Photo from "../shared/photo.model";
     template: require("./card.component.html"),
 })
 export default class CardComponent {
-    @Input() item: Photo;
+    @Input()
+    public item: Photo;
 
-    stop(event: Event) {
+    public stop(event: Event) {
         event.stopPropagation();
     }
 }

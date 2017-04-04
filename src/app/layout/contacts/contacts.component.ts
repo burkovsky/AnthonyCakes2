@@ -9,9 +9,10 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from "@angular/core";
     template: require("./contacts.component.html"),
 })
 export default class ContactsComponent implements AfterViewInit {
-    @ViewChild("navbar") navbar: ElementRef;
+    @ViewChild("navbar")
+    public navbar: ElementRef;
 
-    ngAfterViewInit(): void {
+    public ngAfterViewInit(): void {
         const sticky = new Waypoint.Sticky({
             element: this.navbar.nativeElement,
             stuckClass: "sticky",
