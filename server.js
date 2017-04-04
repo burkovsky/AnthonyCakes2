@@ -17,7 +17,12 @@ var app = express();
 app.use(favicon(path.resolve('public/favicon.ico')));
 
 app.use(compression());
-app.use(express.static(path.resolve('public/')));
+app.use(express.static(path.resolve('public/'), {
+    maxAge: 31536000000, // 1 year in ms
+    setHeaders: (res, path, stat) => {
+        res.setHeader("Expires", new Date(Date.now() + 31536000000).toUTCString());
+    }
+}));
 
 var router = express.Router();
 router.get('/', function(req, res) {
