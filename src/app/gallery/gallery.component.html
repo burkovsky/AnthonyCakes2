@@ -1,6 +1,6 @@
 ﻿<section class="gallery">
     <div class="gallery__cards" *ngIf=photos?.length>
-        <ac-cards class="gallery__cards-container p-2 clearfix" [items]="photos"></ac-cards>                
+        <ac-cards class="gallery__cards-container p-2 clearfix" [items]="photos | generateMarketUrl"></ac-cards>                
     </div>
     <div class="loader text-center color-primary" *ngIf="!photos?.length">
         <div>

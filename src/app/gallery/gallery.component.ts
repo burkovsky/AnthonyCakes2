@@ -11,7 +11,7 @@ import PhotoService from "./shared/photo.service";
 import YandexFotkiParserService from "./shared/yandex-fotki-parser.service";
 
 @Component({
-    providers: [YandexFotkiParserService, PhotoService],
+    providers: [PhotoService, YandexFotkiParserService],
     selector: "ac-gallery",
     styles: [String(require("./gallery.component.scss"))],
     template: require("./gallery.component.html"),

@@ -3,5 +3,4 @@
     public title = "";
     public description: string[] = [];
     public tags: string[] = [];
-    public marketUrl = "";
 }

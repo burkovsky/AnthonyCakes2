@@ -9,6 +9,7 @@ import { routes } from "./app.routes";
 import CardComponent from "./gallery/card/card.component";
 import CardsComponent from "./gallery/cards/cards.component";
 import GalleryComponent from "./gallery/gallery.component";
+import GenerateMarketUrlPipe from "./gallery/shared/generate-market-url.pipe";
 import ContactsComponent from "./layout/contacts/contacts.component";
 import NavMenuComponent from "./layout/nav-menu/nav-menu.component";
 import ToTopComponent from "./layout/to-top/to-top.component";
@@ -27,6 +28,7 @@ import LocalStorageService from "./shared/services/local-storage.service";
         GalleryComponent,
         CardComponent,
         CardsComponent,
+        GenerateMarketUrlPipe,
         AboutComponent,
         ReviewsComponent,
         CackleComments,
