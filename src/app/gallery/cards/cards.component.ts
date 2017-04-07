@@ -5,8 +5,8 @@ import Photo from "../shared/photo.model";
 
 @Component({
     selector: "ac-cards",
-    // styles: [String(require('./cards.component.scss'))],
-    template: require("./cards.component.html"),
+    // styleUrls: ["cards.component.scss"],
+    templateUrl: "cards.component.html",
 })
 export default class CardsComponent implements OnChanges {
     @Input()

@@ -5,8 +5,8 @@ import { config } from "./reviews.config";
 
 @Component({
     selector: "ac-reviews",
-    // styles: [String(require("./reviews.component.scss"))],
-    template: require("./reviews.component.html"),
+    // styleUrls: ["reviews.component.scss"],
+    templateUrl: "reviews.component.html",
 })
 export default class ReviewsComponent implements OnInit {
     constructor(private titleService: Title) {}

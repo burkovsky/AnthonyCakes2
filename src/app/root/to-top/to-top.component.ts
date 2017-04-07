@@ -5,8 +5,8 @@ import { config } from "../root.config";
 
 @Component({
     selector: "ac-to-top",
-    styles: [String(require("./to-top.component.scss"))],
-    template: require("./to-top.component.html"),
+    styleUrls: ["to-top.component.scss"],
+    templateUrl: "to-top.component.html",
 })
 export default class ToTopComponent {
     public active = false;

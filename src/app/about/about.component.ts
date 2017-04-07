@@ -6,8 +6,8 @@ import { config } from "./about.config";
 
 @Component({
     selector: "ac-about",
-    // styles: [String(require("./about.component.scss"))],
-    template: require("./about.component.html"),
+    // styleUrls: ["about.component.scss"],
+    templateUrl: "about.component.html",
 })
 export default class AboutComponent implements OnInit {
     constructor(private lazyLoadService: LazyLoadService, private titleService: Title) {}

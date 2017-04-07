@@ -43,7 +43,7 @@
     "reflect-metadata": "0.1.10",
     "rxjs": "5.3.0",
     "serve-favicon": "2.4.2",
-    "systemjs": "0.20.11",
+    "systemjs": "0.20.12",
     "tether": "1.4.0",
     "waypoints": "4.0.1",
     "zone.js": "0.8.5"
@@ -51,9 +51,10 @@
   "devDependencies": {
     "@types/jquery": "2.0.41",
     "@types/node": "7.0.12",
+    "angular2-template-loader": "0.6.2",
     "codelyzer": "3.0.0-beta.4",
     "compression-webpack-plugin": "0.3.2",
-    "css-loader": "0.28.0",
+    "css-loader": "0.25.0",
     "extract-text-webpack-plugin": "2.1.0",
     "file-loader": "0.11.1",
     "html-loader": "0.4.5",
@@ -66,6 +67,7 @@
     "ts-loader": "2.0.3",
     "tslint": "4.5.1",
     "typescript": "2.2.2",
-    "webpack": "2.3.3"
+    "webpack": "2.3.3",
+    "webpack-merge": "4.1.0"
   }
 }

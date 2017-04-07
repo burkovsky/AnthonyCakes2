@@ -1,11 +1,12 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from "@angular/core";
 
 import { config } from "../reviews.config";
 
 @Component({
+    encapsulation: ViewEncapsulation.None,
     selector: "ac-cackle-comments",
-    styles: [String(require("./cackle-comments.component.scss"))],
-    template: require("./cackle-comments.component.html"),
+    styleUrls: ["cackle-comments.component.scss"],
+    templateUrl: "cackle-comments.component.html",
 })
 export default class CackleCommentsComponent implements OnInit, OnDestroy {
     private timer: any;

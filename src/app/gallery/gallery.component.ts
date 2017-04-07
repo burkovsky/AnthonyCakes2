@@ -11,8 +11,8 @@ import YandexFotkiParserService from "./shared/yandex-fotki-parser.service";
 
 @Component({
     selector: "ac-gallery",
-    styles: [String(require("./gallery.component.scss"))],
-    template: require("./gallery.component.html"),
+    styleUrls: ["gallery.component.scss"],
+    templateUrl: "gallery.component.html",
 })
 export default class GalleryComponent implements OnInit, OnDestroy {
     public photos: Photo[] = [];

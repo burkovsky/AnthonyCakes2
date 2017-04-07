@@ -10,7 +10,7 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: "ac-app",
-    styles: [String(require("./app.component.scss"))],
-    template: require("./app.component.html"),
+    styleUrls: ["./app.component.scss"],
+    templateUrl: "./app.component.html",
 })
 export default class AppComponent {}

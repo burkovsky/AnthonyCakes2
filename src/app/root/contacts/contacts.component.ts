@@ -5,8 +5,8 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from "@angular/core";
 
 @Component({
     selector: "ac-contacts",
-    styles: [String(require("./contacts.component.scss"))],
-    template: require("./contacts.component.html"),
+    styleUrls: ["contacts.component.scss"],
+    templateUrl: "contacts.component.html",
 })
 export default class ContactsComponent implements AfterViewInit {
     @ViewChild("navbar")
