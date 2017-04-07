@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { appConfig } from "../../shared/configs/app.config";
+import { appConfig } from "../../configs/app.config";
 
 @Component({
     selector: "ac-vk-comments",

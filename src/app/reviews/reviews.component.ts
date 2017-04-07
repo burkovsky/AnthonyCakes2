@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 
-import { metaConfig } from "../shared/configs/meta.config";
+import { metaConfig } from "../configs/meta.config";
 
 @Component({
     selector: "ac-reviews",

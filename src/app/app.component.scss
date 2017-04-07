@@ -6,39 +6,11 @@
     min-height: 100%;
     position: relative;
 
-    &_header,
-    &_footer {
-        background-image: $img-overlay;
-    }
-
-    &_header {
-        background-color: $clr-header;
-    }
-
-    &_contacts {
-        background: $clr-contacts $img-overlay;
-    }
-
     &_content {
         background-color: $clr-content;
         display: flex;
         flex: 1;
         justify-content: center;
         position: relative;
-    }
-
-    &_footer {
-        background-color: $clr-footer;
-
-        &-social {
-            a {
-                color: lighten($clr-logo-secondary, $clr-lighten-index);
-
-                &:hover,
-                &:focus {
-                    color: $clr-logo-secondary;
-                }
-            }
-        }
     }
 }

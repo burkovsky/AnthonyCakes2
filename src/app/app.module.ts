@@ -1,47 +1,37 @@
 ﻿import { NgModule } from "@angular/core";
-import { JsonpModule } from "@angular/http";
-import { BrowserModule, Title } from "@angular/platform-browser";
+import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 
-import AboutComponent from "./about/about.component";
+import AboutModule from "./about/about.module";
+import CoreModule from "./core/core.module";
+import GalleryModule from "./gallery/gallery.module";
+import ReviewsModule from "./reviews/reviews.module";
+
 import AppComponent from "./app.component";
 import { routes } from "./app.routes";
-import CardComponent from "./gallery/card/card.component";
-import CardsComponent from "./gallery/cards/cards.component";
-import GalleryComponent from "./gallery/gallery.component";
-import GenerateMarketUrlPipe from "./gallery/shared/generate-market-url.pipe";
 import ContactsComponent from "./layout/contacts/contacts.component";
+import FooterComponent from "./layout/footer/footer.component";
+import HeaderComponent from "./layout/header/header.component";
 import NavMenuComponent from "./layout/nav-menu/nav-menu.component";
 import ToTopComponent from "./layout/to-top/to-top.component";
-import CackleComments from "./reviews/cackle-comments/cackle-comments.component";
-import ReviewsComponent from "./reviews/reviews.component";
-import LazyLoadService from "./shared/services/lazy-load.service";
-import LocalStorageService from "./shared/services/local-storage.service";
 
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
         ContactsComponent,
+        FooterComponent,
+        HeaderComponent,
         NavMenuComponent,
         ToTopComponent,
-        GalleryComponent,
-        CardComponent,
-        CardsComponent,
-        GenerateMarketUrlPipe,
-        AboutComponent,
-        ReviewsComponent,
-        CackleComments,
     ],
     imports: [
         BrowserModule,
-        JsonpModule,
         RouterModule.forRoot(routes),
-    ],
-    providers: [
-        LazyLoadService,
-        LocalStorageService,
-        Title,
+        CoreModule,
+        AboutModule,
+        GalleryModule,
+        ReviewsModule,
     ],
 })
 export default class AppModule {}

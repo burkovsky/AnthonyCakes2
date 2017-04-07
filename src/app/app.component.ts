@@ -6,17 +6,11 @@ import "tether/dist/css/tether.css";
 import "tether/dist/js/tether.js";
 import "../styles/main.scss";
 
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
     selector: "ac-app",
     styles: [String(require("./app.component.scss"))],
     template: require("./app.component.html"),
 })
-export default class AppComponent implements OnInit {
-    public year: number;
-
-    public ngOnInit() {
-        this.year = new Date().getFullYear();
-    }
-}
+export default class AppComponent {}

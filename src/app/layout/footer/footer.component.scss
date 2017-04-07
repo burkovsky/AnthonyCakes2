@@ -1,0 +1,16 @@
+@import '../../../styles/variables';
+
+.main_footer {
+    background: $clr-footer $img-overlay;
+
+    &-social {
+        a {
+            color: lighten($clr-logo-secondary, $clr-lighten-index);
+
+            &:hover,
+            &:focus {
+                color: $clr-logo-secondary;
+            }
+        }
+    }
+}

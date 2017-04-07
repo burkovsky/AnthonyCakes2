@@ -3,15 +3,14 @@ import { Title } from "@angular/platform-browser";
 import { Observable } from "rxjs/Observable";
 import { Subscription } from "rxjs/Subscription";
 
-import { appConfig } from "../shared/configs/app.config";
-import { metaConfig } from "../shared/configs/meta.config";
-import LocalStorageService from "../shared/services/local-storage.service";
+import { appConfig } from "../configs/app.config";
+import { metaConfig } from "../configs/meta.config";
+import LocalStorageService from "../core/local-storage.service";
 import Photo from "./shared/photo.model";
 import PhotoService from "./shared/photo.service";
 import YandexFotkiParserService from "./shared/yandex-fotki-parser.service";
 
 @Component({
-    providers: [PhotoService, YandexFotkiParserService],
     selector: "ac-gallery",
     styles: [String(require("./gallery.component.scss"))],
     template: require("./gallery.component.html"),

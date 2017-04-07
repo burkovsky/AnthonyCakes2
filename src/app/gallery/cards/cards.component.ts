@@ -1,6 +1,6 @@
 ﻿import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 
-import LazyLoadService from "../../shared/services/lazy-load.service";
+import LazyLoadService from "../../core/lazy-load.service";
 import Photo from "../shared/photo.model";
 
 @Component({

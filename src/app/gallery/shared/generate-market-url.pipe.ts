@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-import { appConfig } from "../../shared/configs/app.config";
+import { appConfig } from "../../configs/app.config";
 import Photo from "./photo.model";
 
 @Pipe({

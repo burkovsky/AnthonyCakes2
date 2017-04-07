@@ -1,41 +1,10 @@
 ﻿<div id="main" class="main">
-    <header class="main_header pt-4">
-        <div class="col-8 col-sm-6 col-md-4 col-lg-3 col-xl-2
-                    block-center">
-            <a href="/">
-                <img class="img-fluid" src="/images/common/logo.svg" alt="Anthony Cakes"/>
-            </a>
-        </div>
-    </header>
+    <ac-header></ac-header>
     <ac-nav-menu></ac-nav-menu>
-    <ac-contacts class="main_contacts"></ac-contacts>
+    <ac-contacts></ac-contacts>
     <main class="main_content">
         <router-outlet></router-outlet>
     </main>
     <ac-to-top></ac-to-top>
-    <footer class="main_footer p-4 text-center">
-        <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-1
-                    pb-1 block-center">
-            <a href="/">
-                <img class="img-fluid" src="/images/common/logo.svg" alt="Anthony Cakes"/>
-            </a>
-        </div>
-        <div>
-            <i class="fa fa-copyright"></i>
-            {{year}} Anthony Cakes
-        </div>
-        <div>
-            Разработка - 
-            <a href="mailto:burkovsky.anton@gmail.com">Антон Бурковский</a>, 
-            <a href="mailto:olga.lobzova@yandex.ru">Ольга Лобзова</a>
-        </div>
-        <div class="main_footer-social mt-1">
-            <a href="https://vk.com/anthonycakes" class="mr-2" target="_blank">
-                <i class="fa fa-2x fa-vk"></i>
-            </a>
-            <a href="https://www.instagram.com/anthonycakes_spb/" target="_blank">
-                <i class="fa fa-2x fa-instagram"></i>
-            </a>
-        </div>
-    </footer>
+    <ac-footer></ac-footer>
 </div>
