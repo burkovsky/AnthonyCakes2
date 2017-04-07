@@ -1,7 +1,7 @@
 ﻿import { Component, HostListener, Inject } from "@angular/core";
 import { DOCUMENT } from "@angular/platform-browser";
 
-import { config } from "../root.config";
+import { config } from "../../app.config";
 
 @Component({
     selector: "ac-to-top",
