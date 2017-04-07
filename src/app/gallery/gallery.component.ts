@@ -3,9 +3,8 @@ import { Title } from "@angular/platform-browser";
 import { Observable } from "rxjs/Observable";
 import { Subscription } from "rxjs/Subscription";
 
-import { appConfig } from "../configs/app.config";
-import { metaConfig } from "../configs/meta.config";
 import LocalStorageService from "../core/local-storage.service";
+import { config } from "./gallery.config";
 import Photo from "./shared/photo.model";
 import PhotoService from "./shared/photo.service";
 import YandexFotkiParserService from "./shared/yandex-fotki-parser.service";
@@ -25,7 +24,7 @@ export default class GalleryComponent implements OnInit, OnDestroy {
         private titleService: Title) {}
 
     public ngOnInit() {
-        this.titleService.setTitle(metaConfig.gallery.title);
+        this.titleService.setTitle(config.meta.title);
 
         this.getPhotos();
     }
@@ -43,7 +42,11 @@ export default class GalleryComponent implements OnInit, OnDestroy {
         if (cachedPhotos) {
             this.photos = cachedPhotos;
         } else {
-            this.onGetPhotos = this.photoService.getPhotos(appConfig.photoService.user, appConfig.photoService.album)
+            this.onGetPhotos = this.photoService.getPhotos(
+                config.photoService.baseUrl,
+                config.photoService.user,
+                config.photoService.album,
+                config.photoService.sorting)
                 .subscribe((photos) => {
                     this.localStorageService.setCache(key, photos);
                     this.photos = photos;

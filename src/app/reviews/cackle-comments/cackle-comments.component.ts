@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 
-import { appConfig } from "../../configs/app.config";
+import { config } from "../reviews.config";
 
 @Component({
     selector: "ac-cackle-comments",
@@ -14,7 +14,7 @@ export default class CackleCommentsComponent implements OnInit, OnDestroy {
         let widgets = (window as IWindowCackleWidget).cackle_widget;
         widgets.push({
             guestHideEmail: true,
-            id: appConfig.cackle.widgetId,
+            id: config.cackle.widgetId,
             widget: "Comment",
         });
 

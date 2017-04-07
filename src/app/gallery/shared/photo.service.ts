@@ -5,7 +5,6 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/mergeMap";
 import { Observable } from "rxjs/Observable";
 
-import { appConfig } from "../../configs/app.config";
 import Photo from "./photo.model";
 import YandexFotkiParserService from "./yandex-fotki-parser.service";
 
@@ -19,13 +18,13 @@ export default class PhotoService {
     }
 
     // TODO Support next pages loading
-    public getPhotos(user: string, album: string): Observable<Photo[]> {
-        const userServiceDocumentUrl = `${appConfig.photoService.url}/${user}/`;
+    public getPhotos(baseUrl: string, user: string, album: string, sorting: string): Observable<Photo[]> {
+        const userServiceDocumentUrl = `${baseUrl}/${user}/`;
 
         return this.getDocument(userServiceDocumentUrl)
             .map((doc) => this.parserService.extractAlbumsUrl(doc))
             .flatMap((url) => this.getDocument(String(url)))
-            .map((doc) => this.parserService.extractAlbumUrl(doc, album, appConfig.photoService.sorting))
+            .map((doc) => this.parserService.extractAlbumUrl(doc, album, sorting))
             .flatMap((url) => this.getDocument(String(url)))
             .map((doc) => this.parserService.extractAlbumPhotos(doc));
     }

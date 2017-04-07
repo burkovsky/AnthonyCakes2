@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-import { appConfig } from "../../configs/app.config";
+import { config } from "../gallery.config";
 import Photo from "./photo.model";
 
 @Pipe({
@@ -15,7 +15,7 @@ export default class GenerateMarketUrlPipe implements PipeTransform {
             if (photo.tags.length) {
                 const itemId = photo.tags[photo.tags.length - 1];
                 marketUrl =
-                    `${appConfig.vk.baseUrl}${appConfig.vk.marketId}?w=product-${appConfig.vk.marketId}_${itemId}`;
+                    `${config.vk.baseUrl}${config.vk.marketId}?w=product-${config.vk.marketId}_${itemId}`;
             }
 
             transformed.push({
