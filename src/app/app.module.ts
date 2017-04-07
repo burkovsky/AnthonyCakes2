@@ -9,11 +9,11 @@ import ReviewsModule from "./reviews/reviews.module";
 
 import AppComponent from "./app.component";
 import { routes } from "./app.routes";
-import ContactsComponent from "./layout/contacts/contacts.component";
-import FooterComponent from "./layout/footer/footer.component";
-import HeaderComponent from "./layout/header/header.component";
-import NavMenuComponent from "./layout/nav-menu/nav-menu.component";
-import ToTopComponent from "./layout/to-top/to-top.component";
+import ContactsComponent from "./root/contacts/contacts.component";
+import FooterComponent from "./root/footer/footer.component";
+import HeaderComponent from "./root/header/header.component";
+import NavMenuComponent from "./root/nav-menu/nav-menu.component";
+import ToTopComponent from "./root/to-top/to-top.component";
 
 @NgModule({
     bootstrap: [AppComponent],
