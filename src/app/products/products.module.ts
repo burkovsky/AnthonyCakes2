@@ -3,10 +3,11 @@ import { NgModule } from "@angular/core";
 import { JsonpModule } from "@angular/http";
 import { RouterModule } from "@angular/router";
 
-import CardComponent from "./card/card.component";
-import CardsComponent from "./cards/cards.component";
-import GalleryComponent from "./gallery.component";
-import { routes } from "./gallery.routes";
+import CardDetailsComponent from "./card-details/card-details.component";
+import CardListComponent from "./card-list/card-list.component";
+import ProductDetailsComponent from "./product-details/product-details.component";
+import ProductListComponent from "./product-list/product-list.component";
+import { routes } from "./products.routes";
 import GenerateMarketUrlPipe from "./shared/generate-market-url.pipe";
 import Photo from "./shared/photo.model";
 import PhotoService from "./shared/photo.service";
@@ -14,9 +15,10 @@ import YandexFotkiParserService from "./shared/yandex-fotki-parser.service";
 
 @NgModule({
     declarations: [
-        CardComponent,
-        CardsComponent,
-        GalleryComponent,
+        CardDetailsComponent,
+        CardListComponent,
+        // ProductDetailsComponent,
+        ProductListComponent,
         GenerateMarketUrlPipe,
     ],
     imports: [
@@ -25,8 +27,8 @@ import YandexFotkiParserService from "./shared/yandex-fotki-parser.service";
         RouterModule.forChild(routes),
     ],
     providers: [
-        YandexFotkiParserService,
         PhotoService,
+        YandexFotkiParserService,
     ],
 })
-export default class GalleryModule {}
+export default class ProductsModule {}

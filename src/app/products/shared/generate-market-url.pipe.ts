@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-import { config } from "../gallery.config";
+import { config } from "../products.config";
 import Photo from "./photo.model";
 
 @Pipe({

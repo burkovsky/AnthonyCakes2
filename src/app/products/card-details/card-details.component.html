@@ -1,0 +1,21 @@
+<div class="card-wrapper" (click)="card.flipped = !card.flipped">
+    <div class="card shadowed text-center m-1">
+        <div class="card__panel--front">
+            <div class="lazy" attr.data-src="{{card.imageUrl}}"></div>
+        </div>
+        <div class="card__panel--back p-2" [class.active]="card.flipped">
+            <div class="card__panel--back__content">
+                <h2>
+                    <a *ngIf="card?.marketUrl" (click)="stop($event)" href="{{card.marketUrl}}" target="_blank">
+                        {{card.title}}
+                    </a>
+                    <span *ngIf="!card?.marketUrl">
+                        {{card.title}}
+                    </span>
+                </h2>
+                <hr class="card__panel--back__content-line" />
+                <p class="card__panel--back__content-par m-0" *ngFor="let part of card.description">{{part}}</p>
+            </div>
+        </div>
+    </div>
+</div>

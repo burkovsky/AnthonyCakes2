@@ -3,19 +3,19 @@ import { Title } from "@angular/platform-browser";
 import { Observable } from "rxjs/Observable";
 import { Subscription } from "rxjs/Subscription";
 
-import LocalStorageService from "../core/local-storage.service";
-import { config } from "./gallery.config";
-import Photo from "./shared/photo.model";
-import PhotoService from "./shared/photo.service";
-import YandexFotkiParserService from "./shared/yandex-fotki-parser.service";
+import LocalStorageService from "../../core/local-storage.service";
+import { config } from "../products.config";
+import Photo from "../shared/photo.model";
+import PhotoService from "../shared/photo.service";
+import YandexFotkiParserService from "../shared/yandex-fotki-parser.service";
 
 @Component({
-    selector: "ac-gallery",
-    styleUrls: ["gallery.component.scss"],
-    templateUrl: "gallery.component.html",
+    selector: "ac-product-list",
+    styleUrls: ["product-list.component.scss"],
+    templateUrl: "product-list.component.html",
 })
-export default class GalleryComponent implements OnInit, OnDestroy {
-    public photos: Photo[] = [];
+export default class ProductListComponent implements OnInit, OnDestroy {
+    public products: Photo[] = [];
     private onGetPhotos: Subscription;
 
     constructor(
@@ -36,11 +36,11 @@ export default class GalleryComponent implements OnInit, OnDestroy {
     }
 
     private getPhotos() {
-        const key = "photos";
-        const cachedPhotos = this.localStorageService.getCache(key);
+        const key = "products";
+        const cachedProducts = this.localStorageService.getCache(key);
 
-        if (cachedPhotos) {
-            this.photos = cachedPhotos;
+        if (cachedProducts) {
+            this.products = cachedProducts;
         } else {
             this.onGetPhotos = this.photoService.getPhotos(
                 config.photoService.baseUrl,
@@ -49,7 +49,7 @@ export default class GalleryComponent implements OnInit, OnDestroy {
                 config.photoService.sorting)
                 .subscribe((photos) => {
                     this.localStorageService.setCache(key, photos);
-                    this.photos = photos;
+                    this.products = photos;
                 });
         }
     }

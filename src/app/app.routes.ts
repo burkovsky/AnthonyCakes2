@@ -16,10 +16,10 @@ export const routes: Routes = [
     {
         path: "",
         pathMatch: "full",
-        redirectTo: "gallery",
+        redirectTo: "products",
     },
     {
         path: "**",
-        redirectTo: "gallery",
+        redirectTo: "products",
     },
 ];

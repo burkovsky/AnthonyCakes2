@@ -4,7 +4,7 @@ import { RouterModule } from "@angular/router";
 
 import AboutModule from "./about/about.module";
 import CoreModule from "./core/core.module";
-import GalleryModule from "./gallery/gallery.module";
+import ProductsModule from "./products/products.module";
 import ReviewsModule from "./reviews/reviews.module";
 
 import AppComponent from "./app.component";
@@ -28,9 +28,9 @@ import ToTopComponent from "./root/to-top/to-top.component";
     imports: [
         BrowserModule,
         RouterModule.forRoot(routes),
-        CoreModule,
         AboutModule,
-        GalleryModule,
+        CoreModule,
+        ProductsModule,
         ReviewsModule,
     ],
 })

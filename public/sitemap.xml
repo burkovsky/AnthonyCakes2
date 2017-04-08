@@ -3,7 +3,7 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://anthonycakes.ru/gallery/</loc>
+        <loc>http://anthonycakes.ru/products/</loc>
         <lastmod>2017-04-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
