@@ -1,12 +1,15 @@
 ﻿import { Injectable } from "@angular/core";
 
-import { config } from "./core.config";
+import AppConfig from "./app.config";
 
 export default class StorageService {
+    private readonly config: AppConfig;
     private readonly keyPrefix = "AC_";
     private readonly millisecondsInHour = 3600000;
 
-    constructor(private storage: Storage) {}
+    constructor(private storage: Storage) {
+        this.config = new AppConfig();
+    }
 
     public get(key: string): any {
         const storageKey = this.generateStorageKey(key);
@@ -51,7 +54,7 @@ export default class StorageService {
     }
 
     private isValidCache(timestamp: number): boolean {
-        return (Date.now() - timestamp) / this.millisecondsInHour < config.cache.cacheTimeInHours;
+        return (Date.now() - timestamp) / this.millisecondsInHour < this.config.CACHE_TIME_IN_HOURS;
     }
 
     private generateStorageKey(key: string): string {

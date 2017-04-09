@@ -1,7 +1,7 @@
 ﻿import { Component, HostListener, Inject } from "@angular/core";
 import { DOCUMENT } from "@angular/platform-browser";
 
-import { config } from "../../app.config";
+import AppConfig from "../../core/app.config";
 
 @Component({
     selector: "ac-to-top",
@@ -11,11 +11,13 @@ import { config } from "../../app.config";
 export default class ToTopComponent {
     public active = false;
 
-    constructor(@Inject(DOCUMENT) private document: Document) {}
+    constructor(
+        private config: AppConfig,
+        @Inject(DOCUMENT) private document: Document) {}
 
     @HostListener("window:scroll")
     public onWindowScroll() {
-        this.active = this.document.body.scrollTop > config.scrollTopBound;
+        this.active = this.document.body.scrollTop > this.config.SCROLL_TOP_BOUND;
     }
 
     public toTop() {

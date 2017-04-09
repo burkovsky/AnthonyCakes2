@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from "@angular/core";
 
-import { config } from "../reviews.config";
+import AppConfig from "../../core/app.config";
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -11,11 +11,13 @@ import { config } from "../reviews.config";
 export default class CackleCommentsComponent implements OnInit, OnDestroy {
     private timer: any;
 
+    constructor(private config: AppConfig) {}
+
     public ngOnInit(): void {
         let widgets = (window as IWindowCackleWidget).cackle_widget;
         widgets.push({
             guestHideEmail: true,
-            id: config.cackle.widgetId,
+            id: this.config.CACKLE_WIDGET_ID,
             widget: "Comment",
         });
 

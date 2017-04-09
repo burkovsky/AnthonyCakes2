@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 
-import { config } from "./reviews.config";
+import AppConfig from "../core/app.config";
 
 @Component({
     selector: "ac-reviews",
@@ -9,9 +9,11 @@ import { config } from "./reviews.config";
     templateUrl: "reviews.component.html",
 })
 export default class ReviewsComponent implements OnInit {
-    constructor(private titleService: Title) {}
+    constructor(
+        private config: AppConfig,
+        private titleService: Title) {}
 
     public ngOnInit(): void {
-        this.titleService.setTitle(config.meta.title);
+        this.titleService.setTitle(this.config.PAGE_TITLES.REVIEWS);
     }
 }

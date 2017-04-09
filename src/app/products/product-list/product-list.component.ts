@@ -3,8 +3,8 @@ import { Title } from "@angular/platform-browser";
 import { Observable } from "rxjs/Observable";
 import { Subscription } from "rxjs/Subscription";
 
+import AppConfig from "../../core/app.config";
 import LocalStorageService from "../../core/local-storage.service";
-import { config } from "../products.config";
 import Photo from "../shared/photo.model";
 import PhotoService from "../shared/photo.service";
 import YandexFotkiParserService from "../shared/yandex-fotki-parser.service";
@@ -19,12 +19,13 @@ export default class ProductListComponent implements OnInit, OnDestroy {
     private onGetPhotos: Subscription;
 
     constructor(
+        private config: AppConfig,
         private photoService: PhotoService,
         private localStorageService: LocalStorageService,
         private titleService: Title) {}
 
     public ngOnInit() {
-        this.titleService.setTitle(config.meta.title);
+        this.titleService.setTitle(this.config.PAGE_TITLES.PRODUCTS);
 
         this.getPhotos();
     }
@@ -43,10 +44,10 @@ export default class ProductListComponent implements OnInit, OnDestroy {
             this.products = cachedProducts;
         } else {
             this.onGetPhotos = this.photoService.getPhotos(
-                config.photoService.baseUrl,
-                config.photoService.user,
-                config.photoService.album,
-                config.photoService.sorting)
+                this.config.PHOTO_SERVICE.BASE_URL,
+                this.config.PHOTO_SERVICE.USER,
+                this.config.PHOTO_SERVICE.ALBUM,
+                this.config.PHOTO_SERVICE.SORTING)
                 .subscribe((photos) => {
                     this.localStorageService.setCache(key, photos);
                     this.products = photos;

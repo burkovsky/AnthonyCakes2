@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { config } from "../reviews.config";
+import AppConfig from "../../core/app.config";
 
 @Component({
     selector: "ac-vk-comments",
@@ -10,10 +10,12 @@ import { config } from "../reviews.config";
 export default class VKCommentsComponent implements OnInit {
     public id: string = "vk_comments";
 
+    constructor(private config: AppConfig) {}
+
     public ngOnInit(): void {
         VK.Widgets.Comments(this.id, {
-            attach: config.vk.commentsMedia,
-            limit: config.vk.commentsLimit,
+            attach: this.config.VK.COMMENTS_MEDIA,
+            limit: this.config.VK.COMMENTS_LIMIT,
         });
     }
 }
