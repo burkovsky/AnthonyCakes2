@@ -36,7 +36,7 @@ export default class AppConfig {
             BASE_URL: "http://api-fotki.yandex.ru/api/users",
             SORTING: "manual",
             USER: "anthonycakes",
-        }
+        };
         this.SCROLL_TOP_BOUND = 500;
         this.VK = {
             BASE_URL: "https://vk.com/market-",
