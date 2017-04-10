@@ -12,7 +12,8 @@ module.exports = {
     entry: './main',
     output: {
         path: path.resolve('public/dist/'),
-        filename: 'main.js'
+        publicPath: '/dist/',
+        filename: 'main.js',
     },
     resolve: {
         modules: ['node_modules'],
@@ -24,7 +25,8 @@ module.exports = {
                 test: /\.ts$/,
                 use: [
                     'ts-loader',
-                    'angular2-template-loader'
+                    'angular2-template-loader',
+                    'angular-router-loader'
                 ]
             },
             {
