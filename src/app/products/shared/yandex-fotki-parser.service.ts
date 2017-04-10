@@ -9,6 +9,7 @@ export default class YandexFotkiParserService {
         albums: "album-list",
         collections: "collections",
         entries: "entries",
+        id: "id",
         imageSizes: {
             XL: "XL",
             XXL: "XXL",
@@ -70,26 +71,34 @@ export default class YandexFotkiParserService {
             for (let entry of entries) {
                 let photo = new Photo();
 
-                const title = entry[this.keysMap.title];
-                if (title) {
-                    photo.title = title;
+                const id = entry[this.keysMap.id];
+                if (!id) {
+                    continue;
                 }
+                photo.id = id.substr(id.lastIndexOf(":") + 1);
+
+                const title = entry[this.keysMap.title];
+                if (!title) {
+                    continue;
+                }
+                photo.title = title;
 
                 const images = entry[this.keysMap.images];
-                if (images) {
-                    const original = images[this.keysMap.imageSizes.original];
-                    const xxxl = images[this.keysMap.imageSizes.XXXL];
-                    const xxl = images[this.keysMap.imageSizes.XXL];
-                    const xl = images[this.keysMap.imageSizes.XL];
-                    if (xl) {
-                        photo.imageUrl = xl[this.keysMap.url];
-                    } else if (xxl) {
-                        photo.imageUrl = xxl[this.keysMap.url];
-                    } else if (xxxl) {
-                        photo.imageUrl = xxxl[this.keysMap.url];
-                    } else if (original) {
-                        photo.imageUrl = original[this.keysMap.url];
-                    }
+                if (!images) {
+                    continue;
+                }
+                const original = images[this.keysMap.imageSizes.original];
+                const xxxl = images[this.keysMap.imageSizes.XXXL];
+                const xxl = images[this.keysMap.imageSizes.XXL];
+                const xl = images[this.keysMap.imageSizes.XL];
+                if (xl) {
+                    photo.imageUrl = xl[this.keysMap.url];
+                } else if (xxl) {
+                    photo.imageUrl = xxl[this.keysMap.url];
+                } else if (xxxl) {
+                    photo.imageUrl = xxxl[this.keysMap.url];
+                } else if (original) {
+                    photo.imageUrl = original[this.keysMap.url];
                 }
 
                 const summary = entry[this.keysMap.summary];
