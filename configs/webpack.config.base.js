@@ -13,7 +13,8 @@ module.exports = {
     output: {
         path: path.resolve('public/dist/'),
         publicPath: '/dist/',
-        filename: 'main.js',
+        filename: 'main.[hash].js',
+        chunkFilename: '[id].main.[hash].js'
     },
     resolve: {
         modules: ['node_modules'],
@@ -54,8 +55,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: path.resolve('index.template.html'),
-            filename: path.resolve('public/index.html'),
-            hash: true
+            filename: path.resolve('public/index.html')
         })
     ]
 };
