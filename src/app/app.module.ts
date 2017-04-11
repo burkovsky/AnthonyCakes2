@@ -16,6 +16,10 @@ import HeaderComponent from "./root/header/header.component";
 import NavMenuComponent from "./root/nav-menu/nav-menu.component";
 import ToTopComponent from "./root/to-top/to-top.component";
 
+const devImports = !process.env.PRODUCTION
+    ? [StoreDevtoolsModule.instrumentOnlyWithExtension()]
+    : [];
+
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
@@ -30,9 +34,7 @@ import ToTopComponent from "./root/to-top/to-top.component";
         BrowserModule,
         RouterModule.forRoot(routes),
         StoreModule.provideStore(reducers),
-        StoreDevtoolsModule.instrumentOnlyWithExtension({
-            maxAge: 5,
-        }),
+        ...devImports,
         CoreModule,
         ProductsModule,
     ],
