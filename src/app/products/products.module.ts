@@ -11,6 +11,7 @@ import { routes } from "./products.routes";
 import GenerateMarketUrlPipe from "./shared/generate-market-url.pipe";
 import Photo from "./shared/photo.model";
 import PhotoService from "./shared/photo.service";
+import ProductsService from "./shared/products.service";
 import YandexFotkiParserService from "./shared/yandex-fotki-parser.service";
 
 /*
@@ -37,6 +38,7 @@ Do not use export default with routed feature modules.
     ],
     providers: [
         PhotoService,
+        ProductsService,
         YandexFotkiParserService,
     ],
 })

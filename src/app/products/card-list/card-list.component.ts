@@ -1,9 +1,10 @@
-﻿import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
+﻿import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 
 import LazyLoadService from "../../core/lazy-load.service";
 import Photo from "../shared/photo.model";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "ac-card-list",
     // styleUrls: ["card-list.component.scss"],
     templateUrl: "card-list.component.html",

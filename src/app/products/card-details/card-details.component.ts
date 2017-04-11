@@ -1,8 +1,9 @@
-import { Component, Input } from "@angular/core";
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 
 import Photo from "../shared/photo.model";
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: "ac-card-details",
     styleUrls: ["card-details.component.scss"],
     templateUrl: "card-details.component.html",
