@@ -1,6 +1,6 @@
 import { Action } from "@ngrx/store";
 
-import Photo from "./photo.model";
+import Product from "./product.model";
 
 export const ActionTypes = {
   LOAD_PRODUCTS: "LOAD_PRODUCTS",
@@ -9,5 +9,5 @@ export const ActionTypes = {
 export class LoadAction implements Action {
     public type = ActionTypes.LOAD_PRODUCTS;
 
-    constructor(public payload: Photo[]) {}
+    constructor(public payload: Product[]) {}
 }

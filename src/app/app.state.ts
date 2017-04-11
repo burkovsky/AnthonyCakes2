@@ -1,6 +1,6 @@
-import Photo from "./products/shared/photo.model";
+import Product from "./products/shared/product.model";
 
 export interface IAppState {
-    product: Photo;
-    products: Photo[];
+    product: Product;
+    products: Product[];
 };

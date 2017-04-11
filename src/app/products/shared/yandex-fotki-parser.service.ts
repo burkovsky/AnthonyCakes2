@@ -1,6 +1,6 @@
 ﻿import { Injectable } from "@angular/core";
 
-import Photo from "./photo.model";
+import Product from "./product.model";
 
 @Injectable()
 export default class YandexFotkiParserService {
@@ -63,25 +63,25 @@ export default class YandexFotkiParserService {
         return "";
     }
 
-    public extractAlbumPhotos(albumDocument: Object): Photo[] {
-        let photos: Photo[] = [];
+    public extractAlbumPhotos(albumDocument: Object): Product[] {
+        let products: Product[] = [];
 
         const entries = albumDocument[this.keysMap.entries];
         if (entries) {
             for (let entry of entries) {
-                let photo = new Photo();
+                let product = new Product();
 
                 const id = entry[this.keysMap.id];
                 if (!id) {
                     continue;
                 }
-                photo.id = id.substr(id.lastIndexOf(":") + 1);
+                product.id = id.substr(id.lastIndexOf(":") + 1);
 
                 const title = entry[this.keysMap.title];
                 if (!title) {
                     continue;
                 }
-                photo.title = title;
+                product.title = title;
 
                 const images = entry[this.keysMap.images];
                 if (!images) {
@@ -92,29 +92,29 @@ export default class YandexFotkiParserService {
                 const xxl = images[this.keysMap.imageSizes.XXL];
                 const xl = images[this.keysMap.imageSizes.XL];
                 if (xl) {
-                    photo.imageUrl = xl[this.keysMap.url];
+                    product.imageUrl = xl[this.keysMap.url];
                 } else if (xxl) {
-                    photo.imageUrl = xxl[this.keysMap.url];
+                    product.imageUrl = xxl[this.keysMap.url];
                 } else if (xxxl) {
-                    photo.imageUrl = xxxl[this.keysMap.url];
+                    product.imageUrl = xxxl[this.keysMap.url];
                 } else if (original) {
-                    photo.imageUrl = original[this.keysMap.url];
+                    product.imageUrl = original[this.keysMap.url];
                 }
 
                 const summary = entry[this.keysMap.summary];
                 if (summary) {
-                    photo.description = summary.split(this.summarySeparator);
+                    product.description = summary.split(this.summarySeparator);
                 }
 
                 const tags = entry[this.keysMap.tags];
                 if (tags) {
-                    photo.tags = Object.keys(tags);
+                    product.tags = Object.keys(tags);
                 }
 
-                photos.push(photo);
+                products.push(product);
             }
         }
 
-        return photos;
+        return products;
     }
 }

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 
-import Photo from "../shared/photo.model";
+import Product from "../shared/product.model";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,7 +10,7 @@ import Photo from "../shared/photo.model";
 })
 export default class CardDetailsComponent {
     @Input()
-    public card: Photo;
+    public card: Product;
 
     public stop(event: Event) {
         event.stopPropagation();

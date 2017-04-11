@@ -5,7 +5,7 @@ import { Subscription } from "rxjs/Subscription";
 import { IAppState } from "../../app.state";
 import AppConfig from "../../core/app.config";
 import LocalStorageService from "../../core/local-storage.service";
-import Photo from "../shared/photo.model";
+import Product from "../shared/product.model";
 import ProductsService from "../shared/products.service";
 
 @Component({
@@ -14,7 +14,7 @@ import ProductsService from "../shared/products.service";
     templateUrl: "product-list.component.html",
 })
 export default class ProductListComponent implements OnInit, OnDestroy {
-    public products: Photo[] = [];
+    public products: Product[] = [];
     private onGetProducts: Subscription;
 
     constructor(

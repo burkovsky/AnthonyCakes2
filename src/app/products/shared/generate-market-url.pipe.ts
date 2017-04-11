@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
 import AppConfig from "../../core/app.config";
-import Photo from "./photo.model";
+import Product from "./product.model";
 
 @Pipe({
     name: "generateMarketUrl",
@@ -9,19 +9,19 @@ import Photo from "./photo.model";
 export default class GenerateMarketUrlPipe implements PipeTransform {
     constructor(private config: AppConfig) {}
 
-    public transform(photos: Photo[]): Photo[] {
-        let transformed: Photo[] = [];
+    public transform(products: Product[]): Product[] {
+        let transformed: Product[] = [];
 
-        for (let photo of photos) {
+        for (let product of products) {
             let marketUrl = "";
-            if (photo.tags.length) {
-                const itemId = photo.tags[photo.tags.length - 1];
+            if (product.tags.length) {
+                const itemId = product.tags[product.tags.length - 1];
                 marketUrl = `${this.config.VK.BASE_URL}${this.config.VK.MARKET_ID}?
                             w=product-${this.config.VK.MARKET_ID}_${itemId}`;
             }
 
             transformed.push({
-                ...photo,
+                ...product,
                 marketUrl,
             });
         }

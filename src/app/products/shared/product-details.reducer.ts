@@ -1,9 +1,9 @@
 import { Action, ActionReducer } from "@ngrx/store";
 
-import Photo from "./photo.model";
 import { ActionTypes } from "./product-details.actions";
+import Product from "./product.model";
 
-export const product: ActionReducer<Photo> = (state: Photo = null, action: Action) => {
+export const product: ActionReducer<Product> = (state: Product = null, action: Action) => {
     switch (action.type) {
         case ActionTypes.LOAD_PRODUCT:
             return Object.assign({}, action.payload);

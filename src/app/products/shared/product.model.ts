@@ -1,4 +1,4 @@
-﻿export default class Photo {
+﻿export default class Product {
     public id: string;
     public imageUrl: string;
     public title: string;

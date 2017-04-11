@@ -5,7 +5,7 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/mergeMap";
 import { Observable } from "rxjs/Observable";
 
-import Photo from "./photo.model";
+import Product from "./product.model";
 import YandexFotkiParserService from "./yandex-fotki-parser.service";
 
 @Injectable()
@@ -18,7 +18,7 @@ export default class PhotoService {
     }
 
     // TODO Support next pages loading
-    public getPhotos(baseUrl: string, user: string, album: string, sorting: string): Observable<Photo[]> {
+    public getPhotos(baseUrl: string, user: string, album: string, sorting: string): Observable<Product[]> {
         const userServiceDocumentUrl = `${baseUrl}/${user}/`;
 
         return this.getDocument(userServiceDocumentUrl)

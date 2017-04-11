@@ -5,13 +5,13 @@ import { Observable } from "rxjs/Observable";
 import { IAppState } from "../../app.state";
 import AppConfig from "../../core/app.config";
 import LocalStorageService from "../../core/local-storage.service";
-import Photo from "./photo.model";
 import PhotoService from "./photo.service";
 import { LoadAction } from "./product-list.actions";
+import Product from "./product.model";
 
 @Injectable()
 export default class ProductsService {
-    public products$: Observable<Photo[]>;
+    public products$: Observable<Product[]>;
     private readonly CACHE_KEY = "products";
     private readonly PRODUCTS_STORE_KEY = "products";
 
