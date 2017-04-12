@@ -11,8 +11,4 @@ import Product from "../shared/product.model";
 export default class CardDetailsComponent {
     @Input()
     public card: Product;
-
-    public stop(event: Event) {
-        event.stopPropagation();
-    }
 }

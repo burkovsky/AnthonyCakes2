@@ -16,7 +16,7 @@ export default class CardListComponent implements OnChanges {
     constructor(private lazyLoadService: LazyLoadService) {}
 
     public ngOnChanges(changes: SimpleChanges) {
-        if (changes.cards && this.cards.length > 0) {
+        if (changes["cards"] && this.cards.length > 0) {
             this.lazyLoadService.delayedInit(250);
         }
     }

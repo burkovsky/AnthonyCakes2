@@ -75,7 +75,7 @@ export default class YandexFotkiParserService {
                 if (!id) {
                     continue;
                 }
-                product.id = id.substr(id.lastIndexOf(":") + 1);
+                product.id = parseInt(id.substr(id.lastIndexOf(":") + 1), 10);
 
                 const title = entry[this.keysMap.title];
                 if (!title) {

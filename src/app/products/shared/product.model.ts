@@ -1,5 +1,5 @@
 ﻿export default class Product {
-    public id: string;
+    public id: number;
     public imageUrl: string;
     public title: string;
     public description: string[] = [];
