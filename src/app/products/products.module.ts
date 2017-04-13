@@ -7,11 +7,11 @@ import CardDetailsComponent from "./card-details/card-details.component";
 import CardListComponent from "./card-list/card-list.component";
 import ProductDetailsComponent from "./product-details/product-details.component";
 import ProductListComponent from "./product-list/product-list.component";
+import ProductsComponent from "./products.component";
 import { routes } from "./products.routes";
 import GenerateMarketUrlPipe from "./shared/generate-market-url.pipe";
 import PhotoService from "./shared/photo.service";
 import Product from "./shared/product.model";
-import ProductsService from "./shared/products.service";
 import YandexFotkiParserService from "./shared/yandex-fotki-parser.service";
 
 /*
@@ -29,6 +29,7 @@ Don't use export default with routed feature modules.
         CardListComponent,
         ProductDetailsComponent,
         ProductListComponent,
+        ProductsComponent,
         GenerateMarketUrlPipe,
     ],
     imports: [
@@ -38,7 +39,6 @@ Don't use export default with routed feature modules.
     ],
     providers: [
         PhotoService,
-        ProductsService,
         YandexFotkiParserService,
     ],
 })

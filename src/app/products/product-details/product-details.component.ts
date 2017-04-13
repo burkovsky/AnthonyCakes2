@@ -1,9 +1,14 @@
 ﻿import { Component, OnDestroy, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { Title } from "@angular/platform-browser";
+import { ActivatedRoute, Params } from "@angular/router";
+import { Store } from "@ngrx/store";
+import "rxjs/add/operator/combineLatest";
+import { Observable } from "rxjs/Observable";
 import { Subscription } from "rxjs/Subscription";
 
+import { IAppState } from "../../app.state";
+import { LoadAction } from "../shared/product-details.actions";
 import Product from "../shared/product.model";
-import ProductsService from "../shared/products.service";
 
 @Component({
     selector: "ac-product-details",
@@ -12,15 +17,27 @@ import ProductsService from "../shared/products.service";
 })
 export default class ProductDetailsComponent implements OnInit, OnDestroy {
     public product: Product;
+    private products$: Observable<Product[]>;
     private onGetProduct: Subscription;
 
-    constructor(private route: ActivatedRoute, private productsService: ProductsService) {
-        this.productsService.loadProduct(this.route.snapshot.params["id"]);
+    constructor(
+        private store: Store<IAppState>,
+        private route: ActivatedRoute,
+        private titleService: Title) {
+            this.products$ = this.store.select("products");
     }
 
     public ngOnInit() {
-        this.onGetProduct = this.productsService.product$
-            .subscribe((product) => this.product = product);
+        this.onGetProduct = this.route.params
+            .map((params: Params) => +params["id"])
+            .combineLatest(this.products$)
+            .subscribe((result) => {
+                let id = result[0];
+                let products = result[1];
+
+                this.product = products.find((p) => p.id === id);
+                this.store.dispatch(new LoadAction(this.product));
+            });
     }
 
     public ngOnDestroy() {

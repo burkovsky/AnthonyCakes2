@@ -18,7 +18,7 @@ export default class PhotoService {
     }
 
     // TODO Support next pages loading
-    public getPhotos(baseUrl: string, user: string, album: string, sorting: string): Observable<Product[]> {
+    public getProducts(baseUrl: string, user: string, album: string, sorting: string): Observable<Product[]> {
         const userServiceDocumentUrl = `${baseUrl}/${user}/`;
 
         return this.getDocument(userServiceDocumentUrl)

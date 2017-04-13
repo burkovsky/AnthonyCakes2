@@ -1,12 +1,12 @@
 ﻿import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs/Observable";
 import { Subscription } from "rxjs/Subscription";
 
 import { IAppState } from "../../app.state";
 import AppConfig from "../../core/app.config";
-import LocalStorageService from "../../core/local-storage.service";
 import Product from "../shared/product.model";
-import ProductsService from "../shared/products.service";
 
 @Component({
     selector: "ac-product-list",
@@ -14,20 +14,21 @@ import ProductsService from "../shared/products.service";
     templateUrl: "product-list.component.html",
 })
 export default class ProductListComponent implements OnInit, OnDestroy {
-    public products: Product[] = [];
+    public products: Product[];
+    private products$: Observable<Product[]>;
     private onGetProducts: Subscription;
 
     constructor(
+        private store: Store<IAppState>,
         private config: AppConfig,
-        private productsService: ProductsService,
         private titleService: Title) {
-        this.productsService.loadProducts();
+        this.products$ = this.store.select("products");
     }
 
     public ngOnInit() {
         this.titleService.setTitle(this.config.PAGE_TITLES.PRODUCTS);
 
-        this.onGetProducts = this.productsService.products$
+        this.onGetProducts = this.products$
             .subscribe((products) => this.products = products);
     }
 
