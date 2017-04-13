@@ -6,6 +6,7 @@ export default class AppConfig {
     public readonly CACKLE_WIDGET_ID: number;
     public readonly PAGE_TITLES: {
         ABOUT: string,
+        APPENDIX: string,
         PRODUCTS: string,
         REVIEWS: string,
     };
@@ -28,6 +29,7 @@ export default class AppConfig {
         this.CACKLE_WIDGET_ID = 52063;
         this.PAGE_TITLES = {
             ABOUT: "Обо мне | Anthony Cakes",
+            APPENDIX: " | Anthony Cakes",
             PRODUCTS: "Вкусняшки | Anthony Cakes",
             REVIEWS: "Отзывы | Anthony Cakes",
         };

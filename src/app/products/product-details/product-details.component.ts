@@ -7,6 +7,7 @@ import { Observable } from "rxjs/Observable";
 import { Subscription } from "rxjs/Subscription";
 
 import { IAppState } from "../../app.state";
+import AppConfig from "../../core/app.config";
 import { LoadAction } from "../shared/product-details.actions";
 import Product from "../shared/product.model";
 
@@ -23,8 +24,9 @@ export default class ProductDetailsComponent implements OnInit, OnDestroy {
     constructor(
         private store: Store<IAppState>,
         private route: ActivatedRoute,
+        private config: AppConfig,
         private titleService: Title) {
-            this.products$ = this.store.select("products");
+        this.products$ = this.store.select("products");
     }
 
     public ngOnInit() {
@@ -36,6 +38,7 @@ export default class ProductDetailsComponent implements OnInit, OnDestroy {
                 let products = result[1];
 
                 this.product = products.find((p) => p.id === id);
+                this.titleService.setTitle(`${this.product.title}${this.config.PAGE_TITLES.APPENDIX}`);
                 this.store.dispatch(new LoadAction(this.product));
             });
     }

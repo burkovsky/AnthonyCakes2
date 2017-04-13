@@ -1,8 +1,19 @@
-﻿<section class="product-details container pl-3 pt-3 pr-3">
-    <div>
-        <a routerLink="/products">Назад</a>
+﻿<section class="product-details container-fluid pl-3 pt-3 pr-3">
+    <div class="row mb-3 text-center">
+        <a class="col-12" routerLink="/products">Назад</a>
     </div>
-    <div>
-        {{product?.title}}
+    <div class="row">
+        <div class="col-10 offset-1">
+            <figure class="row">
+                <p class="col-12 col-md-6 col-lg-8">
+                    <img class="img-fluid shadowed" src="{{product?.detailsImageUrl}}" attr.data-src="{{product?.detailsImageUrl}}"/>
+                </p>
+                <figcaption class="col-12 col-md-6 col-lg-2">
+                    <h1>{{product?.title}}</h1>
+                    <hr />
+                    <p *ngFor="let part of product?.description">{{part}}</p>
+                </figcaption>
+            </figure>
+        </div>
     </div>
 </section>

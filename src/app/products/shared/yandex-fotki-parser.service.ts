@@ -92,13 +92,20 @@ export default class YandexFotkiParserService {
                 const xxl = images[this.keysMap.imageSizes.XXL];
                 const xl = images[this.keysMap.imageSizes.XL];
                 if (xl) {
-                    product.imageUrl = xl[this.keysMap.url];
+                    product.listImageUrl = xl[this.keysMap.url];
                 } else if (xxl) {
-                    product.imageUrl = xxl[this.keysMap.url];
+                    product.listImageUrl = xxl[this.keysMap.url];
                 } else if (xxxl) {
-                    product.imageUrl = xxxl[this.keysMap.url];
+                    product.listImageUrl = xxxl[this.keysMap.url];
                 } else if (original) {
-                    product.imageUrl = original[this.keysMap.url];
+                    product.listImageUrl = original[this.keysMap.url];
+                }
+                if (xxl) {
+                    product.detailsImageUrl = xxl[this.keysMap.url];
+                } else if (xxxl) {
+                    product.detailsImageUrl = xxxl[this.keysMap.url];
+                } else if (original) {
+                    product.detailsImageUrl = original[this.keysMap.url];
                 }
 
                 const summary = entry[this.keysMap.summary];

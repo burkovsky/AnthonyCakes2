@@ -10,14 +10,9 @@ import LazyLoadService from "../core/lazy-load.service";
     templateUrl: "about.component.html",
 })
 export default class AboutComponent implements OnInit {
-    constructor(
-        private config: AppConfig,
-        private lazyLoadService: LazyLoadService,
-        private titleService: Title) {}
+    constructor(private config: AppConfig, private titleService: Title) {}
 
     public ngOnInit(): void {
         this.titleService.setTitle(this.config.PAGE_TITLES.ABOUT);
-
-        this.lazyLoadService.init();
     }
 }
