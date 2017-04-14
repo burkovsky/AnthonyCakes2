@@ -1,19 +1,16 @@
-﻿<section class="product-details container-fluid pl-3 pt-3 pr-3">
-    <div class="row mb-3 text-center">
+﻿<section class="product container pl-3 pt-3 pr-3">
+    <div class="product__back row mb-3 text-center">
         <a class="col-12" routerLink="/products">Назад</a>
     </div>
-    <div class="row">
-        <div class="col-10 offset-1">
-            <figure class="row">
-                <p class="col-12 col-md-6 col-lg-8">
-                    <img class="img-fluid shadowed" src="{{product?.detailsImageUrl}}" attr.data-src="{{product?.detailsImageUrl}}"/>
-                </p>
-                <figcaption class="col-12 col-md-6 col-lg-2">
-                    <h1>{{product?.title}}</h1>
-                    <hr />
-                    <p *ngFor="let part of product?.description">{{part}}</p>
-                </figcaption>
-            </figure>
-        </div>
-    </div>
+    <figure class="product__content row mb-0" *ngIf="product">
+        <p class="col-12 col-md-7">
+            <img class="product__content-image img-fluid shadowed" src="{{product.detailsImageUrl}}"/>
+        </p>
+        <figcaption class="product__content-description col-12 col-md-5">
+            <h1>{{product.title}}</h1>
+            <hr/>
+            <p [innerHTML]="product.description | newLineToBr"></p>
+        </figcaption>
+    </figure>
+    <!-- TODO Add loader -->
 </section>

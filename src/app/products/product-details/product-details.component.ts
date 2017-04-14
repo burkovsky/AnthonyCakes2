@@ -37,9 +37,14 @@ export default class ProductDetailsComponent implements OnInit, OnDestroy {
                 let id = result[0];
                 let products = result[1];
 
-                this.product = products.find((p) => p.id === id);
-                this.titleService.setTitle(`${this.product.title}${this.config.PAGE_TITLES.APPENDIX}`);
-                this.store.dispatch(new LoadAction(this.product));
+                if (products.length) {
+                    let product = products.find((p) => p.id === id);
+                    if (product) {
+                        this.product = product;
+                        this.titleService.setTitle(`${product.title}${this.config.PAGE_TITLES.APPENDIX}`);
+                        this.store.dispatch(new LoadAction(product));
+                    }
+                }
             });
     }
 

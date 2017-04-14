@@ -81,7 +81,7 @@ export default class YandexFotkiParserService {
                 if (!title) {
                     continue;
                 }
-                product.title = title;
+                product.title = title.trim();
 
                 const images = entry[this.keysMap.images];
                 if (!images) {
@@ -110,7 +110,7 @@ export default class YandexFotkiParserService {
 
                 const summary = entry[this.keysMap.summary];
                 if (summary) {
-                    product.description = summary.split(this.summarySeparator);
+                    product.description = summary.trim();
                 }
 
                 const tags = entry[this.keysMap.tags];

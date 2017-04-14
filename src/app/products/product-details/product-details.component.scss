@@ -1,1 +1,13 @@
-﻿
+﻿@import '../../../styles/variables';
+
+.product {
+    font-family: 'Kurale', serif;
+
+    &__content {
+        &-description {
+            hr {
+                border-color: $clr-logo-primary;
+            }
+        }
+    }
+}

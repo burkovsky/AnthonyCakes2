@@ -9,7 +9,7 @@ import ProductDetailsComponent from "./product-details/product-details.component
 import ProductListComponent from "./product-list/product-list.component";
 import ProductsComponent from "./products.component";
 import { routes } from "./products.routes";
-import GenerateMarketUrlPipe from "./shared/generate-market-url.pipe";
+import NewLineToBrPipe from "./shared/new-line-to-br.pipe";
 import PhotoService from "./shared/photo.service";
 import Product from "./shared/product.model";
 import YandexFotkiParserService from "./shared/yandex-fotki-parser.service";
@@ -30,7 +30,7 @@ Don't use export default with routed feature modules.
         ProductDetailsComponent,
         ProductListComponent,
         ProductsComponent,
-        GenerateMarketUrlPipe,
+        NewLineToBrPipe,
     ],
     imports: [
         CommonModule,
