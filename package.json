@@ -43,6 +43,7 @@
     "font-awesome": "4.7.0",
     "jquery": "3.2.1",
     "jquery-lazy": "1.7.4",
+    "node-vkapi": "2.1.0",
     "reflect-metadata": "0.1.10",
     "rxjs": "5.3.0",
     "serve-favicon": "2.4.2",

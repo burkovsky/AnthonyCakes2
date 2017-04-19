@@ -8,6 +8,8 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var http = require('http');
 
+var api = require('./api');
+
 /**
  * Setup middleware.
  */
@@ -24,13 +26,14 @@ app.use(express.static(path.resolve('public/'), {
     }
 }));
 
-var router = express.Router();
-router.get('/', function(req, res) {
+app.get('/api/products', api.getProducts);
+
+app.get('/', function(req, res) {
   res.sendFile(path.resolve('public/index.html'));
 });
 
 // catch 404 and forward to home page
-app.use(function(req, res, next) {
+app.use(function(req, res) {
   res.sendFile(path.resolve('public/index.html'));
 });
 
@@ -38,7 +41,7 @@ app.use(function(req, res, next) {
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '8080');
+var port = normalizePort(process.env.PORT || '80');
 app.set('port', port);
 
 /**
