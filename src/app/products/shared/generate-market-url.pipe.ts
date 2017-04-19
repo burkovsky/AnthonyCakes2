@@ -16,8 +16,7 @@ export default class GenerateMarketUrlPipe implements PipeTransform {
             let marketUrl = "";
             if (product.tags.length) {
                 const itemId = product.tags[product.tags.length - 1];
-                marketUrl = `${this.config.VK.BASE_URL}${this.config.VK.MARKET_ID}?
-                            w=product-${this.config.VK.MARKET_ID}_${itemId}`;
+                marketUrl = `${this.config.VK.BASE_URL}${this.config.VK.MARKET_ID}?w=product-${this.config.VK.MARKET_ID}_${itemId}`;
             }
 
             transformed.push({
