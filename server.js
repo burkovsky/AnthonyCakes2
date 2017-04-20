@@ -26,7 +26,7 @@ app.use(express.static(path.resolve('public/'), {
     }
 }));
 
-app.get('/api/products', api.getProducts);
+app.get('/api/products', api.products.get);
 
 app.get('/', function(req, res) {
   res.sendFile(path.resolve('public/index.html'));
@@ -41,7 +41,7 @@ app.use(function(req, res) {
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '80');
+var port = normalizePort(process.env.PORT || '8080');
 app.set('port', port);
 
 /**

@@ -1,41 +1,13 @@
-var vkapi = require('node-vkapi');
+var vk = require('./vk');
 
-function getProducts(req, res) {
-    var vk = new vkapi({
-        app: {
-            id: 0,
-            secret: 'SECRET'
-        },
-        auth: {
-            login: 'LOGIN',
-            pass: 'PASSWORD'
-        },
-        version: '5.63'
-    });
-
-    vk.auth
-        .user({
-            scope: ['market']
-        })
-        .then(token => {
-            vk.call('market.get', {
-                owner_id: -114453626,
-                count: 100,
-                extended: 1,
-                access_token: token.access_token
-            })
-            .then(result => {
-                res.json(result);
-            })
-            .catch(error => {
-                res.json(error);
-            });
+function get(req, res) {
+    vk.getCommunityItems()
+        .then(result => {
+            res.json(result);
         })
         .catch(error => {
-            res.json(error);
+            res.status(400).send(error);
         });
 }
 
-module.exports = {
-    getProducts
-};
+exports.get = get;
