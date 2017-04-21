@@ -6,6 +6,7 @@ import AppConfig from "./app.config";
 import LazyLoadService from "./lazy-load.service";
 import LocalStorageService from "./local-storage.service";
 import SessionStorageService from "./session-storage.service";
+import SlickService from "./slick.service";
 
 /*
 Service module provides utility services.
@@ -19,6 +20,7 @@ Service module should only be imported by the root AppModule.
         LazyLoadService,
         LocalStorageService,
         SessionStorageService,
+        SlickService,
         Title,
     ],
 })

@@ -8,6 +8,7 @@ import { Subscription } from "rxjs/Subscription";
 
 import { IAppState } from "../../app.state";
 import AppConfig from "../../core/app.config";
+import SlickService from "../../core/slick.service";
 import { LoadAction } from "../shared/product-details.actions";
 import { IProduct } from "../shared/product.model";
 
@@ -25,6 +26,7 @@ export default class ProductDetailsComponent implements OnInit, OnDestroy {
         private store: Store<IAppState>,
         private route: ActivatedRoute,
         private config: AppConfig,
+        private slickService: SlickService,
         private titleService: Title) {
         this.products$ = this.store.select("products");
     }
@@ -41,6 +43,8 @@ export default class ProductDetailsComponent implements OnInit, OnDestroy {
                     let product = products.find((p) => p.id === id);
                     if (product) {
                         this.product = product;
+
+                        this.slickService.delayedInit(250);
                         this.titleService.setTitle(`${product.title}${this.config.PAGE_TITLES.APPENDIX}`);
                         this.store.dispatch(new LoadAction(product));
                     }

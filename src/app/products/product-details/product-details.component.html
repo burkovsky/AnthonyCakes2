@@ -2,10 +2,12 @@
     <div class="product__back row mb-3 text-center">
         <a class="col-12" routerLink="/products">Назад</a>
     </div>
-    <figure class="product__content row mb-0" *ngIf="product">
-        <p class="col-12 col-md-7">
-            <img class="product__content-image img-fluid shadowed" src="{{product.detailsImageUrl}}"/>
-        </p>
+    <figure class="product__content row" *ngIf="product">
+        <div class="col-12 col-md-7">
+            <div class="slick shadowed">
+                <img class="product__content-image img-fluid" *ngFor="let photo of product.photos" [src]="photo.photo_807"/>
+            </div>
+        </div>
         <figcaption class="product__content-description col-12 col-md-5">
             <h1>{{product.title}}</h1>
             <hr/>

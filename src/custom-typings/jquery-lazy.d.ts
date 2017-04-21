@@ -68,6 +68,6 @@ interface IJQueryLazyPlugin {
     destroy(): void;
 }
 
-interface IJQueryLazyPlugin extends JQuery {
+interface IJQueryLazy extends JQuery {
     Lazy(options: IJQueryLazyPluginOptions): IJQueryLazyPlugin;
 }

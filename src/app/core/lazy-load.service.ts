@@ -11,7 +11,7 @@ export default class LazyLoadService {
     }
 
     public init(selector = ".lazy") {
-        const lazyItems = $(selector) as IJQueryLazyPlugin;
+        const lazyItems = $(selector) as IJQueryLazy;
         if (lazyItems.length) {
             lazyItems.Lazy({
                 effect: "fadeIn",

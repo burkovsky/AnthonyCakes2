@@ -69,6 +69,7 @@
     "node-sass": "4.5.2",
     "rimraf": "2.6.1",
     "sass-loader": "6.0.3",
+    "slick-carousel": "1.6.0",
     "style-loader": "0.16.1",
     "to-string-loader": "1.1.5",
     "ts-loader": "2.0.3",
