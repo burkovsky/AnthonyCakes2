@@ -1,60 +1,60 @@
 ﻿export interface ICategory {
-    id: Number;
-    name: String;
+    id: number;
+    name: string;
     section: ISection;
 }
 
 export interface ISection {
-    id: Number;
-    name: String;
+    id: number;
+    name: string;
 }
 
 export interface ILike {
-    count: Number;
-    user_likes: Number;
+    count: number;
+    user_likes: number;
 }
 
 export interface IPhoto {
-    album_id: Number;
-    date: Number;
-    height: Number;
-    id: Number;
-    owner_id: Number;
-    photo_75: String;
-    photo_130: String;
-    photo_604: String;
-    photo_807: String;
-    photo_1280: String;
-    photo_2560: String;
-    text: String;
-    user_id: Number;
-    width: Number;
+    album_id: number;
+    date: number;
+    height: number;
+    id: number;
+    owner_id: number;
+    photo_75: string;
+    photo_130: string;
+    photo_604: string;
+    photo_807: string;
+    photo_1280: string;
+    photo_2560: string;
+    text: string;
+    user_id: number;
+    width: number;
 }
 
 export interface IPrice {
-    amount: String;
+    amount: string;
     currency: ICurrency;
-    text: String;
+    text: string;
 }
 
 export interface ICurrency {
-    id: Number;
-    name: String;
+    id: number;
+    name: string;
 }
 
 export interface IProduct {
-    albums_ids: Number[];
-    availability: Boolean;
-    can_comment: Boolean;
-    can_repost: Boolean;
+    albums_ids: number[];
+    availability: boolean;
+    can_comment: boolean;
+    can_repost: boolean;
     category: ICategory;
-    date: Number;
-    description: String;
-    id: Number;
+    date: number;
+    description: string;
+    id: number;
     likes: ILike[];
-    owner_id: Number;
+    owner_id: number;
     price: IPrice;
-    thumb_photo: String;
-    title: String;
-    views_count: Number;
+    thumb_photo: string;
+    title: string;
+    views_count: number;
 }
