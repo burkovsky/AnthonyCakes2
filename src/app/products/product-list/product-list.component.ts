@@ -6,7 +6,7 @@ import { Subscription } from "rxjs/Subscription";
 
 import { IAppState } from "../../app.state";
 import AppConfig from "../../core/app.config";
-import Product from "../shared/product.model";
+import { IProduct } from "../shared/product.model";
 
 @Component({
     selector: "ac-product-list",
@@ -14,8 +14,8 @@ import Product from "../shared/product.model";
     templateUrl: "product-list.component.html",
 })
 export default class ProductListComponent implements OnInit, OnDestroy {
-    public products: Product[];
-    private products$: Observable<Product[]>;
+    public products: IProduct[];
+    private products$: Observable<IProduct[]>;
     private onGetProducts: Subscription;
 
     constructor(

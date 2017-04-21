@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { JsonpModule } from "@angular/http";
+import { HttpModule } from "@angular/http";
 import { RouterModule } from "@angular/router";
 
 import CardDetailsComponent from "./card-details/card-details.component";
@@ -10,9 +10,7 @@ import ProductListComponent from "./product-list/product-list.component";
 import ProductsComponent from "./products.component";
 import { routes } from "./products.routes";
 import NewLineToBrPipe from "./shared/new-line-to-br.pipe";
-import PhotoService from "./shared/photo.service";
-import Product from "./shared/product.model";
-import YandexFotkiParserService from "./shared/yandex-fotki-parser.service";
+import ProductsService from "./shared/products.service";
 
 /*
 Routed feature modules are domain feature modules whose top components are the targets of router navigation routes.
@@ -34,12 +32,11 @@ Don't use export default with routed feature modules.
     ],
     imports: [
         CommonModule,
-        JsonpModule,
+        HttpModule,
         RouterModule.forChild(routes),
     ],
     providers: [
-        PhotoService,
-        YandexFotkiParserService,
+        ProductsService,
     ],
 })
 export class ProductsModule {}

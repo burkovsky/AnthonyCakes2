@@ -1,6 +1,6 @@
 import { Action } from "@ngrx/store";
 
-import Product from "./product.model";
+import { IProduct } from "./product.model";
 
 export const ActionTypes = {
   LOAD_PRODUCT: "LOAD_PRODUCT",
@@ -9,5 +9,5 @@ export const ActionTypes = {
 export class LoadAction implements Action {
     public type = ActionTypes.LOAD_PRODUCT;
 
-    constructor(public payload: Product) {}
+    constructor(public payload: IProduct) {}
 }

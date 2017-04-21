@@ -1,7 +1,7 @@
 ﻿import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 
 import LazyLoadService from "../../core/lazy-load.service";
-import Product from "../shared/product.model";
+import { IProduct } from "../shared/product.model";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -11,7 +11,7 @@ import Product from "../shared/product.model";
 })
 export default class CardListComponent implements OnChanges {
     @Input()
-    public cards: Product[];
+    public cards: IProduct[];
 
     constructor(private lazyLoadService: LazyLoadService) {}
 

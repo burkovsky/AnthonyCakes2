@@ -4,4 +4,4 @@ module.exports = {
     products: {
         get: products.get
     }
-}; 
+};

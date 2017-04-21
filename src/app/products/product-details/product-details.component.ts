@@ -9,7 +9,7 @@ import { Subscription } from "rxjs/Subscription";
 import { IAppState } from "../../app.state";
 import AppConfig from "../../core/app.config";
 import { LoadAction } from "../shared/product-details.actions";
-import Product from "../shared/product.model";
+import { IProduct } from "../shared/product.model";
 
 @Component({
     selector: "ac-product-details",
@@ -17,8 +17,8 @@ import Product from "../shared/product.model";
     templateUrl: "product-details.component.html",
 })
 export default class ProductDetailsComponent implements OnInit, OnDestroy {
-    public product: Product;
-    private products$: Observable<Product[]>;
+    public product: IProduct;
+    private products$: Observable<IProduct[]>;
     private onGetProduct: Subscription;
 
     constructor(

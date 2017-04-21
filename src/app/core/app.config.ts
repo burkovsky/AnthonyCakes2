@@ -2,6 +2,9 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export default class AppConfig {
+    public readonly API: {
+        PRODUCTS: string,
+    };
     public readonly CACHE_TIME_IN_HOURS: number;
     public readonly CACKLE_WIDGET_ID: number;
     public readonly PAGE_TITLES: {
@@ -9,12 +12,6 @@ export default class AppConfig {
         APPENDIX: string,
         PRODUCTS: string,
         REVIEWS: string,
-    };
-    public readonly PHOTO_SERVICE: {
-        ALBUM: string,
-        BASE_URL: string,
-        SORTING: string,
-        USER: string,
     };
     public readonly SCROLL_TOP_BOUND: number;
     public readonly VK: {
@@ -25,6 +22,9 @@ export default class AppConfig {
     };
 
     constructor() {
+        this.API = {
+            PRODUCTS: "/api/products",
+        };
         this.CACHE_TIME_IN_HOURS = 24;
         this.CACKLE_WIDGET_ID = 52063;
         this.PAGE_TITLES = {
@@ -32,12 +32,6 @@ export default class AppConfig {
             APPENDIX: " | Anthony Cakes",
             PRODUCTS: "Вкусняшки | Anthony Cakes",
             REVIEWS: "Отзывы | Anthony Cakes",
-        };
-        this.PHOTO_SERVICE = {
-            ALBUM: "Продукция",
-            BASE_URL: "http://api-fotki.yandex.ru/api/users",
-            SORTING: "manual",
-            USER: "anthonycakes",
         };
         this.SCROLL_TOP_BOUND = 500;
         this.VK = {

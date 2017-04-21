@@ -1,6 +1,6 @@
-var vkapi = require('node-vkapi');
+var VkApi = require('node-vkapi');
 
-var vk = new vkapi({
+var vk = new VkApi({
     app: {
         id: 0,
         secret: 'SECRET'

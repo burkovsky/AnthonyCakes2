@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 
-import Product from "../shared/product.model";
+import { IProduct } from "../shared/product.model";
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,5 +10,5 @@ import Product from "../shared/product.model";
 })
 export default class CardDetailsComponent {
     @Input()
-    public card: Product;
+    public card: IProduct;
 }
