@@ -4,6 +4,10 @@
     font-family: 'Kurale', serif;
 
     &__content {
+        &-image {
+            display: none;
+        }
+
         &-description {
             hr {
                 border-color: $clr-logo-primary;

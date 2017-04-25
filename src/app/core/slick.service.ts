@@ -15,7 +15,11 @@ export default class SlickService {
     public init(selector = ".slick") {
         const slickItems = $(selector) as ISlick;
         if (slickItems.length) {
-            slickItems.slick();
+            slickItems.slick({
+                dots: true,
+                fade: true,
+                mobileFirst: true,
+            });
 
             if (this.timer) {
                 clearInterval(this.timer);
