@@ -14,6 +14,6 @@ export default class ReviewsComponent implements OnInit {
         private titleService: Title) {}
 
     public ngOnInit(): void {
-        this.titleService.setTitle(this.config.PAGE_TITLES.REVIEWS);
+        this.titleService.setTitle(this.config.PAGE_TITLES_REVIEWS);
     }
 }

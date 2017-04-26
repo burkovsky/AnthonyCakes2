@@ -18,7 +18,7 @@ export default class ProductsService {
 
     public getProducts(): Observable<IProduct[]> {
         return this.http
-            .get(this.config.API.PRODUCTS)
+            .get(this.config.API_URLS_PRODUCTS)
             .map(this.extractData)
             .map((data: IProductsResponse) => data.items)
             .catch(this.handleError);

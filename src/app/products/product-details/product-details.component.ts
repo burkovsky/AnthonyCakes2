@@ -45,7 +45,7 @@ export default class ProductDetailsComponent implements OnInit, OnDestroy {
                         this.product = product;
 
                         this.slickService.delayedInit(250);
-                        this.titleService.setTitle(`${product.title}${this.config.PAGE_TITLES.APPENDIX}`);
+                        this.titleService.setTitle(`${product.title}${this.config.PAGE_TITLES_APPENDIX}`);
                         this.store.dispatch(new LoadAction(product));
                     }
                 }

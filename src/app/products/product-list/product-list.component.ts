@@ -26,7 +26,7 @@ export default class ProductListComponent implements OnInit, OnDestroy {
     }
 
     public ngOnInit() {
-        this.titleService.setTitle(this.config.PAGE_TITLES.PRODUCTS);
+        this.titleService.setTitle(this.config.PAGE_TITLES_PRODUCTS);
 
         this.onGetProducts = this.products$
             .subscribe((products) => this.products = products);

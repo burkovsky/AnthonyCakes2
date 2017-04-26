@@ -14,8 +14,8 @@ export default class VKCommentsComponent implements OnInit {
 
     public ngOnInit(): void {
         VK.Widgets.Comments(this.id, {
-            attach: this.config.VK.COMMENTS_MEDIA,
-            limit: this.config.VK.COMMENTS_LIMIT,
+            attach: this.config.VK_COMMENTS_MEDIA,
+            limit: this.config.VK_COMMENTS_LIMIT,
         });
     }
 }

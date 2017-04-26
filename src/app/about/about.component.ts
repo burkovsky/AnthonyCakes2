@@ -13,6 +13,6 @@ export default class AboutComponent implements OnInit {
     constructor(private config: AppConfig, private titleService: Title) {}
 
     public ngOnInit(): void {
-        this.titleService.setTitle(this.config.PAGE_TITLES.ABOUT);
+        this.titleService.setTitle(this.config.PAGE_TITLES_ABOUT);
     }
 }
