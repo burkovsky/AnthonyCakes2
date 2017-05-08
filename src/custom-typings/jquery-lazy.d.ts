@@ -11,7 +11,7 @@ interface IJQueryLazyPluginOptions {
     bind?: string;
     threshold?: number;
     visibleOnly?: boolean;
-    appendScroll?: number | Object;
+    appendScroll?: number | object;
     scrollDirection?: string;
     imageBase?: string;
     defaultImage?: string;
@@ -46,20 +46,16 @@ interface IJQueryLazyPlugin {
     config(entryName: string, value: IJQueryLazyPluginOptions): IJQueryLazyPlugin;
 
     // add new items to current instance
-    addItems(items: HTMLElement[]): IJQueryLazyPlugin;
-    addItems(items: Object): IJQueryLazyPlugin;
-    addItems(items: string): IJQueryLazyPlugin;
+    addItems(items: HTMLElement[] | object | string): IJQueryLazyPlugin;
 
     // get all unhandled items left of current instance
-    getItems(): Object;
+    getItems(): object;
 
     // loads all elements in current viewport
     update(useThrottle: boolean): IJQueryLazyPlugin;
 
     // force loading specific items, ignoring the viewport
-    force(items: HTMLElement[]): IJQueryLazyPlugin;
-    force(items: Object): IJQueryLazyPlugin;
-    force(items: string): IJQueryLazyPlugin;
+    force(items: HTMLElement[] | object | string): IJQueryLazyPlugin;
 
     // loads all remaining available elements from this instance
     loadAll(): IJQueryLazyPlugin;

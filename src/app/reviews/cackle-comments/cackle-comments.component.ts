@@ -14,7 +14,7 @@ export default class CackleCommentsComponent implements OnInit, OnDestroy {
     constructor(private config: AppConfig) {}
 
     public ngOnInit(): void {
-        let widgets = (window as IWindowCackleWidget).cackle_widget;
+        const widgets = (window as IWindowCackleWidget).cackle_widget;
         widgets.push({
             guestHideEmail: true,
             id: this.config.CACKLE_WIDGET_ID,
@@ -25,7 +25,7 @@ export default class CackleCommentsComponent implements OnInit, OnDestroy {
     }
 
     public ngOnDestroy(): void {
-        let widgets = (window as IWindowCackleWidget).cackle_widget;
+        const widgets = (window as IWindowCackleWidget).cackle_widget;
         widgets.pop();
     }
 

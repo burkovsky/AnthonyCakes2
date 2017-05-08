@@ -13,14 +13,14 @@ interface ICackleWidget {
     chanWithoutParams?: boolean;
     url?: string;
     ratingOff?: boolean;
-    product?: Object;
+    product?: object;
     lang?: string;
-    msg?: Object;
+    msg?: object;
     providers?: string;
     theme?: string;
     stream?: boolean;
     ssoAuth?: string;
-    ssoProvider?: Object;
+    ssoProvider?: object;
     ssoPrimary?: boolean;
     authPopup?: Function;
     sort?: string;

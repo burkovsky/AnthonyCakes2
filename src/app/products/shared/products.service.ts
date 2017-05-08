@@ -24,7 +24,7 @@ export default class ProductsService {
             .catch(this.handleError);
     }
 
-    private extractData(response: Response): Object {
+    private extractData(response: Response): object {
         return response.json() || {};
     }
 
@@ -37,8 +37,6 @@ export default class ProductsService {
         } else {
             errorMessage = error.message ? error.message : error.toString();
         }
-
-        console.error(errorMessage);
 
         return Observable.throw(errorMessage);
     }

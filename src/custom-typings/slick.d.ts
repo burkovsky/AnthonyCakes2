@@ -22,8 +22,8 @@ interface ISlickPluginOptions {
     appendArrows?: string;
     appendDots?: string;
     mobileFirst?: boolean;
-    prevArrow?: string | Object;
-    nextArrow?: string | Object;
+    prevArrow?: string | object;
+    nextArrow?: string | object;
     infinite?: boolean;
     initialSlide?: number;
     lazyLoad?: string;
@@ -31,7 +31,7 @@ interface ISlickPluginOptions {
     pauseOnHover?: boolean;
     pauseOnDotsHover?: boolean;
     respondTo?: string;
-    responsive?: Object[];
+    responsive?: object[];
     rows?: number;
     slide?: string;
     slidesPerRow?: number;

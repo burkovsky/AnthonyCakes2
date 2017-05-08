@@ -36,11 +36,11 @@ export default class ProductDetailsComponent implements OnInit, OnDestroy {
             .map((params: Params) => +params["id"])
             .combineLatest(this.products$)
             .subscribe((result) => {
-                let id = result[0];
-                let products = result[1];
+                const id = result[0];
+                const products = result[1];
 
                 if (products.length) {
-                    let product = products.find((p) => p.id === id);
+                    const product = products.find((p) => p.id === id);
                     if (product) {
                         this.product = product;
 
