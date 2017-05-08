@@ -10,7 +10,7 @@ var CACHE_KEYS = {
 };
 
 function get(req, res) {
-    var cachedResult = cache.get(CACHE_KEYS.PRODUCTS);;
+    var cachedResult = cache.get(CACHE_KEYS.PRODUCTS);
     if (cachedResult) {
         res.json(cachedResult);
         return;
