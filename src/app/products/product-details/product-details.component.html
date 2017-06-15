@@ -1,6 +1,8 @@
 ﻿<section class="product container pl-3 pt-3 pr-3">
-    <div class="product__back row mb-3 text-center">
-        <a class="col-12" routerLink="/products">Назад</a>
+    <div class="product__back row mb-3">
+        <span class="col-12">
+            <a routerLink="/products">Вкусняшки</a> > {{product.title}}
+        </span>
     </div>
     <div class="product__content row" *ngIf="product">
         <div class="col-12 col-md-7">
