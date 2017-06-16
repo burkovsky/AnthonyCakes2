@@ -1,16 +1,17 @@
-﻿<section class="product container pl-3 pt-3 pr-3">
+﻿<section class="product container pl-3 pt-3 pr-3 pb-2">
     <div class="product__back row mb-3">
-        <span class="col-12">
-            <a routerLink="/products">Вкусняшки</a> > {{product.title}}
-        </span>
+        <div class="col-12">
+            <a routerLink="/products">Вкусняшки</a>
+            <span *ngIf="product">> {{product.title}}</span>
+        </div>
     </div>
     <div class="product__content row" *ngIf="product">
-        <div class="col-12 col-md-7">
-            <div class="slick shadowed">
-                <img class="product__content-image img-fluid" *ngFor="let photo of product.photos" [src]="photo.photo_1280"/>
+        <div class="col-12 col-md-8">
+            <div class="product__content-carousel slick shadowed">
+                <img class="product__content-image img-fluid" *ngFor="let photo of product.photos" [src]="photo.photo_1280" />
             </div>
         </div>
-        <div class="product__content-description col-12 col-md-5">
+        <div class="product__content-description col-12 col-md-4">
             <h1>{{product.title}}</h1>
             <hr/>
             <p [innerHTML]="product.description | newLineToBr"></p>
