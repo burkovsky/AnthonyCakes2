@@ -6,6 +6,24 @@
     vertical-align: middle;
 }
 
+.slick-track {
+    line-height: normal;
+    height: auto;
+
+    @media (min-width: $mbp-md) {
+        line-height: 389px;
+        height: 389px;
+    }
+    @media (min-width: $mbp-lg) {
+        line-height: 609px;
+        height: 609px;
+    }
+    @media (min-width: $mbp-xl) {
+        line-height: 729px;
+        height: 729px;
+    }
+}
+
 .slick-prev {
     left: 0;
 }

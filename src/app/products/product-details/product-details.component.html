@@ -6,12 +6,12 @@
         </div>
     </div>
     <div class="product__content row" *ngIf="product">
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-7 col-lg-8">
             <div class="product__content-carousel slick shadowed">
                 <img class="product__content-image img-fluid" *ngFor="let photo of product.photos" [src]="photo.photo_1280" />
             </div>
         </div>
-        <div class="product__content-description col-12 col-md-4">
+        <div class="product__content-description col-12 col-md-5 col-lg-4">
             <h1>{{product.title}}</h1>
             <hr/>
             <p [innerHTML]="product.description | newLineToBr"></p>
