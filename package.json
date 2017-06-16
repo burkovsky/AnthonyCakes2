@@ -46,7 +46,7 @@
     "node-cache": "4.1.1",
     "node-vkapi": "2.1.0",
     "reflect-metadata": "0.1.10",
-    "rxjs": "5.4.0",
+    "rxjs": "5.4.1",
     "serve-favicon": "2.4.3",
     "systemjs": "0.20.14",
     "tether": "1.4.0",
@@ -54,7 +54,7 @@
     "zone.js": "0.8.12"
   },
   "devDependencies": {
-    "@types/jquery": "2.0.46",
+    "@types/jquery": "3.2.0",
     "@types/node": "7.0.31",
     "angular-router-loader": "0.6.0",
     "angular2-template-loader": "0.6.2",
