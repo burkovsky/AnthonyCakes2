@@ -5,16 +5,28 @@
             <span *ngIf="product">> {{product.title}}</span>
         </div>
     </div>
-    <div class="product__content row" *ngIf="product">
-        <div class="col-12 col-md-7 col-lg-8">
-            <div class="product__content-carousel slick shadowed">
-                <img class="product__content-image img-fluid" *ngFor="let photo of product.photos" [src]="photo.photo_1280" />
+    <div class="row" *ngIf="product">
+        <div class="col-12 col-lg-8">
+            <div class="slick shadowed">
+                <img class="product__image img-fluid" *ngFor="let photo of product.photos" [src]="photo.photo_1280" />
             </div>
         </div>
-        <div class="product__content-description col-12 col-md-5 col-lg-4">
+        <div class="product__content-description col-12 col-lg-4">
             <h1>{{product.title}}</h1>
-            <hr/>
-            <p [innerHTML]="product.description | newLineToBr"></p>
+            <hr />
+            <p class="product__description" [innerHTML]="product.description | newLineToBr"></p>
+            <p class="product__stats">
+                <span *ngIf="product.likes.count > 0">
+                    <i class="fa fa-heart" ></i>
+                    {{product.likes.count}}
+                </span>
+                <span *ngIf="product.views_count > 0">
+                    <i class="fa fa-eye" ></i>
+                    {{product.views_count}}
+                </span>
+            </p>
+            <hr />
+            <p class="product__price">{{product.price.text}}</p>
         </div>
     </div>
     <!-- TODO Add loader -->

@@ -3,15 +3,25 @@
 .product {
     font-family: 'Kurale', serif;
 
-    &__content {
-        &-image {
-            display: none;
-        }
+    &__image {
+        display: none;
+    }
 
-        &-description {
-            hr {
-                border-color: $clr-logo-primary;
-            }
+    &__content-description {
+        hr {
+            border-color: $clr-logo-primary;
         }
+    }
+
+    &__description {
+        font-size: 1.125rem;
+    }
+
+    &__stats {
+        font-size: 2rem;
+    }
+
+    &__price {
+        font-size: 2.5rem;
     }
 }
