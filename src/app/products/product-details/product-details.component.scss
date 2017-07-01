@@ -19,6 +19,14 @@
 
     &__stats {
         font-size: 2rem;
+
+        span:first-child {
+            margin-right: 1rem;
+        }
+
+        span:last-child {
+            margin-right: 0;
+        }
     }
 
     &__price {
