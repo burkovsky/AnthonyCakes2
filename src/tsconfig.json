@@ -7,6 +7,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": true,
+    "noStrictGenericChecks": true,
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5",
