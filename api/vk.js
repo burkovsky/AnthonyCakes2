@@ -1,15 +1,11 @@
 var VkApi = require('node-vkapi');
 
 var vk = new VkApi({
-    app: {
-        id: 0,
-        secret: 'SECRET'
-    },
-    auth: {
-        login: 'LOGIN',
-        pass: 'PASSWORD'
-    },
-    version: '5.63'
+    appId: 0,
+    appSecret: 'SECRET',
+    userLogin: 'LOGIN',
+    userPassword: 'PASSWORD',
+    version: '5.71'
 });
 
 var authorizationDate = null;
@@ -22,8 +18,8 @@ function needsAuthorization() {
 }
 
 function authorize() {
-    return vk.auth
-        .user({
+    return vk
+        .logIn({
             scope: ['market']
         })
         .then(token => {

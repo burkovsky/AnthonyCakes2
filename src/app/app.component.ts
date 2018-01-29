@@ -2,8 +2,7 @@
 import "bootstrap/dist/js/bootstrap.js";
 import "font-awesome/css/font-awesome.css";
 import "jquery/dist/jquery.js";
-import "tether/dist/css/tether.css";
-import "tether/dist/js/tether.js";
+import "popper.js/dist/popper.js";
 import "../styles/main.scss";
 
 import { Component } from "@angular/core";

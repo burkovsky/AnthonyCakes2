@@ -17,7 +17,7 @@ import NavMenuComponent from "./root/nav-menu/nav-menu.component";
 import ToTopComponent from "./root/to-top/to-top.component";
 
 const devImports = !process.env.PRODUCTION
-    ? [StoreDevtoolsModule.instrumentOnlyWithExtension()]
+    ? [StoreDevtoolsModule.instrument()]
     : [];
 
 @NgModule({
@@ -33,7 +33,7 @@ const devImports = !process.env.PRODUCTION
     imports: [
         BrowserModule,
         RouterModule.forRoot(routes),
-        StoreModule.provideStore(reducers),
+        StoreModule.forRoot(reducers),
         ...devImports,
         CoreModule,
         ProductsModule,
