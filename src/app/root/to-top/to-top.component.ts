@@ -17,7 +17,7 @@ export default class ToTopComponent {
 
     @HostListener("window:scroll")
     public onWindowScroll() {
-        this.active = this.document.body.scrollTop > this.config.SCROLL_TOP_BOUND;
+        this.active = (window.scrollY || this.document.documentElement.scrollTop) > this.config.SCROLL_TOP_BOUND;
     }
 
     public toTop() {
