@@ -1,11 +1,13 @@
 var VkApi = require('node-vkapi');
 
 var vk = new VkApi({
+    apiVersion: '5.71',
     appId: 0,
     appSecret: 'SECRET',
+    captchaApiKey: 'APIKEY',
+    captchaService: 'anti-captcha',
     userLogin: 'LOGIN',
-    userPassword: 'PASSWORD',
-    version: '5.71'
+    userPassword: 'PASSWORD'
 });
 
 var authorizationDate = null;
