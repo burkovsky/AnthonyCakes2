@@ -4,10 +4,10 @@ var vk = new VkApi({
     apiVersion: '5.71',
     appId: 0,
     appSecret: 'SECRET',
-    captchaApiKey: 'APIKEY',
-    captchaService: 'anti-captcha',
     userLogin: 'LOGIN',
-    userPassword: 'PASSWORD'
+    userPassword: 'PASSWORD',
+    captchaApiKey: 'APIKEY',
+    captchaService: 'anti-captcha'
 });
 
 var authorizationDate = null;
@@ -21,13 +21,13 @@ function needsAuthorization() {
 
 function authorize() {
     return vk
-        .logIn({
+        .authorize({
             scope: ['market']
         })
         .then(token => {
             authorizationDate = Date.now();
             authorizationToken = token;
-        })
+        });
 }
 
 function getCommunityItems() {
